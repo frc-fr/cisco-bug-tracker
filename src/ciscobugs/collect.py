@@ -29,6 +29,9 @@ USER_AGENT = "cisco-bug-tracker/0.1 (+https://github.com/frc-fr/cisco-bug-tracke
 CRAWL_DELAY = 2.0
 SITE = "https://www.cisco.com"
 STALE_DAYS = 540
+# Cisco's servers are not in sync: the same PDF can come with another ETag, even another
+# size, from one request to the next. The last ETags seen all mean "unchanged".
+KNOWN_ETAGS = 6
 
 
 class Client:
@@ -225,13 +228,18 @@ def update(manifest_path: Path, catalog_path: Path, cache: Path, client: Client,
         if known and not due(entry, today):
             continue
         etag = pdf_state(client, entry["url"])
+        etags = entry.pop("etags", None) or ([entry["etag"]] if entry.get("etag") else [])
+        entry.pop("etag", None)
         if etag:
-            entry["revised"] = etag_date(etag) or entry.get("revised")
+            # A stale server must not take the date back: the latest copy seen wins.
+            entry["revised"] = max(filter(None, [etag_date(etag), entry.get("revised")]), default=None)
+        entry["etags"] = etags
         # Without a PDF, nothing tells a change: the note is read again once a week.
-        if known and (etag == entry.get("etag") if etag else not weekly(entry, today)):
+        if known and (etag in etags if etag else not weekly(entry, today)):
             continue
         if download_document(client, entry, folder):
-            entry["etag"] = etag
+            if etag:
+                entry["etags"] = (etags + [etag])[-KNOWN_ETAGS:]
             entry.pop("unavailable", None)
             downloaded.append(key)
             log.info("%s: downloaded (%d chapters)", key, len(entry.get("chapters", [])))

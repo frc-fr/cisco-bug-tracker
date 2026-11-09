@@ -181,3 +181,24 @@ def test_release_dates_table():
                 + "<h3>Resolved Bugs in Version 7.6.6</h3>" + table(("CSCwr00001", "Crash")),
                 "Cisco Secure Firewall Threat Defense Release Notes, Version 7.6.x")
     assert parse_document([(URL, html)], "ftd").released == {"7.6.6": "2026-09-15"}
+
+
+def test_an_etag_seen_before_means_unchanged(tmp_path, monkeypatch):
+    """Cisco's servers answer with different ETags for the same PDF: none of those seen triggers a download."""
+    catalog = tmp_path / "catalog.json"
+    catalog.write_text('{"listings": [], "exclude": "x^", "documents": [], "seeds": []}')
+    url = "https://www.cisco.com/c/en/us/td/docs/a/notes.html"
+    manifest = tmp_path / "manifest.json"
+    entry = {"url": url, "system": "iosxe", "families": ["ISR 4000"], "chapters": [], "revised": "2026-10-05",
+             "etag": "8c0fd-6406e3384ad3e"}
+    collect.save_manifest(manifest, {collect.document_key(url): entry})
+    answers = iter(["8c0fd-63fa0bd001c20", "8c0fd-6406e3384ad3e", "8c0fd-63fa0bd001c20"])
+    downloads = []
+    monkeypatch.setattr(collect, "pdf_state", lambda client, u: next(answers))
+    monkeypatch.setattr(collect, "download_document", lambda client, e, folder: downloads.append(e["url"]) or True)
+    for _ in range(3):
+        collect.update(manifest, catalog, tmp_path / "cache", None, datetime(2026, 11, 9, tzinfo=timezone.utc))
+    saved = collect.load_manifest(manifest)[collect.document_key(url)]
+    assert downloads == [url]
+    assert saved["etags"] == ["8c0fd-6406e3384ad3e", "8c0fd-63fa0bd001c20"]
+    assert saved["revised"] == "2026-10-05"
