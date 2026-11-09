@@ -285,10 +285,11 @@
       "families": [
         "IOS 15 M&T platforms"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "8c5fd-63a03465cadf2"
+        "8c5fd-63a03465cadf2",
+        "8c5fd-6409c56dc633e"
       ]
     },
     {
@@ -348,10 +349,11 @@
       "families": [
         "Catalyst 2960-X"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-04",
       "chapters": [],
       "etags": [
-        "4b4a3-639dd48c835b0"
+        "4b4a3-639dd48c835b0",
+        "4b4a3-6404b6586c005"
       ]
     },
     {
@@ -3255,10 +3257,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "80df2-639f4d632de01"
+        "80df2-639f4d632de01",
+        "80df2-64160a7eccc2d"
       ]
     },
     {
@@ -3571,10 +3574,11 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "6f13c-639f4d9fdcf45"
+        "6f13c-639f4d9fdcf45",
+        "6a68f-64156757666eb"
       ]
     },
     {
@@ -3609,10 +3613,11 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "7505b-639ebe3b91a77"
+        "7505b-639ebe3b91a77",
+        "6c058-6406186a96327"
       ]
     },
     {
@@ -3840,10 +3845,11 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-21",
+      "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "f0a87-63a780736e817"
+        "f0a87-63a780736e817",
+        "f0a87-6408ed9711220"
       ]
     },
     {
@@ -3867,10 +3873,10 @@
       ],
       "revised": "2025-10-19",
       "chapters": [],
+      "unavailable": true,
       "etags": [
         "101f6f-63a9e954f1e40"
-      ],
-      "unavailable": true
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/75x/release/notes/b-release-notes-cisco8k-r753.html",
@@ -3930,10 +3936,11 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "ef8cf-63a36ef965433"
+        "ef8cf-63a36ef965433",
+        "ef8cf-6408018bd7948"
       ]
     },
     {
@@ -3955,10 +3962,11 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-19",
+      "revised": "2025-10-12",
       "chapters": [],
       "etags": [
-        "f0f67-63a4069b1572c"
+        "f0f67-63a4069b1572c",
+        "f0f67-640f48be342a4"
       ]
     },
     {
@@ -4018,10 +4026,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-15",
       "chapters": [],
       "etags": [
-        "f9cde-639f3fec05b70"
+        "f9cde-639f3fec05b70",
+        "f9cde-6413939cc72dc"
       ]
     },
     {
@@ -4043,10 +4052,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-19",
       "chapters": [],
       "etags": [
-        "12670b-639fb4b2525ca"
+        "12670b-639fb4b2525ca",
+        "12670b-6417ec68ab4c6"
       ]
     },
     {
@@ -4055,10 +4065,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-04",
       "chapters": [],
       "etags": [
-        "f9803-639f22a53a685"
+        "f9803-639f22a53a685",
+        "f9803-6404aba6e531b"
       ]
     },
     {
@@ -4067,10 +4078,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "12d67c-639f379dec508"
+        "12d67c-639f379dec508",
+        "12d67c-6407677530c3a"
       ]
     },
     {
@@ -4130,10 +4142,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-27",
+      "revised": "2025-10-16",
       "chapters": [],
       "etags": [
-        "130956-63ae6ffdad1bd"
+        "130956-63ae6ffdad1bd",
+        "130956-64147924194d6"
       ]
     },
     {
@@ -4194,10 +4207,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-13",
       "chapters": [],
       "etags": [
-        "11fa05-63a9acc6bb406"
+        "11fa05-63a9acc6bb406",
+        "11fa05-641112cae1722"
       ]
     },
     {
@@ -4206,10 +4220,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "10f8a2-63a035d3bf6c5"
+        "10f8a2-63a035d3bf6c5",
+        "10f8a2-6406fa2ac23f0"
       ]
     },
     {
@@ -4255,10 +4270,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "11c003-63a1db742a697"
+        "11c003-63a1db742a697",
+        "11c003-640ae32890b96"
       ]
     },
     {
@@ -4267,10 +4283,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-25",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "ecc98-63ac0fdc37940"
+        "ecc98-63ac0fdc37940",
+        "ecc98-64076775394eb"
       ]
     },
     {
@@ -4279,10 +4296,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "ed418-63a0051ff7889"
+        "ed418-63a0051ff7889",
+        "ed418-6408f57cbdac9"
       ]
     },
     {
@@ -4379,10 +4397,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "e3e8e-63a369b6cb1c7"
+        "e3e8e-63a369b6cb1c7",
+        "e3e8e-64120f574d917"
       ]
     },
     {
@@ -4417,10 +4436,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-12",
       "chapters": [],
       "etags": [
-        "3d7e1-63a05cf963947"
+        "3d7e1-63a05cf963947",
+        "3d7e1-640ed4441efdf"
       ]
     },
     {
@@ -4429,10 +4449,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "48a61-639ea66d503ae"
+        "48a61-639ea66d503ae",
+        "48a61-640814d31dec9"
       ]
     },
     {
@@ -4441,10 +4462,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "3df7d-639e2220eb6f5"
+        "3df7d-639e2220eb6f5",
+        "3df7d-6406292ec5e13"
       ]
     },
     {
@@ -4557,10 +4579,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-12",
       "chapters": [],
       "etags": [
-        "3ba4e-63a04a5d5efe9"
+        "3ba4e-63a04a5d5efe9",
+        "3cc26-640fb4f53e329"
       ]
     },
     {
@@ -4684,10 +4707,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-19",
       "chapters": [],
       "etags": [
-        "5bf46-639b0bc573e87"
+        "5bf46-639b0bc573e87",
+        "5bf46-64181e7c99e97"
       ]
     },
     {
@@ -4709,10 +4733,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "efa4a-639ebf91ead2e"
+        "efa4a-639ebf91ead2e",
+        "efa4a-6411a69adb76a"
       ]
     },
     {
@@ -4721,10 +4746,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "57826-639faba9d5542"
+        "57826-639faba9d5542",
+        "57826-6408ad60187a6"
       ]
     },
     {
@@ -4733,10 +4759,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "4e4cc-639f22a0ef484"
+        "4e4cc-639f22a0ef484",
+        "4e4cc-64115c8b394a4"
       ]
     },
     {
@@ -4796,10 +4823,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-21",
+      "revised": "2025-10-09",
       "chapters": [],
       "etags": [
-        "f1aa4-63a72f8dab62a"
+        "f1aa4-63a72f8dab62a",
+        "f1aa4-640b27a94eefc"
       ]
     },
     {
@@ -4808,10 +4836,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-09",
       "chapters": [],
       "etags": [
-        "6f9c7-63a00d8884ba0"
+        "6f9c7-63a00d8884ba0",
+        "6f9c7-640af66843e06"
       ]
     },
     {
@@ -4820,10 +4849,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "41b3b-639fdb81734fe"
+        "41b3b-639fdb81734fe",
+        "41b3b-641209d31aa5c"
       ]
     },
     {
@@ -4845,10 +4875,11 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-21",
       "chapters": [],
       "etags": [
-        "446e8-63a02182e25c3"
+        "446e8-63a02182e25c3",
+        "446e8-641a6427fac3a"
       ]
     },
     {
@@ -5021,10 +5052,11 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-09-24",
+      "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "10dad7-63f858d371375"
+        "10dad7-63f858d371375",
+        "10dad7-64086f5e75e4e"
       ]
     },
     {
@@ -5071,10 +5103,11 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "10db59-639f702246f4f"
+        "10db59-639f702246f4f",
+        "10db59-6407677512418"
       ]
     },
     {
@@ -5095,10 +5128,11 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "10fa7f-63a1a10096f65"
+        "10fa7f-63a1a10096f65",
+        "10fa7f-641578038bd4f"
       ]
     },
     {
@@ -5107,10 +5141,11 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-07-21",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "10d345-63a6dd0bd236d"
+        "10d345-63a6dd0bd236d",
+        "10d345-64082b5f3ed97"
       ]
     },
     {
@@ -5155,10 +5190,11 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "111d43-63a1937223262"
+        "111d43-63a1937223262",
+        "111d43-64150a197d4de"
       ]
     },
     {
@@ -5494,10 +5530,11 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "bd1cc-639bca8787f49"
+        "bd1cc-639bca8787f49",
+        "bd1cc-6407d3fd97edc"
       ]
     },
     {
@@ -5667,10 +5704,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-09-24",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "52211-63f8a4db8625a"
+        "52211-63f8a4db8625a",
+        "52211-640690514b1c2"
       ]
     },
     {
@@ -5852,10 +5890,11 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2026-10-06",
+      "revised": "2026-10-07",
       "chapters": [],
       "etags": [
-        "aabcf-65d22e2124bce"
+        "aabcf-65d22e2124bce",
+        "aabcf-65d3f2d936c78"
       ]
     },
     {
@@ -6063,10 +6102,11 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-24",
+      "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "5015c-63aa7ff1f00dd"
+        "5015c-63aa7ff1f00dd",
+        "5015c-641598cff84d5"
       ]
     },
     {
@@ -6419,10 +6459,11 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-10-21",
+      "revised": "2025-10-22",
       "chapters": [],
       "etags": [
-        "45ecf-641ae91a1d348"
+        "45ecf-641ae91a1d348",
+        "45ecf-641bc60e0deb5"
       ]
     },
     {
