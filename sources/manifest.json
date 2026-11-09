@@ -386,10 +386,11 @@
       "families": [
         "Catalyst 2960-X"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "3d588-639f4b1a8a5a7"
+        "3d588-639f4b1a8a5a7",
+        "3d588-6407e219db5ee"
       ]
     },
     {
@@ -426,7 +427,8 @@
       "revised": "2026-09-02",
       "chapters": [],
       "etags": [
-        "735fb-65a838b022ef6"
+        "735fb-65a838b022ef6",
+        "735fb-65a80134f7d95"
       ]
     },
     {
@@ -435,10 +437,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2025-07-13",
+      "revised": "2025-10-10",
       "chapters": [],
       "etags": [
-        "30cc4-639d523319dab"
+        "30cc4-639d523319dab",
+        "30cc4-640cec130ab29"
       ]
     },
     {
@@ -471,10 +474,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "2f5db-63a30e1ca46db"
+        "2f5db-63a30e1ca46db",
+        "2f5db-640a27bb9c584"
       ]
     },
     {
@@ -486,7 +490,8 @@
       "revised": "2026-10-13",
       "chapters": [],
       "etags": [
-        "847fb-65db8c798e8af"
+        "847fb-65db8c798e8af",
+        "847fb-65db88567e20b"
       ]
     },
     {
@@ -495,10 +500,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2025-11-09",
+      "revised": "2025-11-10",
       "chapters": [],
       "etags": [
-        "60d55-64321827d5c3d"
+        "60d55-64321827d5c3d",
+        "60d55-6433854a96673"
       ]
     },
     {
@@ -507,10 +513,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "449db-639dff346ac1f"
+        "449db-639dff346ac1f",
+        "449db-6406f0870beff"
       ]
     },
     {
@@ -519,10 +526,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-12",
       "chapters": [],
       "etags": [
-        "64d4a-639f708c7aaa1"
+        "64d4a-639f708c7aaa1",
+        "64d4a-640fc273c4499"
       ]
     },
     {
@@ -543,10 +551,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2025-07-13",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "3023a-639cc4da531ae"
+        "3023a-639cc4da531ae",
+        "3023a-64114acab8c27"
       ]
     },
     {
@@ -592,8 +601,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/16-11/isr1k-rel-notes-xe-16-11-x.html",
@@ -602,8 +611,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/16-12/isr1k-rel-notes-xe-16-12-x.html",
@@ -612,8 +621,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/16-6-2/isr1k-rel-notes-xe-16-6.html",
@@ -622,8 +631,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/16-7-1/isr1k-rel-notes-xe-16-7.html",
@@ -632,8 +641,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/16-8-1/isr1k-rel-notes-xe-16-8.html",
@@ -642,8 +651,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/16-9-1/isr1k-rel-notes-xe-16-9.html",
@@ -652,8 +661,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-1/isr1k-rel-notes-xe-17-1-x.html",
@@ -662,8 +671,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-10/isr1k-rel-notes-xe-17-10-x.html",
@@ -672,8 +681,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-11/isr1k-rel-notes-xe-17-11-x.html",
@@ -682,8 +691,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-12/isr1k-rel-notes-xe-17-12-x.html",
@@ -692,8 +701,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-13-x/isr1k-rel-notes-xe-17-13-x.html",
@@ -702,8 +711,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-14/isr1k-rel-notes-xe-17-14-x.html",
@@ -712,8 +721,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-15/isr1k-rel-notes-xe-17-15-x.html",
@@ -722,8 +731,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-16/isr1k-rel-notes-xe-17-16-x.html",
@@ -732,8 +741,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-18/isr1k-release-notes-xe-17-18-x.html",
@@ -742,8 +751,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-2/isr1k-rel-notes-xe-17-2-x.html",
@@ -752,8 +761,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-3/isr1k-rel-notes-xe-17-3-x.html",
@@ -762,8 +771,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-4/isr1k-rel-notes-xe-17-4-x.html",
@@ -772,8 +781,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-5/isr1k-rel-notes-xe-17-5-x.html",
@@ -782,8 +791,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-6/isr1k-rel-notes-xe-17-6-x.html",
@@ -792,8 +801,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-7/isr1k-rel-notes-xe-17-7-x.html",
@@ -802,8 +811,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-8/isr1k-rel-notes-xe-17-8-x.html",
@@ -812,8 +821,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/17-9/isr1k-rel-notes-xe-17-9-x.html",
@@ -822,8 +831,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/isr1k-release-notes-xe-26-1-x.html",
@@ -832,8 +841,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/1100/release/isr1k-release-notes-xe-26-2-x.html",
@@ -842,8 +851,8 @@
         "ISR 1000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-10/isr4k-rel-notes-xe-16-10.html",
@@ -852,8 +861,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-11/isr4k-rel-notes-xe-16-11.html",
@@ -862,8 +871,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-12/isr4k-rel-notes-xe-16-12.html",
@@ -872,8 +881,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-6/isr4k-rel-notes-xe-16-6.html",
@@ -882,8 +891,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-7/isr4k-rel-notes-xe-16-7.html",
@@ -892,8 +901,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-8/isr4k-rel-notes-xe-16-8.html",
@@ -902,8 +911,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-9/isr4k-rel-notes-xe-16-9.html",
@@ -912,8 +921,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-16-rn/isr4k-rel-notes-xe-16-5.html",
@@ -922,8 +931,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-1/isr4k-rel-notes-xe-17-1.html",
@@ -932,8 +941,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-10/isr4k-rel-notes-xe-17-10.html",
@@ -942,8 +951,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-11/isr4k-rel-notes-xe-17-11.html",
@@ -952,8 +961,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-12/isr4k-rel-notes-xe-17-12.html",
@@ -962,8 +971,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-13/isr4k-rel-notes-xe-17-13.html",
@@ -972,8 +981,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-14/isr4k-rel-notes-xe-17-14.html",
@@ -982,8 +991,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-15/isr4k-rel-notes-xe-17-15.html",
@@ -992,8 +1001,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-16/isr4k-rel-notes-xe-17-16.html",
@@ -1002,8 +1011,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-2/isr4k-rel-notes-xe-17-2.html",
@@ -1012,8 +1021,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-3/isr4k-rel-notes-xe-17-3.html",
@@ -1022,8 +1031,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-4/isr4k-rel-notes-xe-17-4.html",
@@ -1032,8 +1041,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-5/isr4k-rel-notes-xe-17-5.html",
@@ -1042,8 +1051,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-6/isr4k-rel-notes-xe-17-6.html",
@@ -1052,8 +1061,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-7/isr4k-rel-notes-xe-17-7.html",
@@ -1062,8 +1071,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-8/isr4k-rel-notes-xe-17-8.html",
@@ -1072,8 +1081,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-9/isr4k-rel-notes-xe-17-9.html",
@@ -1082,8 +1091,8 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr1000/release/notes/xe-16-11/asr1000-rel-notes-xe-16-11.html",
@@ -1091,10 +1100,11 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "4e91d-639f6b2b1638e"
+        "4e91d-639f6b2b1638e",
+        "4e91d-64076132a7cf6"
       ]
     },
     {
@@ -1188,10 +1198,11 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "306e9-639f6fd8df2c8"
+        "306e9-639f6fd8df2c8",
+        "306e9-6409aa4449115"
       ]
     },
     {
@@ -1212,10 +1223,11 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "2b9d9-639f6fd8be7a9"
+        "2b9d9-639f6fd8be7a9",
+        "2b9d9-6409773ce504f"
       ]
     },
     {
@@ -1227,7 +1239,8 @@
       "revised": "2026-10-13",
       "chapters": [],
       "etags": [
-        "3e07a-65db9f5275bcb"
+        "3e07a-65db9f5275bcb",
+        "3e07a-65db80899371b"
       ]
     },
     {
@@ -1298,10 +1311,11 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-15",
       "chapters": [],
       "etags": [
-        "8c134-639efa9c67e38"
+        "8c134-639efa9c67e38",
+        "8c134-6412efc2a9da5"
       ]
     },
     {
@@ -1338,7 +1352,8 @@
       "revised": "2026-08-07",
       "chapters": [],
       "etags": [
-        "762ae-65871efd5428e"
+        "762ae-65871efd5428e",
+        "762ae-6587223afdf99"
       ]
     },
     {
@@ -1418,10 +1433,11 @@
       "families": [
         "Catalyst 8200"
       ],
-      "revised": "2026-09-28",
+      "revised": "2026-09-29",
       "chapters": [],
       "etags": [
-        "23a1d-65c83cfabb5a4"
+        "23a1d-65c83cfabb5a4",
+        "23e08-65c9cf24544b6"
       ]
     },
     {
@@ -1495,10 +1511,11 @@
         "Catalyst 8200",
         "Catalyst 8300"
       ],
-      "revised": "2025-07-21",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "2dfe9-63a77fc8d71c9"
+        "2dfe9-63a77fc8d71c9",
+        "2dfe9-64123963054be"
       ]
     },
     {
@@ -1508,10 +1525,11 @@
         "Catalyst 8200",
         "Catalyst 8300"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-04",
       "chapters": [],
       "etags": [
-        "32a01-639f7096d40ff"
+        "32a01-639f7096d40ff",
+        "32a01-64050767ed28d"
       ]
     },
     {
@@ -1561,10 +1579,11 @@
       "families": [
         "Catalyst 8300"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "2ebc0-63a1cc7757b0a"
+        "2ebc0-63a1cc7757b0a",
+        "2ebc0-6407eed7c7fe2"
       ]
     },
     {
@@ -1635,10 +1654,11 @@
       "families": [
         "Catalyst 8300"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-11",
       "chapters": [],
       "etags": [
-        "38aff-63a0bfa0df998"
+        "38aff-63a0bfa0df998",
+        "38aff-640de48d7a430"
       ]
     },
     {
@@ -1741,7 +1761,8 @@
       "revised": "2026-02-21",
       "chapters": [],
       "etags": [
-        "2ee03-64b554339646d"
+        "2ee03-64b554339646d",
+        "2ee03-64b5314cf6a34"
       ]
     },
     {
@@ -2119,7 +2140,8 @@
       "revised": "2025-11-28",
       "chapters": [],
       "etags": [
-        "68cf7-644a3c1fe2e25"
+        "68cf7-644a3c1fe2e25",
+        "68cf7-644a35ea8f518"
       ]
     },
     {
@@ -2181,7 +2203,8 @@
       "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "78823-640ab6e7c782b"
+        "78823-640ab6e7c782b",
+        "78823-639f4c6ece45b"
       ]
     },
     {
@@ -2283,7 +2306,8 @@
       "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "62446-641252541b3b8"
+        "62446-641252541b3b8",
+        "62446-639ef6fd64286"
       ]
     },
     {
@@ -2403,7 +2427,8 @@
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-13/release_notes/ol-17-13-9300/caveats.html"
       ],
       "etags": [
-        "205447-64062bfb3f64f"
+        "205447-64062bfb3f64f",
+        "205447-639cbf55c8efa"
       ]
     },
     {
@@ -2430,10 +2455,11 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2026-03-02",
+      "revised": "2026-03-03",
       "chapters": [],
       "etags": [
-        "7597f-64c0f96d2b258"
+        "7597f-64c0f96d2b258",
+        "7597f-64c17d0ea65d7"
       ]
     },
     {
@@ -2458,7 +2484,8 @@
       "revised": "2025-11-21",
       "chapters": [],
       "etags": [
-        "6a6e3-64420ab9e99e8"
+        "6a6e3-64420ab9e99e8",
+        "6a6e8-643e51bc8c277"
       ]
     },
     {
@@ -2535,7 +2562,8 @@
       "revised": "2025-10-10",
       "chapters": [],
       "etags": [
-        "8ba86-640ce1324cebb"
+        "8ba86-640ce1324cebb",
+        "8ba86-639ef7a88bd72"
       ]
     },
     {
@@ -2650,7 +2678,8 @@
       "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "8a609-641629c7e0509"
+        "8a609-641629c7e0509",
+        "8a609-639f4d1e48e33"
       ]
     },
     {
@@ -2687,7 +2716,8 @@
       "revised": "2025-11-28",
       "chapters": [],
       "etags": [
-        "7babb-644a3c989cf0c"
+        "7babb-644a3c989cf0c",
+        "7babb-644a381190a99"
       ]
     },
     {
@@ -2784,7 +2814,8 @@
       "revised": "2026-03-17",
       "chapters": [],
       "etags": [
-        "76c24-64d30d923d4ad"
+        "76c24-64d30d923d4ad",
+        "76c24-64d30db8d4252"
       ]
     },
     {
@@ -2796,7 +2827,8 @@
       "revised": "2025-11-24",
       "chapters": [],
       "etags": [
-        "6c493-6445d70b9bc4f"
+        "6c493-6445d70b9bc4f",
+        "6b7b5-643d54d56e2a2"
       ]
     },
     {
@@ -2844,7 +2876,8 @@
       "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "9d2d7-640948fc6be11"
+        "9d2d7-640948fc6be11",
+        "9d2d7-639f4d1b21455"
       ]
     },
     {
@@ -2994,10 +3027,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-19",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "55f09-63a4b829c44c9"
+        "55f09-63a4b829c44c9",
+        "55f09-6407dfe894142"
       ]
     },
     {
@@ -3019,10 +3053,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-29",
       "chapters": [],
       "etags": [
-        "88899-639e933743eb6"
+        "88899-639e933743eb6",
+        "88829-642546f8863a4"
       ]
     },
     {
@@ -3043,10 +3078,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-10",
       "chapters": [],
       "etags": [
-        "7d093-639f4d805f386"
+        "7d093-639f4d805f386",
+        "7d093-640d2d047bb29"
       ]
     },
     {
@@ -3126,7 +3162,7 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-13",
+      "revised": "2025-10-05",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-14/release_notes/ol-17-14-9500/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-14/release_notes/ol-17-14-9500/limitations_and_restrictions.html",
@@ -3134,7 +3170,8 @@
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-14/release_notes/ol-17-14-9500/caveats.html"
       ],
       "etags": [
-        "207165-639cbf52039ab"
+        "207165-639cbf52039ab",
+        "207165-640683e8daf55"
       ]
     },
     {
@@ -3155,10 +3192,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-11-19",
+      "revised": "2025-11-26",
       "chapters": [],
       "etags": [
-        "6fbbe-643ea39731cc1"
+        "6fbbe-643ea39731cc1",
+        "6fdea-64480fed187ed"
       ]
     },
     {
@@ -3229,10 +3267,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-20",
       "chapters": [],
       "etags": [
-        "7ea23-639e92d0f585d"
+        "7ea23-639e92d0f585d",
+        "7ea23-64195e27722a4"
       ]
     },
     {
@@ -3241,10 +3280,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "88229-639e92d047b3f"
+        "88229-639e92d047b3f",
+        "88229-64161dd293982"
       ]
     },
     {
@@ -3467,10 +3507,11 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-11-22",
+      "revised": "2025-11-25",
       "chapters": [],
       "etags": [
-        "5f139-6442ac113818b"
+        "5f139-6442ac113818b",
+        "5f139-6446d35ff2574"
       ]
     },
     {
@@ -3504,10 +3545,11 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "9a1e4-639ebe3348960"
+        "9a1e4-639ebe3348960",
+        "9a55a-640683fa39362"
       ]
     },
     {
@@ -3683,10 +3725,11 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-04",
       "chapters": [],
       "etags": [
-        "11189e-639b3fd463705"
+        "11189e-639b3fd463705",
+        "11189e-6405849671071"
       ]
     },
     {
@@ -3695,10 +3738,11 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "f6b9b-639f70612537c"
+        "f6b9b-639f70612537c",
+        "f6b9b-640763665027a"
       ]
     },
     {
@@ -3821,11 +3865,12 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-19",
       "chapters": [],
       "etags": [
         "101f6f-63a9e954f1e40"
-      ]
+      ],
+      "unavailable": true
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/75x/release/notes/b-release-notes-cisco8k-r753.html",
@@ -3859,10 +3904,11 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-19",
       "chapters": [],
       "etags": [
-        "edf93-63a31a369fb61"
+        "edf93-63a31a369fb61",
+        "edf93-641833ca954c4"
       ]
     },
     {
@@ -3921,10 +3967,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "129e62-63a369f92b109"
+        "129e62-63a369f92b109",
+        "129e62-6407677be6080"
       ]
     },
     {
@@ -3946,10 +3993,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-20",
+      "revised": "2025-12-22",
       "chapters": [],
       "etags": [
-        "1455c8-63a5646b404dc"
+        "1455c8-63a5646b404dc",
+        "12a84d-64683f99e4ba5"
       ]
     },
     {
@@ -4031,10 +4079,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-04",
       "chapters": [],
       "etags": [
-        "fa4da-639fd2a5598dc"
+        "fa4da-639fd2a5598dc",
+        "faac2-6405c43cab7c7"
       ]
     },
     {
@@ -4068,10 +4117,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-20",
+      "revised": "2025-10-13",
       "chapters": [],
       "etags": [
-        "3c97a-63a600283544a"
+        "3c97a-63a600283544a",
+        "3c97a-64105098a1b0d"
       ]
     },
     {
@@ -4131,10 +4181,11 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "1093e4-63a987c194c48"
+        "1093e4-63a987c194c48",
+        "1093e4-64071541f05ff"
       ]
     },
     {
@@ -4293,8 +4344,8 @@
         "NCS 560"
       ],
       "chapters": [],
-      "etags": [],
-      "revised": null
+      "revised": null,
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/24xx/b-release-notes-ncs560-r2412.html",
@@ -4302,10 +4353,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-10",
       "chapters": [],
       "etags": [
-        "edacb-63a05cf56d6de"
+        "edacb-63a05cf56d6de",
+        "edacb-640d63f6921fc"
       ]
     },
     {
@@ -4339,10 +4391,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-19",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "e3887-63a4970c4a97f"
+        "e3887-63a4970c4a97f",
+        "e3887-6411ef5a659b3"
       ]
     },
     {
@@ -4426,10 +4479,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "e1cbc-63a2aeb004311"
+        "e1cbc-63a2aeb004311",
+        "e1cbc-6411fe8de1800"
       ]
     },
     {
@@ -4438,10 +4492,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-18",
       "chapters": [],
       "etags": [
-        "4db82-63a2955927c8d"
+        "4db82-63a2955927c8d",
+        "4db82-6417155055d5a"
       ]
     },
     {
@@ -4450,10 +4505,11 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "314ea-63a25ffe71634"
+        "314ea-63a25ffe71634",
+        "314ea-6409cb1e773fd"
       ]
     },
     {
@@ -4541,7 +4597,8 @@
       "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "31906-6408d3747d6ed"
+        "31906-6408d3747d6ed",
+        "31906-639f90f849592"
       ]
     },
     {
@@ -4617,7 +4674,8 @@
       "revised": "2025-10-09",
       "chapters": [],
       "etags": [
-        "65b8f-640bc5a4dc845"
+        "65b8f-640bc5a4dc845",
+        "65b8f-639ebf91c5b61"
       ]
     },
     {
@@ -4641,7 +4699,8 @@
       "revised": "2025-10-14",
       "chapters": [],
       "etags": [
-        "efd56-64115d5195552"
+        "efd56-64115d5195552",
+        "efd56-63a11aa1c705c"
       ]
     },
     {
@@ -5136,7 +5195,8 @@
       "revised": "2025-10-11",
       "chapters": [],
       "etags": [
-        "109b44-640e2a90bf9ed"
+        "109b44-640e2a90bf9ed",
+        "109b44-639f702314456"
       ]
     },
     {
@@ -5174,7 +5234,8 @@
       "revised": "2025-10-19",
       "chapters": [],
       "etags": [
-        "11cec8-64182498dd865"
+        "11cec8-64182498dd865",
+        "11cb40-63ae720694525"
       ]
     },
     {
@@ -5210,7 +5271,8 @@
       "revised": "2025-10-12",
       "chapters": [],
       "etags": [
-        "115b34-640fbf8893100"
+        "115b34-640fbf8893100",
+        "115bff-639c5a87ef89f"
       ]
     },
     {
@@ -5273,7 +5335,8 @@
       "revised": "2026-02-17",
       "chapters": [],
       "etags": [
-        "10fee1-64afa4bf2f51b"
+        "10fee1-64afa4bf2f51b",
+        "1100f6-63a82ffabdb25"
       ]
     },
     {
@@ -5297,7 +5360,8 @@
       "revised": "2025-10-18",
       "chapters": [],
       "etags": [
-        "121bcc-6416bb9581fbc"
+        "121bcc-6416bb9581fbc",
+        "121bcc-639b1eebac4f3"
       ]
     },
     {
@@ -5322,7 +5386,8 @@
       "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "10f558-640a70f1c5a83"
+        "10f558-640a70f1c5a83",
+        "10f558-63a597bf23e58"
       ]
     },
     {
@@ -5334,7 +5399,8 @@
       "revised": "2025-10-09",
       "chapters": [],
       "etags": [
-        "60d60-640b1cf6515fa"
+        "60d60-640b1cf6515fa",
+        "60d60-63a9578ad1155"
       ]
     },
     {
@@ -5418,7 +5484,8 @@
       "revised": "2025-10-18",
       "chapters": [],
       "etags": [
-        "8257a-6416bc0c19d42"
+        "8257a-6416bc0c19d42",
+        "8257a-639e67e5357b5"
       ]
     },
     {
@@ -5502,7 +5569,8 @@
       "revised": "2025-10-10",
       "chapters": [],
       "etags": [
-        "489a1-640c29f02afca"
+        "489a1-640c29f02afca",
+        "489a1-63a6cf2c1092a"
       ]
     },
     {
@@ -5675,7 +5743,8 @@
       "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "4d7eb-6408355dc8a56"
+        "4d7eb-6408355dc8a56",
+        "4d7eb-63a369b5443bc"
       ]
     },
     {
@@ -5687,7 +5756,8 @@
       "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "47fb2-6409359d05c5a"
+        "47fb2-6409359d05c5a",
+        "47f60-64033fa93864a"
       ]
     },
     {
@@ -5723,7 +5793,8 @@
       "revised": "2025-12-19",
       "chapters": [],
       "etags": [
-        "5e676-64655e5e5cd90"
+        "5e676-64655e5e5cd90",
+        "59ad3-64649d93e62b0"
       ]
     },
     {
@@ -5747,7 +5818,8 @@
       "revised": "2026-06-01",
       "chapters": [],
       "etags": [
-        "6f5f4-6532b56a742a3"
+        "6f5f4-6532b56a742a3",
+        "6f5f4-653342da0e766"
       ]
     },
     {
@@ -5855,7 +5927,8 @@
       "revised": "2026-02-28",
       "chapters": [],
       "etags": [
-        "6a995-64bddda256026"
+        "6a995-64bddda256026",
+        "6a995-64be571d30ee3"
       ]
     },
     {
@@ -5891,7 +5964,8 @@
       "revised": "2026-06-10",
       "chapters": [],
       "etags": [
-        "74003-653e23972d099"
+        "74003-653e23972d099",
+        "74003-653e412c23fdd"
       ]
     },
     {
@@ -5966,7 +6040,8 @@
       "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "58436-640a983ab4e8c"
+        "58436-640a983ab4e8c",
+        "58436-63a6f102dbe17"
       ]
     },
     {
@@ -6041,7 +6116,8 @@
       "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "40118-64060c961422f"
+        "40118-64060c961422f",
+        "40118-63a0d059dded1"
       ]
     },
     {
@@ -6066,7 +6142,8 @@
       "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "3bd9e-640a176a8d3fe"
+        "3bd9e-640a176a8d3fe",
+        "3bd9e-639debcea6561"
       ]
     },
     {
@@ -6078,7 +6155,8 @@
       "revised": "2025-10-19",
       "chapters": [],
       "etags": [
-        "5f8b8-64189f39edbf7"
+        "5f8b8-64189f39edbf7",
+        "5f8b8-63a05942ed336"
       ]
     },
     {
@@ -6102,7 +6180,8 @@
       "revised": "2025-10-21",
       "chapters": [],
       "etags": [
-        "67b45-641a5da4eac90"
+        "67b45-641a5da4eac90",
+        "67b45-63a1c5fa14490"
       ]
     },
     {
@@ -6140,7 +6219,8 @@
       "revised": "2025-11-18",
       "chapters": [],
       "etags": [
-        "47b5c-643de611bda5c"
+        "47b5c-643de611bda5c",
+        "47b5c-639de137e581f"
       ]
     },
     {
@@ -6202,7 +6282,8 @@
       "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "2ecc1-6409e03c1e8da"
+        "2ecc1-6409e03c1e8da",
+        "2ecc1-63a11f2693e39"
       ]
     },
     {
@@ -6302,7 +6383,8 @@
       "revised": "2025-10-19",
       "chapters": [],
       "etags": [
-        "3dab9-64189e2216d6e"
+        "3dab9-64189e2216d6e",
+        "3dab9-639de1eb9b9f5"
       ]
     },
     {
@@ -6327,7 +6409,8 @@
       "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "46d37-6408b454025f9"
+        "46d37-6408b454025f9",
+        "46d37-639d52fcd637f"
       ]
     },
     {
@@ -6423,7 +6506,8 @@
       "revised": "2025-10-17",
       "chapters": [],
       "etags": [
-        "f6e6a-6415f695a28bc"
+        "f6e6a-6415f695a28bc",
+        "f6e6a-63cca7cb12003"
       ]
     },
     {
@@ -6447,7 +6531,8 @@
       "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "f4f93-6407a36dd9078"
+        "f4f93-6407a36dd9078",
+        "f4f93-63fd8e4ff730c"
       ]
     },
     {
@@ -6471,7 +6556,8 @@
       "revised": "2025-10-10",
       "chapters": [],
       "etags": [
-        "d6dc1-640c899d44b24"
+        "d6dc1-640c899d44b24",
+        "d6dc1-63fd8e4507488"
       ]
     },
     {
@@ -6531,7 +6617,8 @@
       "revised": "2025-10-22",
       "chapters": [],
       "etags": [
-        "89fe5-641bc40e14267"
+        "89fe5-641bc40e14267",
+        "89fe5-639db3a956bd1"
       ]
     },
     {
@@ -6591,7 +6678,8 @@
       "revised": "2025-10-20",
       "chapters": [],
       "etags": [
-        "12c6d0-6419aed2fb74f"
+        "12c6d0-6419aed2fb74f",
+        "12c6d0-63e0162643fe3"
       ]
     },
     {
@@ -6615,7 +6703,8 @@
       "revised": "2025-10-20",
       "chapters": [],
       "etags": [
-        "dfb80-6419aed0fdf3a"
+        "dfb80-6419aed0fdf3a",
+        "dfb80-639daedee57f9"
       ]
     },
     {
@@ -6639,7 +6728,8 @@
       "revised": "2025-10-07",
       "chapters": [],
       "etags": [
-        "a8110-640893d52561f"
+        "a8110-640893d52561f",
+        "a8110-639e57ff9e257"
       ]
     },
     {
@@ -6672,10 +6762,11 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2026-05-12",
+      "revised": "2026-05-13",
       "chapters": [],
       "etags": [
-        "84a0a-651995133e16c"
+        "84a0a-651995133e16c",
+        "84a0a-651ad853ae411"
       ]
     },
     {
@@ -6687,7 +6778,8 @@
       "revised": "2025-10-24",
       "chapters": [],
       "etags": [
-        "2f56b-641def176aaaa"
+        "2f56b-641def176aaaa",
+        "2f56b-63a7da28f2f5f"
       ]
     },
     {
@@ -6699,7 +6791,8 @@
       "revised": "2025-10-09",
       "chapters": [],
       "etags": [
-        "2a278-640b2956d2066"
+        "2a278-640b2956d2066",
+        "2a278-639ae5b4154cc"
       ]
     },
     {
@@ -6723,7 +6816,8 @@
       "revised": "2025-10-20",
       "chapters": [],
       "etags": [
-        "e79b4-6419aebe1ab95"
+        "e79b4-6419aebe1ab95",
+        "df0c8-63a0d0de56b69"
       ]
     },
     {
@@ -6747,7 +6841,8 @@
       "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "da703-640785aaccdba"
+        "da703-640785aaccdba",
+        "da82b-639b1bb94a039"
       ]
     },
     {
@@ -6771,7 +6866,8 @@
       "revised": "2025-10-04",
       "chapters": [],
       "etags": [
-        "c7bde-64054f86ba93d"
+        "c7bde-64054f86ba93d",
+        "c7bde-63fd07f487437"
       ]
     },
     {
@@ -6840,10 +6936,11 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-10-21",
+      "revised": "2025-11-06",
       "chapters": [],
       "etags": [
-        "f38e1-641ae927032f6"
+        "f38e1-641ae927032f6",
+        "f376e-642e47259c338"
       ]
     },
     {
@@ -6976,7 +7073,8 @@
       "revised": "2026-07-05",
       "chapters": [],
       "etags": [
-        "8ff87-655df5d4a751d"
+        "8ff87-655df5d4a751d",
+        "8ff87-655df5d35e5ee"
       ]
     },
     {
@@ -7010,10 +7108,11 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-10",
       "chapters": [],
       "etags": [
-        "5342d-655df58ee7a0a"
+        "5342d-655df58ee7a0a",
+        "5342d-656440fc6a6bf"
       ]
     },
     {
@@ -7074,10 +7173,11 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-24",
       "chapters": [],
       "etags": [
-        "3b57c-655df54b718dd"
+        "3b57c-655df54b718dd",
+        "3b57c-65754d4191973"
       ]
     },
     {
@@ -7086,10 +7186,11 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-06",
       "chapters": [],
       "etags": [
-        "3d7da-655df5423baf1"
+        "3d7da-655df5423baf1",
+        "3d7da-655f18b14afe9"
       ]
     },
     {
@@ -7200,10 +7301,11 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-11",
       "chapters": [],
       "etags": [
-        "51d51-655df595092d4"
+        "51d51-655df595092d4",
+        "51d51-656530dff4883"
       ]
     },
     {
@@ -7483,10 +7585,11 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "d6add-639dc41677c1a"
+        "d6add-639dc41677c1a",
+        "d6add-6408405b771b1"
       ]
     },
     {
