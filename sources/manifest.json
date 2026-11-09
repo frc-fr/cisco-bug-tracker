@@ -6,9 +6,9 @@
       "families": [
         "Secure Firewall ASA"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-09-25",
       "chapters": [],
-      "etag": "8c0fd-6406e3384ad3e"
+      "etag": "8c0fd-63fa0bd001c20"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/asa/asa913/release/notes/asarn913.html",
@@ -16,9 +16,9 @@
       "families": [
         "Secure Firewall ASA"
       ],
-      "revised": "2025-10-12",
+      "revised": "2025-07-22",
       "chapters": [],
-      "etag": "c-640eb1041de2c"
+      "etag": "c-63a7f398a8da6"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/asa/asa916/release/notes/asarn916.html",
@@ -36,9 +36,9 @@
       "families": [
         "Secure Firewall ASA"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "4584d-6406ce6359ca1"
+      "etag": "3b381-639ee83df3961"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/asa/asa918/release/notes/asarn918.html",
@@ -56,9 +56,9 @@
       "families": [
         "Secure Firewall ASA"
       ],
-      "revised": "2025-10-09",
+      "revised": "2025-07-12",
       "chapters": [],
-      "etag": "48932-640b776731aa3"
+      "etag": "487fa-639b4833bab11"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/asa/asa920/release/notes/asarn920.html",
@@ -119,13 +119,13 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-07-04",
+      "revised": "2026-07-05",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/650/650x/relnotes/firepower-release-notes-650x/upgrade.html",
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/650/650x/relnotes/firepower-release-notes-650x/resolved_issues.html",
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/650/650x/relnotes/firepower-release-notes-650x/known-issues.html"
       ],
-      "etag": "249133-655ce2f52f070"
+      "etag": "249133-655dd4d39e502"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/firepower/660/relnotes/firepower-release-notes-660.html",
@@ -178,7 +178,7 @@
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/710/relnotes/firepower-release-notes-710/upgrade.html",
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/710/relnotes/firepower-release-notes-710/bugs.html"
       ],
-      "etag": "249244-655d077e39442"
+      "etag": "249244-655d08a46bb67"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/release-notes/threat-defense/720/threat-defense-release-notes-72.html",
@@ -198,7 +198,7 @@
       ],
       "revised": "2026-07-07",
       "chapters": [],
-      "etag": "7f08a-65609aab1daa7"
+      "etag": "7f08a-65605374eb8a8"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/release-notes/threat-defense/740/threat-defense-release-notes-74.html",
@@ -256,9 +256,9 @@
       "families": [
         "Catalyst 1000"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "48289-6406160c0f334"
+      "etag": "46341-639f4a9a17dbd"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-2_2_e/release_notes/OL-32568.html",
@@ -266,9 +266,9 @@
       "families": [
         "Catalyst 2960-X"
       ],
-      "revised": "2025-10-06",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "55245-6407e2a754a2f"
+      "etag": "55245-639f4b1b73c14"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-2_3_e/release_notes/rn-2523e-2960x-xr.html",
@@ -276,9 +276,10 @@
       "families": [
         "Catalyst 2960-X"
       ],
-      "revised": "2025-10-16",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "3c191-64142641af68b"
+      "etag": "3c191-64142641af68b",
+      "unavailable": true
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-2_4_e/releasenotes/rn-1524e-2960x-xr.html",
@@ -296,9 +297,10 @@
       "families": [
         "Catalyst 2960-X"
       ],
-      "revised": "2025-10-16",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "35979-6413fa65983a9"
+      "etag": "35979-6413fa65983a9",
+      "unavailable": true
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-2_5b_e/release_notes/rn-1525be-2960x-xr.html",
@@ -306,9 +308,10 @@
       "families": [
         "Catalyst 2960-X"
       ],
-      "revised": "2025-10-16",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "36158-641426431f5ad"
+      "etag": "36158-641426431f5ad",
+      "unavailable": true
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15_2_6_e/release_notes/rn-1526e-2960x-xr.html",
@@ -336,9 +339,9 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2025-10-08",
+      "revised": "2025-07-14",
       "chapters": [],
-      "etag": "339e1-640aa4c1676e5"
+      "etag": "339e1-639de6df7fe5e"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/C8000V/Release-Notes/c8000v-releasenotes-17-12.html",
@@ -956,9 +959,9 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-04",
       "chapters": [],
-      "etag": "9379f-639b6ef229b26"
+      "etag": "93734-64052e2eb457a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr1000/release/notes/xe-17-1/asr1000-rel-notes-xe-17-1.html",
@@ -1066,9 +1069,9 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-09",
       "chapters": [],
-      "etag": "3f13c-639e7413324d4"
+      "etag": "3f06a-640b86e38023a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr1000/release/notes/xe-17-3/asr1000-rel-notes-xe-17-3.html",
@@ -1076,9 +1079,9 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "90f2e-639e7f760418a"
+      "etag": "90f2e-6406b3f05e0ef"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr1000/release/notes/xe-17-4/asr1000-rel-notes-xe-17-4.html",
@@ -1116,9 +1119,9 @@
       "families": [
         "ASR 1000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-15",
       "chapters": [],
-      "etag": "4573c-639f6fd99ce15"
+      "etag": "4573c-6412efc264c59"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr1000/release/notes/xe-17-8/asr1000-rel-notes-xe-17-8.html",
@@ -1146,11 +1149,11 @@
       "families": [
         "ASR 920"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/routers/asr920/release/notes/17-12-1/b-rn-xe-17-12-1-asr920/m-caveats-17-12-x-asr920.html"
       ],
-      "etag": "1de006-639e9168733fb"
+      "etag": "1e0133-64078475b2b8d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr920/release/notes/17-13-1/b-rn-xe-17-13-1-asr920.html",
@@ -1158,11 +1161,11 @@
       "families": [
         "ASR 920"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-05",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/routers/asr920/release/notes/17-13-1/b-rn-xe-17-13-1-asr920/m-caveats-17-13-x-asr920.html"
       ],
-      "etag": "1d053d-639b6cb9c6678"
+      "etag": "1d053d-6406ae2499da1"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr920/release/notes/17-15-1/b-rn-xe-17-15-1-asr920.html",
@@ -1182,11 +1185,11 @@
       "families": [
         "ASR 920"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-07",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/routers/asr920/release/notes/17-9-1/b-rn-xe-17-9-1-asr920/m-caveats-asr920-17-9-1.html"
       ],
-      "etag": "1e2023-639e469c53753"
+      "etag": "1e404c-640912928fb14"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8200/rel_notes/17_4_x/cat8200-rel-notes-xe-17-4-x.html",
@@ -1214,9 +1217,9 @@
       "families": [
         "Catalyst 8200"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "6903d-639e5ab7696ee"
+      "etag": "6903d-64085fd5440c0"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8200/rel_notes/17_7_x/cat8200-rel-notes-xe-17-7-x.html",
@@ -1245,9 +1248,9 @@
         "Catalyst 8200",
         "Catalyst 8300"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "313b5-639f70971a219"
+      "etag": "313b5-641798a334dd9"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/17-12-x/cat8200-and-8300-rel-notes-xe-17-12-x.html",
@@ -1300,9 +1303,9 @@
         "Catalyst 8200",
         "Catalyst 8300"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "47558-639defccf7ddb"
+      "etag": "47558-64085fd5185ca"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/17-18-x/release-notes-catalyst-8200-and-catalyst-8300-series-edge-platforms-release-17-18-x.html",
@@ -1311,9 +1314,9 @@
         "Catalyst 8200",
         "Catalyst 8300"
       ],
-      "revised": "2026-10-14",
+      "revised": "2026-10-13",
       "chapters": [],
-      "etag": "84a89-65dcadcd3063b"
+      "etag": "84a89-65db87f2e8800"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/17-8-x/cat8300-rel-notes-xe-17-8-x.html",
@@ -1372,9 +1375,9 @@
       "families": [
         "Catalyst 8300"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "87bde-63a0245320322"
+      "etag": "87bde-64085fd547f29"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/17_7_x/cat8300-rel-notes-xe-17-7-x.html",
@@ -1395,7 +1398,7 @@
       ],
       "revised": "2026-08-07",
       "chapters": [],
-      "etag": "68d32-65871f63d7d15"
+      "etag": "68d32-658727b1b4cf3"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/26-x/release-notes-catalyst-8200-and-catalyst-8300-series-edge-platforms-release-26-1-x.html",
@@ -1427,7 +1430,7 @@
       ],
       "revised": "2026-10-13",
       "chapters": [],
-      "etag": "7e6c3-65db8334ec48c"
+      "etag": "7e6c3-65db80cc53900"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/cat8500-17-10-rel-notes.html",
@@ -1435,9 +1438,9 @@
       "families": [
         "Catalyst 8500"
       ],
-      "revised": "2026-02-21",
+      "revised": "2026-02-24",
       "chapters": [],
-      "etag": "2a532-64b5060f6698a"
+      "etag": "2a532-64b931e4ad62f"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/cat8500-17-11-rel-notes.html",
@@ -1447,7 +1450,7 @@
       ],
       "revised": "2026-02-21",
       "chapters": [],
-      "etag": "3112d-64b4e6f619fd2"
+      "etag": "3112d-64b4d0ccd114a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/cat8500-17-12-rel-notes.html",
@@ -1505,9 +1508,9 @@
       "families": [
         "Catalyst 8500"
       ],
-      "revised": "2026-02-21",
+      "revised": "2026-02-24",
       "chapters": [],
-      "etag": "481c9-64b4d39d104d3"
+      "etag": "481c9-64b9295bdcb49"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/cat8500-17-4-rel-notes.html",
@@ -1537,7 +1540,7 @@
       ],
       "revised": "2026-02-21",
       "chapters": [],
-      "etag": "7d212-64b5088ada867"
+      "etag": "7d212-64b55550c768b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/cat8500-17-7-rel-notes.html",
@@ -1555,9 +1558,9 @@
       "families": [
         "Catalyst 8500"
       ],
-      "revised": "2026-02-24",
+      "revised": "2026-02-21",
       "chapters": [],
-      "etag": "2b209-64b8f2254e07c"
+      "etag": "2b209-64b55457e781d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/cat8500-17-9-rel-notes.html",
@@ -1657,7 +1660,7 @@
       ],
       "revised": "2025-11-28",
       "chapters": [],
-      "etag": "68683-644a35ea8dd95"
+      "etag": "68683-644a40367a235"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/software/release/17-10/release_notes/ol-17-10-9200.html",
@@ -1750,9 +1753,9 @@
       "families": [
         "Catalyst 9200"
       ],
-      "revised": "2025-12-18",
+      "revised": "2025-11-19",
       "chapters": [],
-      "etag": "5ab34-6463ffb3e9a6d"
+      "etag": "59fb1-643e868dec583"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/software/release/17-17/release_notes/ol-17-17-9200.html",
@@ -1790,9 +1793,9 @@
       "families": [
         "Catalyst 9200"
       ],
-      "revised": "2025-10-06",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "84733-6407d698c6064"
+      "etag": "84733-639f4c6cf4e39"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/software/release/17-4/release_notes/ol-17-4-9200.html",
@@ -1810,9 +1813,9 @@
       "families": [
         "Catalyst 9200"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-08",
       "chapters": [],
-      "etag": "6f420-639f4c6f53581"
+      "etag": "6f420-640ab69f73650"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/software/release/17-6/release_notes/ol-17-6-9200.html",
@@ -1840,9 +1843,9 @@
       "families": [
         "Catalyst 9200"
       ],
-      "revised": "2025-10-19",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "7006a-64180b29fc440"
+      "etag": "7006a-639f4c6ebc351"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/software/release/17-9/release_notes/ol-17-9-9200.html",
@@ -1925,9 +1928,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-09",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "958fa-640b4242cade1"
+      "etag": "958fa-639f4c340b858"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/16-8/release_notes/ol-16-8-9300.html",
@@ -1935,9 +1938,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-06",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "7fe9e-6407fbede9bbd"
+      "etag": "7ff43-639ef7990adda"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/16-9/release_notes/ol-16-9-9300.html",
@@ -1957,7 +1960,7 @@
       ],
       "revised": "2025-11-28",
       "chapters": [],
-      "etag": "7d48a-644a3a0c1a25e"
+      "etag": "7d48a-644a364710baf"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-10/release_notes/ol-17-10-9300.html",
@@ -1965,14 +1968,14 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-04",
+      "revised": "2025-07-14",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-10/release_notes/ol-17-10-9300/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-10/release_notes/ol-17-10-9300/limitations_and_restrictions.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-10/release_notes/ol-17-10-9300/upgrading_the_switch_software.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-10/release_notes/ol-17-10-9300/caveats.html"
       ],
-      "etag": "20fa51-6404baf3577a8"
+      "etag": "20fa51-639de5a051271"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-11/release_notes/ol-17-11-9300.html",
@@ -2025,14 +2028,14 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-12-18",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/release_notes/ol-17-14-9300/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/release_notes/ol-17-14-9300/limitations_and_restrictions.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/release_notes/ol-17-14-9300/upgrading_the_switch_software.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/release_notes/ol-17-14-9300/caveats.html"
       ],
-      "etag": "205670-640683c37df91"
+      "etag": "205d8a-6463d02a7315d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-15/release_notes/ol-17-15-9300.html",
@@ -2050,9 +2053,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-11-20",
+      "revised": "2025-11-24",
       "chapters": [],
-      "etag": "6c317-6440a4b9e2b53"
+      "etag": "6c317-644504fc61a56"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-17/release_notes/ol-17-17-9300.html",
@@ -2072,7 +2075,7 @@
       ],
       "revised": "2026-10-19",
       "chapters": [],
-      "etag": "76790-65e2df21d9e6e"
+      "etag": "76790-65e2e43d6debf"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-2/release_notes/ol-17-2-9300.html",
@@ -2082,7 +2085,7 @@
       ],
       "revised": "2025-11-28",
       "chapters": [],
-      "etag": "7a483-644a3a0befeb1"
+      "etag": "7a483-644a39fe4186b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-3/release_notes/ol-17-3-9300.html",
@@ -2090,9 +2093,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-07",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "9b8af-6408bd62f532e"
+      "etag": "9b8af-639f4ccbe0b95"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-4/release_notes/ol-17-4-9300.html",
@@ -2100,9 +2103,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "81aab-640618398ac11"
+      "etag": "81aab-639ef7a4192d6"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-5/release_notes/ol-17-5-9300.html",
@@ -2110,9 +2113,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-19",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "836b5-64179d42e43c1"
+      "etag": "836b5-639f4ccdd666c"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-6/release_notes/ol-17-6-9300.html",
@@ -2130,9 +2133,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-14",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "8821e-641250202d10b"
+      "etag": "8821e-639f4ccd47911"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-8/release_notes/ol-17-8-9300.html",
@@ -2140,9 +2143,9 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2025-10-14",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "81ee0-6412502416837"
+      "etag": "81ee0-639f4ccd25e39"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-9/release_notes/ol-17-9-9300.html",
@@ -2225,9 +2228,9 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2025-10-19",
+      "revised": "2025-07-18",
       "chapters": [],
-      "etag": "a0dbc-64181f93d5922"
+      "etag": "a0e6c-63a2ab20359d5"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9400/software/release/16-9/release_notes/ol-16-9-9400.html",
@@ -2390,9 +2393,9 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "806d4-6405f95e1d779"
+      "etag": "806d4-639f4d1dcbea7"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9400/software/release/17-5/release_notes/ol-17-5-9400.html",
@@ -2410,9 +2413,9 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "87a30-639f4d199c212"
+      "etag": "87a30-64180b3d2cdb8"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9400/software/release/17-7/release_notes/ol-17-7-9400.html",
@@ -2420,9 +2423,9 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "8d6f6-639f4d1d19ad6"
+      "etag": "8d6f6-64189400d264a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9400/software/release/17-8/release_notes/ol-17-8-9400.html",
@@ -2430,9 +2433,9 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "83681-639f4d208e6f9"
+      "etag": "83681-64180b607a6e4"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9400/software/release/17-9/release_notes/ol-17-9-9400.html",
@@ -2515,9 +2518,9 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-21",
+      "revised": "2025-10-13",
       "chapters": [],
-      "etag": "80b61-63a65689b21de"
+      "etag": "80b61-641045e2f7085"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/16-8/release_notes/ol-16-8-9500.html",
@@ -2555,14 +2558,14 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-13",
+      "revised": "2025-10-06",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-10/release_notes/ol-17-10-9500/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-10/release_notes/ol-17-10-9500/limitations_and_restrictions.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-10/release_notes/ol-17-10-9500/upgrading_the_switch_software.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-10/release_notes/ol-17-10-9500/caveats.html"
       ],
-      "etag": "2067c1-639d32c46e8ed"
+      "etag": "2067c1-64083f99e90c4"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-11/release_notes/ol-17-11-9500.html",
@@ -2570,14 +2573,14 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-08-27",
+      "revised": "2025-10-07",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-11/release_notes/ol-17-11-9500/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-11/release_notes/ol-17-11-9500/limitations_and_restrictions.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-11/release_notes/ol-17-11-9500/upgrading_the_switch_software.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-11/release_notes/ol-17-11-9500/caveats.html"
       ],
-      "etag": "20a733-63d573c6661fb"
+      "etag": "20a733-6408ae9f51e33"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-12/release_notes/ol-17-12-9500.html",
@@ -2600,14 +2603,14 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-05",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-13/release_notes/ol-17-13-9500/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-13/release_notes/ol-17-13-9500/limitations_and_restrictions.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-13/release_notes/ol-17-13-9500/upgrading_the_switch_software.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-13/release_notes/ol-17-13-9500/caveats.html"
       ],
-      "etag": "2062c4-639f4d5fe5cb6"
+      "etag": "2062c4-640683e4cffdc"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-14/release_notes/ol-17-14-9500.html",
@@ -2672,7 +2675,7 @@
       ],
       "revised": "2025-11-28",
       "chapters": [],
-      "etag": "7a790-644a361c9c090"
+      "etag": "7a790-644a41ed5f4e6"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-3/release_notes/ol-17-3-9500.html",
@@ -2680,9 +2683,9 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-16",
       "chapters": [],
-      "etag": "9f131-639f4d60d1e54"
+      "etag": "9f131-641477973784b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-4/release_notes/ol-17-4-9500.html",
@@ -2720,9 +2723,9 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "8bcf5-639e245c53bdf"
+      "etag": "8bcf5-640744028f34d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-8/release_notes/ol-17-8-9500.html",
@@ -2805,14 +2808,14 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-13",
+      "revised": "2025-12-17",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-10/release_notes/ol-17-10-9600/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-10/release_notes/ol-17-10-9600/limitations_and_restrictions.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-10/release_notes/ol-17-10-9600/upgrading_the_switch_software.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-10/release_notes/ol-17-10-9600/caveats.html"
       ],
-      "etag": "1fbda8-639d0dedd3cf4"
+      "etag": "1fc4fa-646274538dc26"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-11/release_notes/ol-17-11-9600.html",
@@ -2850,14 +2853,14 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-09",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-13/release_notes/ol-17-13-9600/important_notes.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-13/release_notes/ol-17-13-9600/limitations_and_restrictions.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-13/release_notes/ol-17-13-9600/upgrading_the_switch_software.html",
         "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-13/release_notes/ol-17-13-9600/caveats.html"
       ],
-      "etag": "1fd5a0-639ee50ca9130"
+      "etag": "1fdbbc-640bf8d6c29d4"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-14/release_notes/ol-17-14-9600.html",
@@ -2890,9 +2893,9 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-11-18",
+      "revised": "2025-11-25",
       "chapters": [],
-      "etag": "60ae3-643d855ac6eb6"
+      "etag": "60f27-6446dd28482df"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-17/release_notes/ol-17-17-9600.html",
@@ -2922,7 +2925,7 @@
       ],
       "revised": "2025-11-28",
       "chapters": [],
-      "etag": "6fa4f-644a392eb869c"
+      "etag": "6fa4f-644a3d400a000"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-3/release_notes/ol-17-3-9600.html",
@@ -2940,9 +2943,9 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "72a10-639ebd9e63979"
+      "etag": "6e419-640628df4f602"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-5/release_notes/ol-17-5-9600.html",
@@ -2960,9 +2963,9 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-04",
       "chapters": [],
-      "etag": "7b014-639ebe3575381"
+      "etag": "7b3cc-64054de85f2a8"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-7/release_notes/ol-17-7-9600.html",
@@ -2970,9 +2973,9 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "7ebbe-639f4d9f616cd"
+      "etag": "75eb1-6417a04a96e61"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-8/release_notes/ol-17-8-9600.html",
@@ -3025,9 +3028,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-19",
+      "revised": "2025-10-14",
       "chapters": [],
-      "etag": "115a69-63a429d886ff2"
+      "etag": "115a69-64116c4130410"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/24xx/release/notes/b-release-notes-cisco8k-r2412.html",
@@ -3035,9 +3038,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "f3ed3-639f86036d5da"
+      "etag": "f3ed3-6418757883ed4"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/24xx/release/notes/b-release-notes-cisco8k-r24211.html",
@@ -3055,9 +3058,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "f38cc-639b3f1c567d5"
+      "etag": "f38cc-64089786cb0b7"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/24xx/release/notes/b-release-notes-cisco8k-r24221.html",
@@ -3105,9 +3108,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-09-16",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "f76d8-63eef9392afcb"
+      "etag": "f76d8-6407676f563e9"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/25xx/release/notes/b-release-notes-cisco8k-2511.html",
@@ -3125,9 +3128,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-21",
+      "revised": "2025-10-22",
       "chapters": [],
-      "etag": "116c4b-63a6de9d1644e"
+      "etag": "116c4b-641ba8478a6bf"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/710x/release/notes/b-release-notes-cisco8k-r7102.html",
@@ -3135,9 +3138,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-12",
       "chapters": [],
-      "etag": "3f35b-63a9713c601c8"
+      "etag": "3f35b-640ef2268a34a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/711x/release/notes/b-release-notes-cisco8k-r7111.html",
@@ -3145,9 +3148,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-17",
       "chapters": [],
-      "etag": "122fde-63a2962bb07a0"
+      "etag": "122fde-64158e3597445"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/711x/release/notes/b-release-notes-cisco8k-r7112.html",
@@ -3155,9 +3158,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-13",
+      "revised": "2025-10-17",
       "chapters": [],
-      "etag": "f1653-639c7e9e72c56"
+      "etag": "f1653-6415cac166dcd"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/711x/release/notes/b-release-notes-cisco8k-r71121.html",
@@ -3175,9 +3178,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-20",
       "chapters": [],
-      "etag": "f5b69-63a9713daed5c"
+      "etag": "f5dc9-6418e0f94fab6"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/75x/release/notes/b-release-notes-cisco8k-r752.html",
@@ -3195,9 +3198,10 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-08-04",
+      "revised": "2025-10-13",
       "chapters": [],
-      "etag": "104f22-63b81a0cbbcbe"
+      "etag": "104f22-63b81a0cbbcbe",
+      "unavailable": true
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/77x/release/notes/b-release-notes-cisco8k-r771.html",
@@ -3205,9 +3209,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-22",
+      "revised": "2025-10-22",
       "chapters": [],
-      "etag": "f7fda-63a8243f8efe2"
+      "etag": "f7fda-641c5e7b722f8"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/77x/release/notes/b-release-notes-cisco8k-r772.html",
@@ -3225,9 +3229,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-03",
       "chapters": [],
-      "etag": "105aa9-63a1cf85e0f1e"
+      "etag": "105aa9-640481bbb9b3e"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/78x/release/notes/b-release-notes-cisco8k-r782.html",
@@ -3245,9 +3249,9 @@
       "families": [
         "Cisco 8000"
       ],
-      "revised": "2025-08-03",
+      "revised": "2025-10-18",
       "chapters": [],
-      "etag": "107ae1-63b6b724c731a"
+      "etag": "107ae1-6417332778955"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/79x/release/notes/b-release-notes-cisco8k-r792.html",
@@ -3275,9 +3279,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-04",
       "chapters": [],
-      "etag": "f99c5-63a369f894335"
+      "etag": "f99c5-64059cf165636"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/24xx/release/notes/b-release-notes-ncs5500-r2421.html",
@@ -3315,9 +3319,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "f4a97-63a1d51bb803f"
+      "etag": "f4aa1-6407676f2faa1"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/24xx/release/notes/b-release-notes-ncs5500-r2431.html",
@@ -3375,9 +3379,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-12",
       "chapters": [],
-      "etag": "137673-63a06a7e15ab3"
+      "etag": "137673-640fa60ca284e"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/710x/release/notes/b-release-notes-ncs5500-r7102.html",
@@ -3405,9 +3409,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-14",
       "chapters": [],
-      "etag": "3ce74-63a33c21a01e7"
+      "etag": "3ce74-64124d724f872"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/711x/release/notes/b-release-notes-ncs5500-r71121.html",
@@ -3415,9 +3419,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "f2b63-63a369f5d513f"
+      "etag": "f2b63-6418504c3f0d0"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/74x/release/notes/b-release-notes-ncs5500-r741.html",
@@ -3425,9 +3429,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-19",
+      "revised": "2025-10-12",
       "chapters": [],
-      "etag": "11461a-63a47e54ea271"
+      "etag": "11461a-640f4cc6af58b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/74x/release/notes/b-release-notes-ncs5500-r742.html",
@@ -3465,9 +3469,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-20",
       "chapters": [],
-      "etag": "fb0e2-63a9713166af4"
+      "etag": "fb0e2-641936ad596d8"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/76x/release/notes/b-release-notes-ncs5500-r761.html",
@@ -3525,9 +3529,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "11aa49-63a183dee0c40"
+      "etag": "11aa49-6408e073c485e"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/78x/release/notes/b-release-notes-ncs5500-r782.html",
@@ -3535,9 +3539,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-21",
       "chapters": [],
-      "etag": "ecea0-63a052d870f73"
+      "etag": "ecea0-641ad1abe0f2f"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/79x/release/notes/b-release-notes-ncs5500-r791.html",
@@ -3545,9 +3549,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "11d4a5-639f969f9884e"
+      "etag": "11d4a5-640891ecf9b73"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/general/79x/release/notes/b-release-notes-ncs5500-r792.html",
@@ -3555,9 +3559,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-15",
       "chapters": [],
-      "etag": "ee9e9-63a944ec905eb"
+      "etag": "ee9e9-6412f81d79eb0"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/241x/b-release-notes-ncs560-r2411.html",
@@ -3584,9 +3588,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "4fe84-63a18efe91aa1"
+      "etag": "4fe84-64069bed1fd32"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/24xx/b-release-notes-ncs560-r2422.html",
@@ -3614,9 +3618,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-17",
+      "revised": "2025-10-19",
       "chapters": [],
-      "etag": "46f58-63a1e67363294"
+      "etag": "46f58-641836a5d205b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/24xx/b-release-notes-ncs560-r2432.html",
@@ -3654,9 +3658,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-13",
       "chapters": [],
-      "etag": "43f26-63a369b552e0c"
+      "etag": "43f26-64107cf064502"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/710x/b-release-notes-ncs560-r710.html",
@@ -3664,9 +3668,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-14",
       "chapters": [],
-      "etag": "fe8ee-63a0f1817a165"
+      "etag": "fe8ee-64120ef50f6de"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/710x/b-release-notes-ncs560-r7102.html",
@@ -3704,9 +3708,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-19",
+      "revised": "2025-10-17",
       "chapters": [],
-      "etag": "f540a-63a46ae7bd4ef"
+      "etag": "f540a-6415b689f5a04"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/75x/b-release-notes-ncs560-r751.html",
@@ -3714,9 +3718,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-20",
+      "revised": "2025-10-09",
       "chapters": [],
-      "etag": "3b92f-63a63366265dd"
+      "etag": "3b92f-640b6246cf572"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/75x/b-release-notes-ncs560-r752.html",
@@ -3724,9 +3728,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-15",
       "chapters": [],
-      "etag": "3927c-63a0517f87dc8"
+      "etag": "3927c-6412aaea5876b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/76x/b-release-notes-ncs560-r761.html",
@@ -3754,9 +3758,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-10-06",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "3cc52-6408469916422"
+      "etag": "3cc52-639f6de541e6f"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/77x/b-release-notes-ncs560-r772.html",
@@ -3774,9 +3778,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-10-06",
+      "revised": "2025-07-23",
       "chapters": [],
-      "etag": "2fd1e-640817512d2bf"
+      "etag": "2fd1e-63a99370e6060"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/78x/b-release-notes-ncs560-r781.html",
@@ -3794,9 +3798,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-10-04",
+      "revised": "2025-07-16",
       "chapters": [],
-      "etag": "2fd39-6405b73bb912c"
+      "etag": "2fd39-63a0c93acab0a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs560/release-notes/79x/b-release-notes-ncs560-r791.html",
@@ -3804,9 +3808,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-10-06",
+      "revised": "2025-07-14",
       "chapters": [],
-      "etag": "43f68-64078f4cceab5"
+      "etag": "43f68-639ea66841294"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/24xx/b-release-notes-ncs540-r2412.html",
@@ -3814,9 +3818,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-13",
       "chapters": [],
-      "etag": "fe2cd-63a2952d48e13"
+      "etag": "fe2cd-6410aa0249be3"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/24xx/b-release-notes-ncs540-r2421.html",
@@ -3884,9 +3888,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-09",
+      "revised": "2025-07-18",
       "chapters": [],
-      "etag": "61b40-640b0e80a09c5"
+      "etag": "61b40-63a36990b9ea5"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/24xx/b-release-notes-ncs540-r2442.html",
@@ -3904,9 +3908,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-09",
+      "revised": "2025-07-13",
       "chapters": [],
-      "etag": "5e104-640b4ca47d262"
+      "etag": "5e104-639ca0c3abca6"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/710x/b-release-notes-ncs540-r710.html",
@@ -3914,9 +3918,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-14",
+      "revised": "2025-07-16",
       "chapters": [],
-      "etag": "11568c-64115d541ff4c"
+      "etag": "11568c-63a04a126041d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/710x/b-release-notes-ncs540-r7102.html",
@@ -3954,9 +3958,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-16",
+      "revised": "2025-07-25",
       "chapters": [],
-      "etag": "54927-6413c1e1b208b"
+      "etag": "54927-63ac0f35a4c0a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/74x/b-release-notes-ncs540-r742.html",
@@ -3974,9 +3978,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-09",
+      "revised": "2025-07-12",
       "chapters": [],
-      "etag": "44d40-640ae8daa1dad"
+      "etag": "44d40-639b1c05e3c2e"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/75x/b-release-notes-ncs540-r752.html",
@@ -3984,9 +3988,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-14",
+      "revised": "2025-07-14",
       "chapters": [],
-      "etag": "4a264-6412163c124a2"
+      "etag": "4a264-639e4d9a13301"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/76x/b-release-notes-ncs540-r761.html",
@@ -4034,9 +4038,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-14",
+      "revised": "2025-07-11",
       "chapters": [],
-      "etag": "50c26-6412163f85d48"
+      "etag": "50c26-639ad0e106a1f"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/78x/b-release-notes-ncs540-r782.html",
@@ -4044,9 +4048,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-07-22",
       "chapters": [],
-      "etag": "3f1f2-64066921c1c6b"
+      "etag": "3f1f2-63a828ecbc79f"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/79x/b-release-notes-ncs540-r791.html",
@@ -4054,9 +4058,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-14",
+      "revised": "2025-07-27",
       "chapters": [],
-      "etag": "55a6b-6412163e0b69c"
+      "etag": "55a6b-63ae6f3763e54"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/24xx/general/release/notes/b-release-notes-asr9000-r2411.html",
@@ -4064,9 +4068,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-07",
+      "revised": "2025-07-24",
       "chapters": [],
-      "etag": "120111-6408d7f4dcb6c"
+      "etag": "120111-63aae9d0a2448"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/24xx/general/release/notes/b-release-notes-asr9000-r2412.html",
@@ -4074,9 +4078,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-17",
+      "revised": "2025-07-14",
       "chapters": [],
-      "etag": "1096bd-64156648390dc"
+      "etag": "1096bd-639da997fcf29"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/24xx/general/release/notes/b-release-notes-asr9000-r2421.html",
@@ -4094,9 +4098,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-15",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "10edab-6412eb7e16aa8"
+      "etag": "10edab-639f7023d1f93"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/24xx/general/release/notes/b-release-notes-asr9000-r24221.html",
@@ -4114,9 +4118,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "118ea7-639f70235f380"
+      "etag": "118ea7-64060cc4527c7"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/24xx/general/release/notes/b-release-notes-asr9000-r2432.html",
@@ -4124,9 +4128,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-18",
+      "revised": "2025-07-15",
       "chapters": [],
-      "etag": "10f738-6416bc2ca2b38"
+      "etag": "10f738-639f1acc1ce3d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/24xx/general/release/notes/b-release-notes-asr9000-r2441.html",
@@ -4234,9 +4238,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-17",
       "chapters": [],
-      "etag": "10a41a-639f70248cf7e"
+      "etag": "10a41a-6415a09c10897"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/asr9k-r7-11/general/release/notes/b-release-notes-asr9000-r71121.html",
@@ -4254,9 +4258,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-04",
+      "revised": "2025-07-13",
       "chapters": [],
-      "etag": "123103-640594d459ca9"
+      "etag": "123103-639c5888c9614"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/asr9k-r7-4/general/release/notes/b-release-notes-asr9k-r742.html",
@@ -4264,9 +4268,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-21",
+      "revised": "2025-07-25",
       "chapters": [],
-      "etag": "11631b-641a6c99644c4"
+      "etag": "11631b-63ac28ae651d7"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/asr9k-r7-5/general/release/notes/b-release-notes-asr9000-r751.html",
@@ -4314,9 +4318,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-09",
+      "revised": "2025-07-18",
       "chapters": [],
-      "etag": "112a2f-640b46da05700"
+      "etag": "112ae8-63a299c267762"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/asr9k-r7-7/general/release/notes/b-release-notes-asr9000-r771.html",
@@ -4324,9 +4328,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-11",
+      "revised": "2025-07-16",
       "chapters": [],
-      "etag": "117a3c-640e2b6077e2d"
+      "etag": "117a3c-63a137086d10e"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/asr9k-r7-7/general/release/notes/b-release-notes-asr9000-r772.html",
@@ -4334,9 +4338,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-19",
+      "revised": "2025-07-16",
       "chapters": [],
-      "etag": "10cd05-64184535892a8"
+      "etag": "10cd05-63a0634157c76"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/asr9k-r7-8/general/release/notes/b-release-notes-asr9000-r781.html",
@@ -4384,9 +4388,9 @@
       "families": [
         "ASR 9000"
       ],
-      "revised": "2025-10-05",
+      "revised": "2025-07-19",
       "chapters": [],
-      "etag": "1108b0-640683a605d5e"
+      "etag": "1108b0-63a3e7df2d90a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr9000/software/asr9k-r7-9/general/release/notes/b-release-notes-asr9000-r7921.html",
@@ -4554,9 +4558,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "5d617-639e81726cad1"
+      "etag": "5d617-640668c5f44bc"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/iosxr/release-notes/25xx/cisco-ncs540-series-routers-release-notes-2522.html",
@@ -4584,9 +4588,9 @@
       "families": [
         "NCS 540"
       ],
-      "revised": "2025-10-09",
+      "revised": "2025-10-20",
       "chapters": [],
-      "etag": "65e62-640b8ed398321"
+      "etag": "65e62-6418d912af161"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/iosxr/release-notes/25xx/cisco-ncs540-series-routers-release-notes-2541.html",
@@ -4604,9 +4608,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-10-07",
+      "revised": "2025-07-23",
       "chapters": [],
-      "etag": "53892-640906c6cd233"
+      "etag": "53892-63a95936c3419"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/iosxr/release-notes/25xx/cisco-ncs5500-series-routers-release-notes-2521.html",
@@ -4614,9 +4618,9 @@
       "families": [
         "NCS 5500"
       ],
-      "revised": "2025-07-22",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "87271-63a879f1a0aed"
+      "etag": "87271-640928b6ec67d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/iosxr/release-notes/25xx/cisco-ncs5500-series-routers-release-notes-2522.html",
@@ -4674,9 +4678,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2025-10-11",
+      "revised": "2025-07-22",
       "chapters": [],
-      "etag": "49097-640d9f6dbf25d"
+      "etag": "49097-63a84cbad4fcd"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/iosxr/release-notes/25xx/cisco-ncs560-series-routers-release-notes-2521.html",
@@ -4894,9 +4898,9 @@
       "families": [
         "NCS 560"
       ],
-      "revised": "2026-02-28",
+      "revised": "2026-03-01",
       "chapters": [],
-      "etag": "4cc6e-64bdbd8937aaa"
+      "etag": "4cc6e-64bee8423a2d5"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/101x/release-notes/cisco-nexus-3000-nxos-release-notes-1011.html",
@@ -4904,9 +4908,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-10-10",
+      "revised": "2025-07-23",
       "chapters": [],
-      "etag": "5f54f-640c8ac552b57"
+      "etag": "5f54f-63a9d47180d59"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/101x/release-notes/cisco-nexus-3000-nxos-release-notes-1012.html",
@@ -4914,9 +4918,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-10-17",
+      "revised": "2025-07-18",
       "chapters": [],
-      "etag": "515e9-641593aba5136"
+      "etag": "515e9-63a36eb1795f3"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/102x/release-notes/cisco-nexus-3000-nxos-release-notes-1021.html",
@@ -4934,9 +4938,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-10-08",
+      "revised": "2025-07-17",
       "chapters": [],
-      "etag": "5324c-640a983ad1b71"
+      "etag": "5324c-63a259a5d1596"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/102x/release-notes/cisco-nexus-3000-nxos-release-notes-1023.html",
@@ -4954,9 +4958,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-18",
       "chapters": [],
-      "etag": "56f85-639f874085af8"
+      "etag": "56f85-6416926d2b355"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/102x/release-notes/cisco-nexus-3000-nxos-release-notes-1025.html",
@@ -4964,9 +4968,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-23",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "570e9-63a9a2fefb0d9"
+      "etag": "570e9-64069d5d63fc2"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/102x/release-notes/cisco-nexus-3000-nxos-release-notes-1026.html",
@@ -4994,9 +4998,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-10-20",
+      "revised": "2025-07-14",
       "chapters": [],
-      "etag": "3be3b-6418f77749945"
+      "etag": "3be3b-639dc8bd72f21"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/102x/release-notes/cisco-nexus-3000-nxos-release-notes-1029.html",
@@ -5044,9 +5048,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-26",
+      "revised": "2025-10-20",
       "chapters": [],
-      "etag": "3a556-63addbaf56e25"
+      "etag": "3a556-6418f0b47da29"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/103x/release-notes/cisco-nexus-3000-nxos-release-notes-1034a.html",
@@ -5054,9 +5058,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-21",
       "chapters": [],
-      "etag": "385dc-639b7120aabc5"
+      "etag": "385dc-641a2032d0bde"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/103x/release-notes/cisco-nexus-3000-nxos-release-notes-1035.html",
@@ -5074,9 +5078,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "375bc-639e225ce8a07"
+      "etag": "375bc-640893d56a39c"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/103x/release-notes/cisco-nexus-3000-nxos-release-notes-1037.html",
@@ -5094,9 +5098,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-10",
       "chapters": [],
-      "etag": "375b5-639d875286f5c"
+      "etag": "375b5-640c38dc6762b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/103x/release-notes/cisco-nexus-3000-nxos-release-notes-1039.html",
@@ -5124,9 +5128,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-22",
+      "revised": "2025-10-17",
       "chapters": [],
-      "etag": "35a30-63a7e31018a9f"
+      "etag": "35a30-64152fa9434ef"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/104x/release-notes/cisco-nexus-3000-nxos-release-notes-1043.html",
@@ -5134,9 +5138,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-09",
       "chapters": [],
-      "etag": "2ccc4-63a0d059db7c7"
+      "etag": "2ccc4-640bcf888a950"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/104x/release-notes/cisco-nexus-3000-nxos-release-notes-1044.html",
@@ -5164,9 +5168,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-09-03",
+      "revised": "2025-10-04",
       "chapters": [],
-      "etag": "3df05-63de0e82dd6ee"
+      "etag": "3df05-64056d0e48d6e"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/104x/release-notes/cisco-nexus-3000-nxos-release-notes-1047.html",
@@ -5176,7 +5180,7 @@
       ],
       "revised": "2026-02-11",
       "chapters": [],
-      "etag": "3a7c1-64a83643eebc5"
+      "etag": "3a7c1-64a8cb379458d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/104x/release-notes/cisco-nexus-3000-nxos-release-notes-1048.html",
@@ -5204,9 +5208,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "44c16-639f4e28bc155"
+      "etag": "44c16-640955579e575"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3000/105x/release-notes/cisco-nexus-3000-nxos-release-notes-1053F.html",
@@ -5746,7 +5750,7 @@
       ],
       "revised": "2026-07-05",
       "chapters": [],
-      "etag": "82119-655df5da4aa0d"
+      "etag": "82119-655df5db7cc14"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/923/nexus_923_3000_3500_3600_rn.html",
@@ -5774,9 +5778,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-10",
       "chapters": [],
-      "etag": "d57c1-655df5c62c4a5"
+      "etag": "d57c1-6563bba276a9b"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/9310/cisco-nexus-3000-nxos-release-notes-9310.html",
@@ -5794,9 +5798,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-04",
       "chapters": [],
-      "etag": "52453-655e18045d1ad"
+      "etag": "52453-655ce746c643a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/9312/cisco-nexus-3000-nxos-release-notes-9312.html",
@@ -5804,9 +5808,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-21",
+      "revised": "2026-07-05",
       "chapters": [],
-      "etag": "537c8-65718b007cc54"
+      "etag": "537c8-655df583c02cd"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/9313/cisco-nexus-3000-nxos-release-notes-9313.html",
@@ -5814,9 +5818,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-14",
+      "revised": "2026-07-05",
       "chapters": [],
-      "etag": "518a9-65697e87d5350"
+      "etag": "518a9-655df57e829e2"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/9314/cisco-nexus-3000-nxos-release-notes-9314.html",
@@ -5824,9 +5828,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-06",
+      "revised": "2026-07-05",
       "chapters": [],
-      "etag": "4b51b-655ed3518c7d7"
+      "etag": "4b51b-655df55746d07"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/9315/cisco-nexus-3000-nxos-release-notes-9315.html",
@@ -5854,9 +5858,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-11",
       "chapters": [],
-      "etag": "b8c46-655df5c0ca16f"
+      "etag": "b8c46-65652629433b5"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/933/933_3000_3500_3600_rn.html",
@@ -5864,9 +5868,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-07",
       "chapters": [],
-      "etag": "a8c7e-655df5ba9c7a9"
+      "etag": "a8c7e-655ffb991781c"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/934/934_3000_3500_3600_rn.html",
@@ -5884,9 +5888,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-07",
       "chapters": [],
-      "etag": "cd436-655df5af3841b"
+      "etag": "cd436-65605461570cf"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/936/936_3000_3500_3600_rn.html",
@@ -5894,9 +5898,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-17",
       "chapters": [],
-      "etag": "a0cc3-655df5a979473"
+      "etag": "a0cc3-656c61735bdc6"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/937/cisco-nexus-3000-nxos-release-notes-937.html",
@@ -5904,9 +5908,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-08",
       "chapters": [],
-      "etag": "71f12-655df5a364ad7"
+      "etag": "71f12-65615194e57f1"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/937/cisco-nexus-3000-nxos-release-notes-937a.html",
@@ -5914,9 +5918,9 @@
       "families": [
         "Nexus 3000"
       ],
-      "revised": "2026-07-05",
+      "revised": "2026-07-15",
       "chapters": [],
-      "etag": "69e6d-655df59ec3a23"
+      "etag": "69e6d-656a1739ea845"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/release/notes/938/cisco-nexus-3000-nxos-release-notes-938.html",
@@ -5964,9 +5968,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-15",
       "chapters": [],
-      "etag": "12a298-639d9f1a2464b"
+      "etag": "12a298-641276abd4ff2"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/92x/release/notes/922_9000_nxos_rn.html",
@@ -5974,9 +5978,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-16",
+      "revised": "2025-10-20",
       "chapters": [],
-      "etag": "13c5d0-63a09e0e6c18b"
+      "etag": "13c5d0-6419956bc0eda"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/92x/release/notes/923_9000_nxos_rn.html",
@@ -5984,9 +5988,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-11-13",
       "chapters": [],
-      "etag": "108900-639da388cd06f"
+      "etag": "108900-6437e82519572"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/92x/release/notes/924_9000_nxos_rn.html",
@@ -5994,9 +5998,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-20",
       "chapters": [],
-      "etag": "f7867-639db3f18e6e2"
+      "etag": "f7867-641985a3b35b4"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/931_9000_nxos_rn.html",
@@ -6004,9 +6008,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-11",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "138030-639aea5013291"
+      "etag": "138030-6407eb08dea35"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/932_9000_nxos_rn.html",
@@ -6014,9 +6018,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-09",
       "chapters": [],
-      "etag": "1249dc-639db3a1a9c79"
+      "etag": "1249dc-640b013d6b150"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-9310.html",
@@ -6024,9 +6028,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "f584b-639d9f0e497ac"
+      "etag": "f584b-6409075a81627"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-9311.html",
@@ -6034,9 +6038,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-08",
       "chapters": [],
-      "etag": "de81a-639e63f7d9782"
+      "etag": "de81a-640a3ab3d4a79"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-9312.html",
@@ -6044,9 +6048,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "b4427-639daebf4ec43"
+      "etag": "b4427-640719091c1ac"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-9313.html",
@@ -6054,9 +6058,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-14",
       "chapters": [],
-      "etag": "a02d7-639e58d9c01d0"
+      "etag": "a02d7-641155bba0f67"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-9314.html",
@@ -6064,9 +6068,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-13",
+      "revised": "2025-10-09",
       "chapters": [],
-      "etag": "7150b-639c9827ce2be"
+      "etag": "7150b-640b158a6d4e0"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-9315.html",
@@ -6074,9 +6078,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "7ff63-639c2eb4d9e81"
+      "etag": "7fe4f-6405e0437c0f3"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-9316.html",
@@ -6084,9 +6088,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-09-07",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "7d503-63e31e7898177"
+      "etag": "7d503-640790c511653"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-933.html",
@@ -6094,9 +6098,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "124954-639d9f197d266"
+      "etag": "124954-64083e0ea032a"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-934.html",
@@ -6104,9 +6108,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-06",
       "chapters": [],
-      "etag": "fd1bc-639db3a835ca1"
+      "etag": "fd1bc-6407baae388ce"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-935.html",
@@ -6114,9 +6118,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "1503ee-639bfc13526bc"
+      "etag": "1503ee-6408fe9109221"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-936.html",
@@ -6124,9 +6128,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-10",
       "chapters": [],
-      "etag": "fe5d7-639daeb9d893b"
+      "etag": "fe5d7-640d2ede0063c"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-937.html",
@@ -6134,9 +6138,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-07",
       "chapters": [],
-      "etag": "f9984-639da3a3dd34f"
+      "etag": "f9984-64096a47b5985"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-937a.html",
@@ -6144,9 +6148,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-04",
       "chapters": [],
-      "etag": "bb1c0-639db9883554f"
+      "etag": "bb1c0-640573572343d"
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/release/notes/cisco-nexus-9000-nxos-release-notes-938.html",
@@ -6164,9 +6168,9 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2025-07-14",
+      "revised": "2025-10-05",
       "chapters": [],
-      "etag": "e3b51-639db432c8734"
+      "etag": "e3b51-64061e190bf86"
     }
   ]
 }
