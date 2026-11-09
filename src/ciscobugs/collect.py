@@ -29,8 +29,9 @@ USER_AGENT = "cisco-bug-tracker/0.1 (+https://github.com/frc-fr/cisco-bug-tracke
 CRAWL_DELAY = 2.0
 SITE = "https://www.cisco.com"
 STALE_DAYS = 540
-# Cisco's servers are not in sync: the same PDF can come with another ETag, even another
-# size, from one request to the next. The last ETags seen all mean "unchanged".
+# Cisco's servers are not in sync: the same PDF comes with another ETag, even another size,
+# from one request to the next. A copy no newer than the latest one seen means "unchanged";
+# the last ETags seen are kept for the PDFs whose ETag carries no date.
 KNOWN_ETAGS = 6
 
 
@@ -230,13 +231,19 @@ def update(manifest_path: Path, catalog_path: Path, cache: Path, client: Client,
         etag = pdf_state(client, entry["url"])
         etags = entry.pop("etags", None) or ([entry["etag"]] if entry.get("etag") else [])
         entry.pop("etag", None)
-        if etag:
-            # A stale server must not take the date back: the latest copy seen wins.
-            entry["revised"] = max(filter(None, [etag_date(etag), entry.get("revised")]), default=None)
         entry["etags"] = etags
-        # Without a PDF, nothing tells a change: the note is read again once a week.
-        if known and (etag in etags if etag else not weekly(entry, today)):
-            continue
+        seen = entry.get("revised")
+        copy = etag_date(etag) if etag else None
+        if copy:
+            # A stale server must not take the date back: the latest copy seen wins.
+            entry["revised"] = max(filter(None, [copy, seen]))
+        if known:
+            if not etag:
+                # Without a PDF, nothing tells a change: the note is read again once a week.
+                if not weekly(entry, today):
+                    continue
+            elif etag in etags or (copy and seen and copy <= seen):
+                continue
         if download_document(client, entry, folder):
             if etag:
                 entry["etags"] = (etags + [etag])[-KNOWN_ETAGS:]

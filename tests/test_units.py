@@ -192,13 +192,20 @@ def test_an_etag_seen_before_means_unchanged(tmp_path, monkeypatch):
     entry = {"url": url, "system": "iosxe", "families": ["ISR 4000"], "chapters": [], "revised": "2026-10-05",
              "etag": "8c0fd-6406e3384ad3e"}
     collect.save_manifest(manifest, {collect.document_key(url): entry})
-    answers = iter(["8c0fd-63fa0bd001c20", "8c0fd-6406e3384ad3e", "8c0fd-63fa0bd001c20"])
+    # Copies of 2025-09-25, 2026-10-05 (the one known) and 2025-07-22: none newer than the one known.
+    answers = iter(["8c0fd-63fa0bd001c20", "8c0fd-6406e3384ad3e", "c-63a7f398a8da6", "9-65cbe4add47e2"])
     downloads = []
     monkeypatch.setattr(collect, "pdf_state", lambda client, u: next(answers))
     monkeypatch.setattr(collect, "download_document", lambda client, e, folder: downloads.append(e["url"]) or True)
     for _ in range(3):
         collect.update(manifest, catalog, tmp_path / "cache", None, datetime(2026, 11, 9, tzinfo=timezone.utc))
-    saved = collect.load_manifest(manifest)[collect.document_key(url)]
+    assert downloads == []
+    assert collect.load_manifest(manifest)[collect.document_key(url)]["revised"] == "2026-10-05"
+    # A copy of 2026-10-01 is older too.
+    collect.update(manifest, catalog, tmp_path / "cache", None, datetime(2026, 11, 9, tzinfo=timezone.utc))
+    assert downloads == []
+    # A revision of the note gives a newer copy, of 2026-11-11: it is read.
+    answers = iter(["9-6600000000000"])
+    collect.update(manifest, catalog, tmp_path / "cache", None, datetime(2026, 11, 9, tzinfo=timezone.utc))
     assert downloads == [url]
-    assert saved["etags"] == ["8c0fd-6406e3384ad3e", "8c0fd-63fa0bd001c20"]
-    assert saved["revised"] == "2026-10-05"
+    assert collect.load_manifest(manifest)[collect.document_key(url)]["revised"] == "2026-11-11"
