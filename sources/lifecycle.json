@@ -1,0 +1,129 @@
+{
+  "iosxe": {
+    "source": "https://endoflife.date/cisco-ios-xe",
+    "page": "https://endoflife.date/cisco-ios-xe",
+    "policy": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-16/bulletin-c25-2378701.html",
+    "branches": {
+      "26.1": {
+        "released": "2026-06-03",
+        "maintenance": null,
+        "support": null,
+        "lts": true
+      },
+      "17.18": {
+        "released": "2025-08-08",
+        "maintenance": "2028-02-08",
+        "support": "2029-08-08",
+        "lts": true
+      },
+      "17.17": {
+        "released": "2025-03-31",
+        "maintenance": "2026-07-30",
+        "support": "2026-07-30",
+        "lts": false
+      },
+      "17.16": {
+        "released": "2024-12-11",
+        "maintenance": "2026-01-13",
+        "support": "2026-01-13",
+        "lts": false
+      },
+      "17.15": {
+        "released": "2024-08-09",
+        "maintenance": "2027-03-30",
+        "support": "2028-09-30",
+        "lts": true
+      },
+      "17.14": {
+        "released": "2024-04-13",
+        "maintenance": "2025-05-31",
+        "support": "2025-05-31",
+        "lts": false
+      },
+      "17.13": {
+        "released": "2023-11-30",
+        "maintenance": "2024-12-31",
+        "support": "2024-12-31",
+        "lts": false
+      },
+      "17.12": {
+        "released": "2023-07-28",
+        "maintenance": "2026-03-30",
+        "support": "2027-09-30",
+        "lts": true
+      },
+      "17.11": {
+        "released": "2023-03-28",
+        "maintenance": "2024-05-14",
+        "support": "2024-05-14",
+        "lts": false
+      },
+      "17.10": {
+        "released": "2022-11-30",
+        "maintenance": "2024-01-03",
+        "support": "2024-01-03",
+        "lts": false
+      },
+      "17.9": {
+        "released": "2022-07-29",
+        "maintenance": "2025-03-30",
+        "support": "2026-09-30",
+        "lts": true
+      },
+      "17.8": {
+        "released": "2022-04-11",
+        "maintenance": "2023-05-30",
+        "support": "2023-05-30",
+        "lts": false
+      },
+      "17.7": {
+        "released": "2021-11-30",
+        "maintenance": "2023-01-30",
+        "support": "2023-01-30",
+        "lts": false
+      },
+      "17.6": {
+        "released": "2021-07-30",
+        "maintenance": "2024-03-31",
+        "support": "2024-09-30",
+        "lts": true
+      },
+      "17.5": {
+        "released": "2021-03-31",
+        "maintenance": "2022-05-30",
+        "support": "2022-05-30",
+        "lts": false
+      },
+      "17.4": {
+        "released": "2020-11-30",
+        "maintenance": "2022-01-28",
+        "support": "2022-01-28",
+        "lts": false
+      },
+      "17.3": {
+        "released": "2020-07-31",
+        "maintenance": "2023-03-31",
+        "support": "2023-09-30",
+        "lts": true
+      },
+      "17.2": {
+        "released": "2020-03-30",
+        "maintenance": "2021-07-15",
+        "support": "2021-07-15",
+        "lts": false
+      },
+      "17.1": {
+        "released": "2019-11-21",
+        "maintenance": "2020-12-30",
+        "support": "2020-12-30",
+        "lts": false
+      },
+      "16.12": {
+        "released": "2019-07-31",
+        "maintenance": "2022-02-17",
+        "support": "2022-08-18",
+        "lts": true
+      }
+    }
+  }
+}
