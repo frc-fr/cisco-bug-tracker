@@ -2839,10 +2839,11 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2025-11-19",
+      "revised": "2025-11-23",
       "chapters": [],
       "etags": [
-        "6b210-643f76541e238"
+        "6b210-643f76541e238",
+        "6b36e-6443f61c6415b"
       ]
     },
     {
@@ -2901,10 +2902,11 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "81107-639f4d1db2be6"
+        "81107-639f4d1db2be6",
+        "81107-6406e4a1b39a9"
       ]
     },
     {
@@ -7062,10 +7064,11 @@
       "families": [
         "Nexus 9000"
       ],
-      "revised": "2026-09-03",
+      "revised": "2026-11-09",
       "chapters": [],
       "etags": [
-        "432f7-65a91a926dfd6"
+        "432f7-65a91a926dfd6",
+        "4467b-65fdfcf231943"
       ]
     },
     {
