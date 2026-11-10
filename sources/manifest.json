@@ -1394,12 +1394,13 @@
       "families": [
         "ASR 920"
       ],
-      "revised": "2025-08-28",
+      "revised": "2026-01-02",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/routers/asr920/release/notes/17-15-1/b-rn-xe-17-15-1-asr920/m-caveats-17-15-x-asr920.html"
       ],
       "etags": [
-        "1dca20-63d7268805508"
+        "1dca20-63d7268805508",
+        "1dc242-6476476557cf1"
       ]
     },
     {
@@ -1461,10 +1462,11 @@
       "families": [
         "Catalyst 8200"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "47bf5-639f2d98db1ba"
+        "47bf5-639f2d98db1ba",
+        "47bf5-64075a6450c33"
       ]
     },
     {
@@ -1822,10 +1824,11 @@
       "families": [
         "Catalyst 8500"
       ],
-      "revised": "2026-02-21",
+      "revised": "2026-02-24",
       "chapters": [],
       "etags": [
-        "3475c-64b5546f7d673"
+        "3475c-64b5546f7d673",
+        "3475c-64b9378444c60"
       ]
     },
     {
@@ -3311,10 +3314,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-09",
       "chapters": [],
       "etags": [
-        "83339-639f4d66bf72b"
+        "83339-639f4d66bf72b",
+        "83339-640b7bc34c8c1"
       ]
     },
     {
