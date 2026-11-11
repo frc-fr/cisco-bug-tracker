@@ -2169,10 +2169,11 @@
       "families": [
         "Catalyst 9200"
       ],
-      "revised": "2025-07-15",
+      "revised": "2025-10-08",
       "chapters": [],
       "etags": [
-        "6fb3c-639f4c66983c3"
+        "6fb3c-639f4c66983c3",
+        "6fb3c-640ab64c53a53"
       ]
     },
     {
@@ -2194,10 +2195,11 @@
       "families": [
         "Catalyst 9200"
       ],
-      "revised": "2025-07-12",
+      "revised": "2025-10-05",
       "chapters": [],
       "etags": [
-        "6b903-639b6a0949ea9"
+        "6b903-639b6a0949ea9",
+        "6b903-640678c3dc8b6"
       ]
     },
     {
