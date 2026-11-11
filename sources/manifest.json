@@ -1609,10 +1609,11 @@
       "families": [
         "Catalyst 8300"
       ],
-      "revised": "2025-07-18",
+      "revised": "2025-10-06",
       "chapters": [],
       "etags": [
-        "6de50-63a2e091c38c5"
+        "6de50-63a2e091c38c5",
+        "6de50-6407a75c9fdfa"
       ]
     },
     {
