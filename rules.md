@@ -11,7 +11,7 @@ site: https://frc-fr.github.io/cisco-bug-tracker/
 
 # Critères communs
 
-Section identique dans forti-, juni-, palo- et cisco-bug-tracker. Toute modification se reporte dans les quatre.
+Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute modification se reporte dans les cinq.
 
 ## Architecture
 
@@ -85,6 +85,20 @@ Section identique dans forti-, juni-, palo- et cisco-bug-tracker. Toute modifica
 - Textes longs justifiés, sur toute la largeur.
 - Cron et date de dernière mise à jour affichés.
 - Placeholders neutres : ne jamais révéler le matériel de l'utilisateur.
+- Même forme dans tous les sites, quelle que soit la façon de présenter du fournisseur : on cherche au même endroit.
+- Données uniformes entre fournisseurs : pas d'information propre à un seul fournisseur si elle n'aide pas l'exploitation (ex. date de mise en vente).
+- Plusieurs systèmes : sélecteur de logiciel, libellé visible « Logiciel », jamais un choix de matériel.
+
+## Matériel et nouveautés
+
+- Onglet Matériel : pastilles de statut (« Tous » en premier, puis « Plus dans la dernière branche » ou son équivalent).
+- Colonnes : Modèle, Première version, Dernière version, Statut <logiciel>, Version recommandée, Fin de support.
+- Statut tiré d'une source officielle du fournisseur : il dit, sans le deviner, si le matériel est encore maintenu.
+- Fin de vie annoncée par référence : variantes affichées séparément, pièces détachées et modules écartés.
+- Pas de source : « Aucune fin annoncée », jamais « supporté ».
+- Version recommandée seulement si le fournisseur la publie sans compte ; sinon la colonne est absente, et la note dit pourquoi.
+- Rechercher : un modèle choisi affiche ce que le fournisseur dit de lui (statut, version recommandée, fin de support).
+- Quoi de neuf : cartes « Dernière version publiée », « Dernier document mis à jour », puis « Recommandée par <fournisseur> » si elle existe.
 
 ## Design
 
@@ -115,6 +129,7 @@ Section identique dans forti-, juni-, palo- et cisco-bug-tracker. Toute modifica
 ## Six systèmes
 
 - IOS, IOS XE, IOS XR, NX-OS, ASA, FTD : un onglet et des données par système.
+- Le sélecteur choisit un logiciel, jamais un matériel : libellé visible « Logiciel », nom complet en infobulle.
 - Gammes Routeurs, Switch et Firewall, listées dans `sources/catalog.json`.
 - Ajouter une gamme : ajouter sa page « Release Notes » et le motif de ses notes au catalogue.
 - Une note peut couvrir plusieurs gammes ; une version peut être décrite par plusieurs notes.
@@ -144,8 +159,13 @@ Section identique dans forti-, juni-, palo- et cisco-bug-tracker. Toute modifica
 - Pages HTML sans ETag ni Last-Modified : HEAD sur le PDF généré de la note pour savoir si elle a changé.
 - Note inchangée depuis plus de 18 mois : vérifiée une fois par semaine.
 - Bug Search Tool jamais interrogé : il demande un compte.
-- Dates de support : endoflife.date pour IOS XE seulement (fin de maintenance, fin de support, LTS).
-- Autres systèmes : pas de table Cisco unique. Branche « active » si une note a été révisée dans les 12 derniers mois, et le site le précise.
+- Dates de support IOS XE : endoflife.date (fin de maintenance, fin de support, LTS).
+- NX-OS : tableau du Cisco NX-OS Software Lifecycle Support Statement (EoSWM, EoVSS/LDoS ; la plus tardive des deux dates).
+- FTD : tableaux du Threat Defense Compatibility Guide ; dernière version FTD par plateforme Firepower/ASA (« Arrêt après »).
+- IOS XR, ASA : annonces End-of-Sale and End-of-Life de leur page « EoS/EoL notices », chacune lue une fois.
+- Liste d'annonces : une branche non annoncée reste supportée sans date, sauf si elle est plus ancienne que toutes les annoncées.
+- Lignes de modules (« Firepower 9300: SM-24… ») ignorées : le châssis continue avec d'autres modules.
+- IOS : pas de table Cisco. Branche « active » si une note a été révisée dans les 12 derniers mois, et le site le précise.
 
 ## Extraction
 
@@ -159,6 +179,13 @@ Section identique dans forti-, juni-, palo- et cisco-bug-tracker. Toute modifica
 
 - Famille d'un bug = famille des notes qui le listent : fiable.
 - Modèle connu seulement quand le titre du bug le cite.
+- Fin de vie : bulletins End-of-Sale and End-of-Life des pages « EoS/EoL notice listing » de chaque gamme (`sources/hardware.json`).
+- Un bulletin est lu une fois ; ses références sont gardées entières, le build choisit les châssis.
+- Écartés : pièces `=`, Cisco ONE `C1-`, cartes, modules, ventilateurs, alimentations, licences, bulletins logiciels (« OS SW »).
+- Pas de dernière version logicielle chez Cisco : statut = fin des versions de maintenance logicielle, puis Last Date of Support.
+- Un châssis est rangé sous le modèle cité qui le préfixe (C9300-24T sous C9300) ; sinon il est son propre modèle.
+- Gamme sans bulletin publié : « Aucune fin annoncée », jamais « supporté ».
+- Pas de version recommandée : Cisco ne la publie pas sans compte.
 
 ## Affichage
 

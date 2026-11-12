@@ -17,14 +17,17 @@
         <h1><span class="brand">Cisco</span> Bug Tracker</h1>
         <p id="scope" data-text="page.scope"></p>
         <p class="privacy" data-text="page.privacy"></p>
-        <nav class="systems" data-label="system.label">
-          <button type="button" id="system-asa" class="tab" aria-pressed="false">ASA</button>
-          <button type="button" id="system-ftd" class="tab" aria-pressed="false">FTD</button>
-          <button type="button" id="system-ios" class="tab" aria-pressed="false">IOS</button>
-          <button type="button" id="system-iosxe" class="tab" aria-pressed="false">IOS XE</button>
-          <button type="button" id="system-iosxr" class="tab" aria-pressed="false">IOS XR</button>
-          <button type="button" id="system-nxos" class="tab" aria-pressed="false">NX-OS</button>
-        </nav>
+        <div class="systems-row">
+          <span class="systems-label" data-text="system.label"></span>
+          <nav class="systems" data-label="system.label">
+            <button type="button" id="system-asa" class="tab" aria-pressed="false" data-title="system.asa">ASA</button>
+            <button type="button" id="system-ftd" class="tab" aria-pressed="false" data-title="system.ftd">FTD</button>
+            <button type="button" id="system-ios" class="tab" aria-pressed="false" data-title="system.ios">IOS</button>
+            <button type="button" id="system-iosxe" class="tab" aria-pressed="false" data-title="system.iosxe">IOS XE</button>
+            <button type="button" id="system-iosxr" class="tab" aria-pressed="false" data-title="system.iosxr">IOS XR</button>
+            <button type="button" id="system-nxos" class="tab" aria-pressed="false" data-title="system.nxos">NX-OS</button>
+          </nav>
+        </div>
       </div>
       <div class="top-actions">
         <a class="icon-link" href="feed.xml" data-label="news.subscribe">
@@ -82,8 +85,10 @@
         <input id="hardware-query" type="search" autocomplete="off" spellcheck="false" data-placeholder="hardware.placeholder">
       </label>
       <p class="muted hardware-note" data-html="hardware.note"></p>
+      <p id="recommended-note" class="muted hardware-note"></p>
     </section>
     <p id="version-info" class="version-info muted"></p>
+    <p id="recommendation" class="version-info"></p>
     <div id="notices"></div>
     <div id="upgrade-notices"></div>
     <div id="chips" class="summary" role="group" data-label="filter.status"></div>

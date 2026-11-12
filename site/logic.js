@@ -183,6 +183,32 @@ function officialUrl(document, page = 0, bug = null) {
   return bug ? `${url}#:~:text=${bug}` : url;
 }
 
+/**
+ * What Cisco says of a model's end of life, as groups of variants. A bulletin
+ * gives the end of software maintenance releases and the last date of support;
+ * Cisco gives no last software release per model, unlike other vendors. A
+ * group is "stopped" once its software maintenance or its support is over.
+ * The model is "stopped" as soon as one of its groups is, or "announced" when
+ * it only has bulletins, or "none": no bulletin is no promise of support.
+ */
+function compareBranches(a, b) {
+  const [majorA, minorA] = a.split(".").map(Number);
+  const [majorB, minorB] = b.split(".").map(Number);
+  return majorA - majorB || minorA - minorB;
+}
+
+function hardwareStatus(entry, today, latestBranch = "") {
+  const groups = entry.eol.map(([variants, bulletin, lastSoftware, endOfSupport, page, endOfMaintenance]) => ({ variants, bulletin, lastSoftware, endOfSupport, page, endOfMaintenance }));
+  for (const group of groups) {
+    // The Threat Defense guide gives the last release of a platform: past it, no newer branch runs on it.
+    const left = Boolean(group.lastSoftware) && Boolean(latestBranch) && compareBranches(group.lastSoftware, latestBranch) < 0;
+    group.stopped = left || (Boolean(group.endOfMaintenance) && group.endOfMaintenance < today);
+    group.ended = Boolean(group.endOfSupport) && group.endOfSupport < today;
+  }
+  const key = groups.some((group) => group.stopped || group.ended) ? "stopped" : groups.length ? "announced" : "none";
+  return { key, groups };
+}
+
 /** Tab-separated text, which spreadsheets and mail clients paste as a table. */
 function tableText(rows) {
   return rows.map((row) => row.map((cell) => String(cell ?? "").replace(/\s+/g, " ").trim()).join("\t")).join("\n");
@@ -191,6 +217,6 @@ function tableText(rows) {
 if (typeof module !== "undefined") {
   module.exports = {
     nameOf, covers, firstFixes, statusAt, branchSupport, supportedBranches, hardwareMatch, selectedFamily, searchTerms, isBugTerm,
-    matchesTerms, upgradeGroup, upgradeNotices, modelSummaries, officialUrl, tableText,
+    matchesTerms, upgradeGroup, upgradeNotices, modelSummaries, officialUrl, tableText, hardwareStatus,
   };
 }

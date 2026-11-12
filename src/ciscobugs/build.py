@@ -10,6 +10,7 @@ from typing import Dict, List, Optional
 from .collect import load_manifest, pdf_of
 from .extract import load_documents, read_changes
 from .feed import build_feed, latest_changes
+from .hardware import hardware_index, load_state
 from .lifecycle import load_lifecycle
 from .normalize import families_in, family_of_model, model_sort_key, models_in
 from .versions import SYSTEMS, branch_key, is_rebuild, parts, train_of, version_key
@@ -37,12 +38,17 @@ def branch_lifecycle(system: str, branches: List[str], lifecycle: Optional[dict]
         return {}
     listed = lifecycle["branches"]
     newest = max((branch_key(system, b) for b in listed), default=())
+    oldest = min((branch_key(system, b) for b in listed), default=())
+    # A list of end-of-life announcements only names the branches announced so far: one it does not
+    # name is still supported, unless it is older than all of them. A complete table names them all.
+    complete = lifecycle.get("complete", True)
     found = {}
     for branch in branches:
         if branch in listed:
-            found[branch] = {**listed[branch], "listed": True}
+            found[branch] = {**{k: v for k, v in listed[branch].items() if k != "page"}, "listed": True}
         else:
-            found[branch] = {"listed": False, "newer": branch_key(system, branch) > newest}
+            key = branch_key(system, branch)
+            found[branch] = {"listed": False, "newer": key > newest if complete else key > oldest}
     return found
 
 
@@ -59,7 +65,8 @@ def cross_references(documents: Dict[str, dict]) -> Dict[str, Dict[str, set]]:
 
 
 def build_system(system: str, documents: List[dict], manifest: Dict[str, dict], today: str,
-                 lifecycle: Optional[dict] = None, references: Optional[Dict[str, Dict[str, set]]] = None) -> dict:
+                 lifecycle: Optional[dict] = None, references: Optional[Dict[str, Dict[str, set]]] = None,
+                 eol: Optional[dict] = None) -> dict:
     """Index and bugs of one system.
 
     A release can be documented by several notes, one per product series; a bug
@@ -156,6 +163,9 @@ def build_system(system: str, documents: List[dict], manifest: Dict[str, dict], 
         "name": SYSTEMS[system],
         "families": families,
         "models": [[m, family_positions[family_of_model(m, system)]] for m in sorted(cited_models, key=model_sort_key)],
+        "hardware": hardware_index(families, sorted(cited_models, key=model_sort_key), eol,
+                                   (lifecycle or {}).get("platforms") if system == "ftd" else None,
+                                   (lifecycle or {}).get("source")),
         "versions": index_versions,
         "branches": {b: {"activity": branch_activity.get(b) or None, "active": branch_activity.get(b, "") >= limit,
                          **dates.get(b, {})} for b in branches},
@@ -176,7 +186,8 @@ def build_system(system: str, documents: List[dict], manifest: Dict[str, dict], 
 
 
 def build_site(extracted: Path, manifest_path: Path, changes_path: Path, schedule_path: Path,
-               sources: Path, dist: Path, base_url: str, lifecycle_path: Path = Path("sources/lifecycle.json")) -> dict:
+               sources: Path, dist: Path, base_url: str, lifecycle_path: Path = Path("sources/lifecycle.json"),
+               hardware_path: Path = Path("sources/hardware.json")) -> dict:
     documents = load_documents(extracted)
     manifest = load_manifest(manifest_path)
     now = datetime.now(timezone.utc)
@@ -184,6 +195,7 @@ def build_site(extracted: Path, manifest_path: Path, changes_path: Path, schedul
     schedule = read_schedule(schedule_path)
     all_changes = read_changes(changes_path)
     lifecycles = load_lifecycle(lifecycle_path)
+    eol = load_state(hardware_path) if hardware_path.exists() else None
     references = cross_references(documents)
 
     if dist.exists():
@@ -194,7 +206,7 @@ def build_site(extracted: Path, manifest_path: Path, changes_path: Path, schedul
     for system in SYSTEMS:
         own = [d for d in documents.values() if d["system"] == system]
         # A system whose notes are not collected yet still gets its files: the page says so.
-        data = build_system(system, own, manifest, now.strftime("%Y-%m-%d"), lifecycles.get(system), references)
+        data = build_system(system, own, manifest, now.strftime("%Y-%m-%d"), lifecycles.get(system), references, eol)
         data["index"].update({"updated": updated, "schedule": schedule})
         changes = latest_changes([c for c in all_changes if c["system"] == system], documents)
         folder = dist / "data" / system

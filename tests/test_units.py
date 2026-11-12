@@ -209,3 +209,106 @@ def test_an_etag_seen_before_means_unchanged(tmp_path, monkeypatch):
     collect.update(manifest, catalog, tmp_path / "cache", None, datetime(2026, 11, 9, tzinfo=timezone.utc))
     assert downloads == [url]
     assert collect.load_manifest(manifest)[collect.document_key(url)]["revised"] == "2026-11-11"
+
+
+from ciscobugs.hardware import chassis_name, chassis_of, hardware_index, listing_bulletins, parse_bulletin, worth_reading
+
+
+def test_bulletin_keeps_hardware_milestones_and_chassis():
+    page = (
+        "<table><tr><th>Milestone</th><th>Definition</th><th>Date</th></tr>"
+        "<tr><td>End-of-Sale Date: HW</td><td>x</td><td>February 3, 2018</td></tr>"
+        "<tr><td>End of SW Maintenance Releases Date: HW</td><td>x</td><td>February 3, 2019</td></tr>"
+        "<tr><td>Last Date of Support: HW</td><td>x</td><td>February 28, 2023</td></tr></table>"
+        "<table><tr><th>End-of-Sale Product Part Number</th><th>Product Description</th></tr>"
+        "<tr><td>N9K-C9372PX</td><td>Nexus 9300 with 48p 10G SFP+ and 6p 40G QSFP+</td></tr>"
+        "<tr><td>N9K-C9372PX=</td><td>Nexus 9K, Spare</td></tr>"
+        "<tr><td>C1-N9K-C9372PX</td><td>Cisco ONE Nexus 9300</td></tr>"
+        "<tr><td>N9K-C9372PX-BUN</td><td>Nexus 9372PX bundle PID</td></tr>"
+        "<tr><td>NXA-FAN-30CFM-F</td><td>Nexus fan, port side intake</td></tr></table>"
+    )
+    bulletin = parse_bulletin(page)
+    assert {k: v for k, v in bulletin.items() if k != "parts"} == {
+        "hardware": True, "end_of_sale": "2018-02-03", "end_of_maintenance": "2019-02-03", "end_of_support": "2023-02-28"}
+    assert len(bulletin["parts"]) == 5 and chassis_of(bulletin) == [("N9K-C9372PX", "N9K-C9372PX")]
+    software = "<table><tr><th>Milestone</th></tr><tr><td>Last Date of Support: OS SW</td><td>x</td><td>May 1, 2020</td></tr></table>"
+    assert parse_bulletin(software) == {"hardware": False}
+    assert chassis_name("ASA5515-K9", "ASA 5515-X with SW, 6GE Data, 1GE Mgmt, AC, 3DES/AES") == ("ASA5515", "ASA5515")
+    assert chassis_name("C9300-24T", "Catalyst 9300 24-port data only") == ("C9300", "C9300-24T")
+    assert chassis_name("EDU-C2960X-24PD-L", "Catalyst 2960-X 24 GigE, EDU") is None
+    assert chassis_name("N9K-X9736PQ", "Nexus 9500 linecard") is None
+    assert chassis_name("ASA5545-2SSD120", "ASA 5545-X IPS SSD 120GB") is None
+    assert chassis_name("WS-C2960X-24PD-L++", "Catalyst 2960-X 24 GigE PoE 370W") == ("WS-C2960X", "WS-C2960X-24PD-L")
+    assert chassis_name("ASR1000-ESP20", "Cisco ASR1000 Embedded Services Processor, 20G") is None
+    assert chassis_name("ASR-9912-SFC110", "ASR 9912 Fabric Card") is None
+    assert chassis_name("A9K-24X10GE-SE", "ASR 9000 24-port 10GE Service Edge Optimized LC") is None
+
+
+def test_listing_and_titles():
+    page = ('<a href="/c/en/us/products/collateral/x/eos-eol-notice-c51-739451.html">EoS for the Nexus 9372PX Switches</a>'
+            '<a href="/c/en/us/products/collateral/x/eos-eol-notice-c51-739451-fr.html">Annonce</a>')
+    assert listing_bulletins(page, "https://www.cisco.com/a/b.html") == {
+        "https://www.cisco.com/c/en/us/products/collateral/x/eos-eol-notice-c51-739451.html":
+            {"bulletin": "c51-739451", "title": "EoS for the Nexus 9372PX Switches"}}
+    assert not worth_reading("End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 16.9.x")
+    assert worth_reading("End-of-Sale and End-of-Life Announcement for the Cisco Catalyst 3850 switches")
+
+
+def test_chassis_go_under_the_model_the_notes_cite():
+    state = {"listings": [], "bulletins": [
+        {"url": "u", "bulletin": "c51-1", "families": ["Nexus 9000"], "hardware": True, "end_of_sale": None,
+         "end_of_maintenance": "2019-02-03", "end_of_support": "2023-02-28",
+         "parts": [["N9K-C9372PX", "Nexus 9300 with 48p 10G SFP+"], ["N9K-C9396TX", "Nexus 9300 with 48p 1/10G-T"]]},
+        {"url": "v", "bulletin": "c51-2", "families": ["Catalyst 9300"], "hardware": True, "end_of_sale": None,
+         "end_of_maintenance": None, "end_of_support": None, "parts": [["C9300-24T", "Catalyst 9300 24-port"]]},
+    ]}
+    index = hardware_index(["Nexus 9000"], ["N9K-9372PX"], state)
+    assert list(index["models"]) == ["N9K-9372PX", "N9K-C9396TX"]
+    assert index["models"]["N9K-9372PX"]["eol"] == [[["N9K-C9372PX"], "c51-1", None, "2023-02-28", "u", "2019-02-03"]]
+    assert index["models"]["N9K-C9396TX"]["family"] == "Nexus 9000"
+
+
+from ciscobugs.lifecycle import parse_announcement, parse_ftd, parse_nxos, platform_models
+from ciscobugs.build import branch_lifecycle
+
+
+def test_nxos_lifecycle_table():
+    page = ("<table><tr><th>NX-OS Major Release</th><th>EoSWM Date</th><th>EoVSS/LDoS</th></tr>"
+            "<tr><td>10.2(x)</td><td>Nov 30 2023</td><td>Feb 28 2025/Aug 31 2025</td></tr>"
+            "<tr><td>10.3(x)</td><td>Nov 30 2024</td><td>Feb 28 2027 *</td></tr>"
+            "<tr><td>10.5(x)</td><td>Feb 28 2027</td><td>Feb 28 2029</td></tr></table>")
+    branches = parse_nxos(page)
+    assert branches["10.2"]["support"] == "2025-08-31" and branches["10.3"]["support"] == "2027-02-28"
+    assert branches["10.5"]["maintenance"] == "2027-02-28"
+
+
+def test_ftd_guide_tables():
+    rows = "".join(f"<tr><td>{v}</td><td>2025-11-18</td><td>2026-11-18</td><td>{s}</td><td>x</td></tr>"
+                   for v, s in [("7.3", "2027-11-30"), ("7.2", "2027-11-30"), ("6.2.3", "2025-02-28"), ("6.2", "2022-03-31"), ("7.0", "2027-11-30"), ("7.7", "2028-09-30")])
+    platforms = ("<table><tr><th>Platform</th><th>Last device version</th><th>Last Mgmt. Center</th><th>End of sale</th><th>End of support</th></tr>"
+                 "<tr><td>Firepower 2110, 2120</td><td>7.4</td><td>TBD</td><td>2025-05-27</td><td>2030-05-31</td></tr>"
+                 "<tr><td>2022-01-31</td><td>2027-01-31</td><td>Subscriptions</td></tr>"
+                 "<tr><td>Firepower 9300: SM-24, SM-36 modules</td><td>7.2</td><td>7.7</td><td>2024-08-31</td><td>2025-08-31</td></tr>"
+                 "<tr><td>ASA 5506-X, 5506H-X</td><td>6.2.3</td><td>6.6</td><td>2021-08-02</td><td>2026-08-31</td></tr></table>")
+    parsed = parse_ftd("<table><tr><th>Version</th><th>End of sale</th><th>End of updates</th><th>End of support</th></tr>"
+                       + rows + "</table>" + platforms)
+    assert parsed["branches"]["6.2"]["support"] == "2025-02-28" and parsed["branches"]["7.3"]["maintenance"] == "2026-11-18"
+    assert parsed["platforms"]["FPR2110"]["last"] == "7.4" and parsed["platforms"]["ASA5506"]["last"] == "6.2"
+    assert "FPR9300" not in parsed["platforms"]
+    assert platform_models("ASA 5525-X, 5545-X, 5555-X") == ["ASA5525", "ASA5545", "ASA5555"]
+
+
+def test_announcement_milestones():
+    page = ("<table><tr><th>Milestone</th><th>Definition</th><th>Date</th></tr>"
+            "<tr><td>End-of-Sale Date: OS SW</td><td>x</td><td>September 30, 2026</td></tr>"
+            "<tr><td>End of SW Maintenance Releases Date: OS SW</td><td>x</td><td>March 31, 2027</td></tr>"
+            "<tr><td>Last Date of Support: OS SW</td><td>x</td><td>September 30, 2029</td></tr></table>")
+    assert parse_announcement(page) == {"sale": "2026-09-30", "maintenance": "2027-03-31", "support": "2029-09-30"}
+
+
+def test_a_branch_not_announced_yet_is_still_supported():
+    announced = {"complete": False, "branches": {"7.3": {"support": "2027-11-30"}, "7.7": {"support": "2028-09-30"}}}
+    found = branch_lifecycle("ftd", ["6.4", "7.4", "7.6", "7.7"], announced)
+    assert found["7.4"] == {"listed": False, "newer": True} and found["6.4"] == {"listed": False, "newer": False}
+    table = {"branches": {"10.4": {"support": "2028-02-29"}, "10.6": {"support": "2030-02-28"}}}
+    assert branch_lifecycle("nxos", ["10.5"], table)["10.5"]["newer"] is False

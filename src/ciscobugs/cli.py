@@ -10,6 +10,7 @@ def main() -> None:
     parser.add_argument("--catalog", type=Path, default=Path("sources/catalog.json"))
     parser.add_argument("--manifest", type=Path, default=Path("sources/manifest.json"))
     parser.add_argument("--lifecycle", type=Path, default=Path("sources/lifecycle.json"))
+    parser.add_argument("--hardware", type=Path, default=Path("sources/hardware.json"))
     parser.add_argument("--schedule", type=Path, default=Path("sources/schedule.yml"))
     parser.add_argument("--cache", type=Path, default=Path(".cache/html"))
     parser.add_argument("--output", type=Path, default=Path("data/extracted"))
@@ -25,9 +26,11 @@ def main() -> None:
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     if args.command == "collect":
-        from . import collect, lifecycle
+        from . import collect, hardware, lifecycle
         client = collect.Client()
         lifecycle.update_lifecycle(args.lifecycle, client)
+        lifecycle.update_cisco(args.lifecycle, client)
+        hardware.update_hardware(args.hardware, client)
         downloaded = collect.update(args.manifest, args.catalog, args.cache, client)
         logging.info("%d notes downloaded", len(downloaded))
     elif args.command == "extract":
@@ -40,6 +43,6 @@ def main() -> None:
     elif args.command == "build":
         from . import build
         summary = build.build_site(args.output, args.manifest, args.changes, args.schedule, args.site, args.dist, args.base_url,
-                                   args.lifecycle)
+                                   args.lifecycle, args.hardware)
         for system, counts in summary.items():
             logging.info("%s: %s", system, counts)

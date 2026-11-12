@@ -125,5 +125,1148 @@
         "lts": true
       }
     }
+  },
+  "nxos": {
+    "source": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/nx-os-software/guide_c07-658595.html",
+    "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/nx-os-software/guide_c07-658595.html",
+    "policy": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/nx-os-software/guide_c07-658595.html",
+    "complete": true,
+    "branches": {
+      "10.2": {
+        "released": null,
+        "maintenance": "2023-11-30",
+        "support": "2025-08-31",
+        "lts": false
+      },
+      "10.3": {
+        "released": null,
+        "maintenance": "2024-11-30",
+        "support": "2027-02-28",
+        "lts": false
+      },
+      "10.4": {
+        "released": null,
+        "maintenance": "2026-02-28",
+        "support": "2028-02-29",
+        "lts": false
+      },
+      "10.5": {
+        "released": null,
+        "maintenance": "2027-02-28",
+        "support": "2029-02-28",
+        "lts": false
+      },
+      "10.6": {
+        "released": null,
+        "maintenance": "2028-02-29",
+        "support": "2030-02-28",
+        "lts": false
+      }
+    }
+  },
+  "ftd": {
+    "source": "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/compatibility/threat-defense-compatibility.html",
+    "page": "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/compatibility/threat-defense-compatibility.html",
+    "policy": "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/compatibility/threat-defense-compatibility.html",
+    "complete": false,
+    "branches": {
+      "7.7": {
+        "released": null,
+        "sale": "2026-09-29",
+        "maintenance": "2027-09-29",
+        "support": "2028-09-30",
+        "lts": false
+      },
+      "7.3": {
+        "released": null,
+        "sale": "2025-11-18",
+        "maintenance": "2026-05-18",
+        "support": "2027-11-30",
+        "lts": false
+      },
+      "7.2": {
+        "released": null,
+        "sale": "2025-11-18",
+        "maintenance": "2026-11-18",
+        "support": "2027-11-30",
+        "lts": false
+      },
+      "7.1": {
+        "released": null,
+        "sale": "2023-12-22",
+        "maintenance": "2024-12-21",
+        "support": "2025-12-31",
+        "lts": false
+      },
+      "7.0": {
+        "released": null,
+        "sale": "2025-11-18",
+        "maintenance": "2026-11-18",
+        "support": "2027-11-30",
+        "lts": false
+      },
+      "6.7": {
+        "released": null,
+        "sale": "2021-07-09",
+        "maintenance": "2022-07-09",
+        "support": "2024-07-31",
+        "lts": false
+      },
+      "6.6": {
+        "released": null,
+        "sale": "2022-03-02",
+        "maintenance": "2023-03-02",
+        "support": "2025-03-31",
+        "lts": false
+      },
+      "6.5": {
+        "released": null,
+        "sale": "2020-06-22",
+        "maintenance": "2021-06-22",
+        "support": "2023-06-30",
+        "lts": false
+      },
+      "6.4": {
+        "released": null,
+        "sale": "2023-02-27",
+        "maintenance": "2024-02-27",
+        "support": "2026-02-28",
+        "lts": false
+      },
+      "6.3": {
+        "released": null,
+        "sale": "2020-04-30",
+        "maintenance": "2021-04-30",
+        "support": "2023-04-30",
+        "lts": false
+      },
+      "6.2": {
+        "released": null,
+        "sale": "2022-02-04",
+        "maintenance": "2023-02-04",
+        "support": "2025-02-28",
+        "lts": false
+      },
+      "6.1": {
+        "released": null,
+        "sale": "2019-11-22",
+        "maintenance": "2021-05-22",
+        "support": "2023-05-31",
+        "lts": false
+      },
+      "6.0": {
+        "released": null,
+        "sale": "2017-11-10",
+        "maintenance": "2018-11-10",
+        "support": "2020-11-30",
+        "lts": false
+      }
+    },
+    "platforms": {
+      "FPR2110": {
+        "last": "7.4",
+        "sale": "2025-05-27",
+        "support": "2030-05-31",
+        "platform": "Firepower 2110, 2120, 2130, 2140"
+      },
+      "FPR2120": {
+        "last": "7.4",
+        "sale": "2025-05-27",
+        "support": "2030-05-31",
+        "platform": "Firepower 2110, 2120, 2130, 2140"
+      },
+      "FPR2130": {
+        "last": "7.4",
+        "sale": "2025-05-27",
+        "support": "2030-05-31",
+        "platform": "Firepower 2110, 2120, 2130, 2140"
+      },
+      "FPR2140": {
+        "last": "7.4",
+        "sale": "2025-05-27",
+        "support": "2030-05-31",
+        "platform": "Firepower 2110, 2120, 2130, 2140"
+      },
+      "FPR4110": {
+        "last": "7.2",
+        "sale": "2024-07-31",
+        "support": "2027-01-31",
+        "platform": "Firepower 4110"
+      },
+      "ASA5508": {
+        "last": "7.0",
+        "sale": "2021-08-02",
+        "support": "2026-08-31",
+        "platform": "ASA 5508-X, 5516-X"
+      },
+      "ASA5516": {
+        "last": "7.0",
+        "sale": "2021-08-02",
+        "support": "2026-08-31",
+        "platform": "ASA 5508-X, 5516-X"
+      },
+      "ASA5525": {
+        "last": "6.6",
+        "sale": "2020-09-04",
+        "support": "2025-09-30",
+        "platform": "ASA 5525-X, 5545-X, 5555-X"
+      },
+      "ASA5545": {
+        "last": "6.6",
+        "sale": "2020-09-04",
+        "support": "2025-09-30",
+        "platform": "ASA 5525-X, 5545-X, 5555-X"
+      },
+      "ASA5555": {
+        "last": "6.6",
+        "sale": "2020-09-04",
+        "support": "2025-09-30",
+        "platform": "ASA 5525-X, 5545-X, 5555-X"
+      },
+      "FPR4120": {
+        "last": "7.2",
+        "sale": "2024-08-31",
+        "support": "2025-08-31",
+        "platform": "Firepower 4120, 4140, 4150"
+      },
+      "FPR4140": {
+        "last": "7.2",
+        "sale": "2024-08-31",
+        "support": "2025-08-31",
+        "platform": "Firepower 4120, 4140, 4150"
+      },
+      "FPR4150": {
+        "last": "7.2",
+        "sale": "2024-08-31",
+        "support": "2025-08-31",
+        "platform": "Firepower 4120, 4140, 4150"
+      },
+      "ASA5515": {
+        "last": "6.4",
+        "sale": "2017-08-25",
+        "support": "2022-08-31",
+        "platform": "ASA 5515-X"
+      },
+      "ASA5506": {
+        "last": "6.2",
+        "sale": "2021-08-02",
+        "support": "2026-08-31",
+        "platform": "ASA 5506-X, 5506H-X, 5506W-X"
+      },
+      "ASA5512": {
+        "last": "6.2",
+        "sale": "2017-08-25",
+        "support": "2022-08-31",
+        "platform": "ASA 5512-X"
+      }
+    }
+  },
+  "iosxr": {
+    "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xr-software/eos-eol-notice-listing.html",
+    "page": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xr-software/eos-eol-notice-listing.html",
+    "policy": null,
+    "complete": false,
+    "branches": {
+      "25.3": {
+        "released": null,
+        "sale": "2027-03-18",
+        "maintenance": "2027-09-17",
+        "support": "2030-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-25-3-eol.html"
+      },
+      "25.2": {
+        "released": null,
+        "sale": "2026-12-18",
+        "maintenance": "2027-06-18",
+        "support": "2029-12-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-25-2-eol.html"
+      },
+      "25.1": {
+        "released": null,
+        "sale": "2026-09-30",
+        "maintenance": "2027-03-31",
+        "support": "2029-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-25-1-eol.html"
+      },
+      "24.4": {
+        "released": null,
+        "sale": "2026-06-18",
+        "maintenance": "2026-12-18",
+        "support": "2029-06-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-4-eol.html"
+      },
+      "24.3": {
+        "released": null,
+        "sale": "2026-03-03",
+        "maintenance": "2026-09-03",
+        "support": "2029-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-3-eol.html"
+      },
+      "24.2": {
+        "released": null,
+        "sale": "2025-12-15",
+        "maintenance": "2026-06-15",
+        "support": "2028-12-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-2-eol.html"
+      },
+      "24.1": {
+        "released": null,
+        "sale": "2025-09-16",
+        "maintenance": "2026-03-16",
+        "support": "2028-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-1-eol.html"
+      },
+      "7.11": {
+        "released": null,
+        "sale": "2025-06-09",
+        "maintenance": "2025-12-09",
+        "support": "2028-06-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-11-eol.html"
+      },
+      "7.10": {
+        "released": null,
+        "sale": "2025-02-16",
+        "maintenance": "2025-08-16",
+        "support": "2028-02-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-10-eol.html"
+      },
+      "7.9": {
+        "released": null,
+        "sale": "2024-09-28",
+        "maintenance": "2025-03-28",
+        "support": "2027-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-9-eol.html"
+      },
+      "7.8": {
+        "released": null,
+        "sale": "2024-05-30",
+        "maintenance": "2024-11-30",
+        "support": "2027-05-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-8-eol.html"
+      },
+      "7.7": {
+        "released": null,
+        "sale": "2024-01-29",
+        "maintenance": "2024-07-29",
+        "support": "2029-01-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-rel-7-7-eol.html"
+      },
+      "6.9": {
+        "released": null,
+        "sale": "2024-01-29",
+        "maintenance": "2024-07-29",
+        "support": "2029-01-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-rel-6-9-eol.html"
+      },
+      "7.6": {
+        "released": null,
+        "sale": "2023-09-30",
+        "maintenance": "2024-03-31",
+        "support": "2028-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-eol.html"
+      },
+      "7.5": {
+        "released": null,
+        "sale": "2023-11-30",
+        "maintenance": "2024-05-31",
+        "support": "2028-05-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-5-eol.html"
+      },
+      "7.4": {
+        "released": null,
+        "sale": "2023-02-06",
+        "maintenance": "2023-08-06",
+        "support": "2028-02-29",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-4-eol.html"
+      },
+      "7.3": {
+        "released": null,
+        "sale": "2022-08-29",
+        "maintenance": "2023-02-28",
+        "support": "2027-08-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-3-eol.html"
+      },
+      "7.2": {
+        "released": null,
+        "sale": "2022-03-14",
+        "maintenance": "2022-09-14",
+        "support": "2027-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-2-eol.html"
+      },
+      "7.1": {
+        "released": null,
+        "sale": "2021-07-30",
+        "maintenance": "2022-01-30",
+        "support": "2026-07-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-744794.html"
+      },
+      "7.0": {
+        "released": null,
+        "sale": "2021-02-28",
+        "maintenance": "2021-08-31",
+        "support": "2026-02-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-743511.html"
+      },
+      "6.8": {
+        "released": null,
+        "sale": "2023-02-06",
+        "maintenance": "2023-08-06",
+        "support": "2028-02-29",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-6-8-eol.html"
+      },
+      "6.7": {
+        "released": null,
+        "sale": "2021-07-30",
+        "maintenance": "2022-01-30",
+        "support": "2026-07-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-744795.html"
+      },
+      "6.6": {
+        "released": null,
+        "sale": "2020-06-22",
+        "maintenance": "2020-12-21",
+        "support": "2025-06-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-742542.html"
+      },
+      "6.5": {
+        "released": null,
+        "sale": "2020-02-10",
+        "maintenance": "2020-08-10",
+        "support": "2025-02-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-741964.html"
+      },
+      "6.4": {
+        "released": null,
+        "sale": "2019-09-30",
+        "maintenance": "2020-03-29",
+        "support": "2024-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-741090.html"
+      },
+      "6.3": {
+        "released": null,
+        "sale": "2019-03-19",
+        "maintenance": "2019-09-18",
+        "support": "2024-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-741364.html"
+      },
+      "6.2": {
+        "released": null,
+        "sale": "2019-03-21",
+        "maintenance": "2020-03-21",
+        "support": "2024-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-740472.html"
+      },
+      "6.1": {
+        "released": null,
+        "sale": "2018-09-21",
+        "maintenance": "2019-09-21",
+        "support": "2023-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-740473.html"
+      },
+      "6.0": {
+        "released": null,
+        "sale": "2017-12-11",
+        "maintenance": "2018-05-11",
+        "support": "2022-12-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-738789.html"
+      },
+      "5.3": {
+        "released": null,
+        "sale": "2017-02-09",
+        "maintenance": "2017-08-11",
+        "support": "2022-02-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-737730.html"
+      },
+      "5.2": {
+        "released": null,
+        "sale": "2017-01-29",
+        "maintenance": "2018-01-29",
+        "support": "2022-01-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-737664.html"
+      },
+      "5.1": {
+        "released": null,
+        "sale": "2015-10-01",
+        "maintenance": "2016-04-01",
+        "support": "2020-10-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-732936.html"
+      },
+      "5.0": {
+        "released": null,
+        "sale": "2015-09-15",
+        "maintenance": "2016-03-15",
+        "support": "2020-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-732784.html"
+      },
+      "4.3": {
+        "released": null,
+        "sale": "2015-04-10",
+        "maintenance": "2015-10-10",
+        "support": "2020-04-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-731527.html"
+      },
+      "4.2": {
+        "released": null,
+        "sale": "2013-08-17",
+        "maintenance": "2014-02-15",
+        "support": "2018-08-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-714709.html"
+      },
+      "4.1": {
+        "released": null,
+        "sale": "2013-03-19",
+        "maintenance": "2014-03-31",
+        "support": "2018-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-704793.html"
+      },
+      "4.0": {
+        "released": null,
+        "sale": "2012-04-01",
+        "maintenance": "2012-10-01",
+        "support": "2017-04-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-663255.html"
+      },
+      "3.9": {
+        "released": null,
+        "sale": "2011-04-10",
+        "maintenance": "2012-04-09",
+        "support": "2016-04-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-627836.html"
+      },
+      "3.8": {
+        "released": null,
+        "sale": "2010-12-28",
+        "maintenance": "2011-12-28",
+        "support": "2015-12-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eol_c51_596913.html"
+      },
+      "3.6": {
+        "released": null,
+        "sale": "2009-06-30",
+        "maintenance": null,
+        "support": "2014-06-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-498620.html"
+      },
+      "3.5": {
+        "released": null,
+        "sale": "2009-05-11",
+        "maintenance": "2010-05-11",
+        "support": "2014-05-11",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-492041.html"
+      }
+    },
+    "bulletins": {
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-25-3-eol.html": {
+        "branch": "25.3",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 25.3",
+        "sale": "2027-03-18",
+        "maintenance": "2027-09-17",
+        "support": "2030-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-25-2-eol.html": {
+        "branch": "25.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 25.2",
+        "sale": "2026-12-18",
+        "maintenance": "2027-06-18",
+        "support": "2029-12-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-25-1-eol.html": {
+        "branch": "25.1",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 25.1",
+        "sale": "2026-09-30",
+        "maintenance": "2027-03-31",
+        "support": "2029-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-4-eol.html": {
+        "branch": "24.4",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 24.4",
+        "sale": "2026-06-18",
+        "maintenance": "2026-12-18",
+        "support": "2029-06-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-3-eol.html": {
+        "branch": "24.3",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 24.3",
+        "sale": "2026-03-03",
+        "maintenance": "2026-09-03",
+        "support": "2029-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-2-eol.html": {
+        "branch": "24.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 24.2",
+        "sale": "2025-12-15",
+        "maintenance": "2026-06-15",
+        "support": "2028-12-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-24-1-eol.html": {
+        "branch": "24.1",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 24.1",
+        "sale": "2025-09-16",
+        "maintenance": "2026-03-16",
+        "support": "2028-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-11-eol.html": {
+        "branch": "7.11",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.11",
+        "sale": "2025-06-09",
+        "maintenance": "2025-12-09",
+        "support": "2028-06-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-10-eol.html": {
+        "branch": "7.10",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.10",
+        "sale": "2025-02-16",
+        "maintenance": "2025-08-16",
+        "support": "2028-02-28"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-9-eol.html": {
+        "branch": "7.9",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.9",
+        "sale": "2024-09-28",
+        "maintenance": "2025-03-28",
+        "support": "2027-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-8-eol.html": {
+        "branch": "7.8",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.8",
+        "sale": "2024-05-30",
+        "maintenance": "2024-11-30",
+        "support": "2027-05-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-rel-7-7-eol.html": {
+        "branch": "7.7",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.7",
+        "sale": "2024-01-29",
+        "maintenance": "2024-07-29",
+        "support": "2029-01-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-rel-6-9-eol.html": {
+        "branch": "6.9",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.9",
+        "sale": "2024-01-29",
+        "maintenance": "2024-07-29",
+        "support": "2029-01-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-eol.html": {
+        "branch": "7.6",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.6",
+        "sale": "2023-09-30",
+        "maintenance": "2024-03-31",
+        "support": "2028-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-5-eol.html": {
+        "branch": "7.5",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.5",
+        "sale": "2023-11-30",
+        "maintenance": "2024-05-31",
+        "support": "2028-05-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-4-eol.html": {
+        "branch": "7.4",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.4",
+        "sale": "2023-02-06",
+        "maintenance": "2023-08-06",
+        "support": "2028-02-29"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-3-eol.html": {
+        "branch": "7.3",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.3",
+        "sale": "2022-08-29",
+        "maintenance": "2023-02-28",
+        "support": "2027-08-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-7-2-eol.html": {
+        "branch": "7.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.2",
+        "sale": "2022-03-14",
+        "maintenance": "2022-09-14",
+        "support": "2027-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-744794.html": {
+        "branch": "7.1",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.1",
+        "sale": "2021-07-30",
+        "maintenance": "2022-01-30",
+        "support": "2026-07-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-743511.html": {
+        "branch": "7.0",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 7.0",
+        "sale": "2021-02-28",
+        "maintenance": "2021-08-31",
+        "support": "2026-02-28"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/ios-xr-software-release-6-8-eol.html": {
+        "branch": "6.8",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.8",
+        "sale": "2023-02-06",
+        "maintenance": "2023-08-06",
+        "support": "2028-02-29"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-744795.html": {
+        "branch": "6.7",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.7",
+        "sale": "2021-07-30",
+        "maintenance": "2022-01-30",
+        "support": "2026-07-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-742542.html": {
+        "branch": "6.6",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.6",
+        "sale": "2020-06-22",
+        "maintenance": "2020-12-21",
+        "support": "2025-06-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-741964.html": {
+        "branch": "6.5",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.5",
+        "sale": "2020-02-10",
+        "maintenance": "2020-08-10",
+        "support": "2025-02-28"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-741090.html": {
+        "branch": "6.4",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.4",
+        "sale": "2019-09-30",
+        "maintenance": "2020-03-29",
+        "support": "2024-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-741364.html": {
+        "branch": "6.3",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.3",
+        "sale": "2019-03-19",
+        "maintenance": "2019-09-18",
+        "support": "2024-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-740472.html": {
+        "branch": "6.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.2",
+        "sale": "2019-03-21",
+        "maintenance": "2020-03-21",
+        "support": "2024-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-740473.html": {
+        "branch": "6.1",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.1",
+        "sale": "2018-09-21",
+        "maintenance": "2019-09-21",
+        "support": "2023-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-738789.html": {
+        "branch": "6.0",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 6.0",
+        "sale": "2017-12-11",
+        "maintenance": "2018-05-11",
+        "support": "2022-12-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-737730.html": {
+        "branch": "5.3",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 5.3",
+        "sale": "2017-02-09",
+        "maintenance": "2017-08-11",
+        "support": "2022-02-28"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-737664.html": {
+        "branch": "5.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 5.2",
+        "sale": "2017-01-29",
+        "maintenance": "2018-01-29",
+        "support": "2022-01-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-732936.html": {
+        "branch": "5.1",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 5.1",
+        "sale": "2015-10-01",
+        "maintenance": "2016-04-01",
+        "support": "2020-10-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-732784.html": {
+        "branch": "5.0",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 5.0",
+        "sale": "2015-09-15",
+        "maintenance": "2016-03-15",
+        "support": "2020-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eos-eol-notice-c51-731527.html": {
+        "branch": "4.3",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 4.3",
+        "sale": "2015-04-10",
+        "maintenance": "2015-10-10",
+        "support": "2020-04-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-714709.html": {
+        "branch": "4.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 4.2",
+        "sale": "2013-08-17",
+        "maintenance": "2014-02-15",
+        "support": "2018-08-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-704793.html": {
+        "branch": "4.1",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 4.1",
+        "sale": "2013-03-19",
+        "maintenance": "2014-03-31",
+        "support": "2018-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-663255.html": {
+        "branch": "4.0",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 4.0",
+        "sale": "2012-04-01",
+        "maintenance": "2012-10-01",
+        "support": "2017-04-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-627836.html": {
+        "branch": "3.9",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 3.9",
+        "sale": "2011-04-10",
+        "maintenance": "2012-04-09",
+        "support": "2016-04-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/eol_c51_596913.html": {
+        "branch": "3.8",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 3.8",
+        "sale": "2010-12-28",
+        "maintenance": "2011-12-28",
+        "support": "2015-12-28"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-498620.html": {
+        "branch": "3.6",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 3.6",
+        "sale": "2009-06-30",
+        "support": "2014-06-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/end_of_life_notice_c51-492041.html": {
+        "branch": "3.5",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XR Software Release 3.5",
+        "sale": "2009-05-11",
+        "maintenance": "2010-05-11",
+        "support": "2014-05-11"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/routers/12000-series-routers/prod_end-of-life_notice0900aecd8055b332.html": {
+        "branch": "3.2",
+        "title": "EoS/EoL Announcement for the Cisco IOS XR Software Release 3.2"
+      }
+    }
+  },
+  "asa": {
+    "source": "https://www.cisco.com/c/en/us/products/security/asa-firepower-services/eos-eol-notice-listing.html",
+    "page": "https://www.cisco.com/c/en/us/products/security/asa-firepower-services/eos-eol-notice-listing.html",
+    "policy": null,
+    "complete": false,
+    "branches": {
+      "9.23": {
+        "released": null,
+        "sale": "2026-09-29",
+        "maintenance": "2027-09-29",
+        "support": "2028-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-release-9-23-asav-asdm-release-7-23-eol.html"
+      },
+      "9.16": {
+        "released": null,
+        "sale": "2025-11-18",
+        "maintenance": "2026-11-18",
+        "support": "2027-11-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-9-16-asav-asdm-release-7-16-eol.html"
+      },
+      "9.18": {
+        "released": null,
+        "sale": "2025-11-18",
+        "maintenance": "2026-11-18",
+        "support": "2027-11-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-9-18-asav-asdm-release-7-18-eol.html"
+      },
+      "9.19": {
+        "released": null,
+        "sale": "2025-11-18",
+        "maintenance": "2026-05-18",
+        "support": "2027-11-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-asav-asdm-release-eol.html"
+      },
+      "9.17": {
+        "released": null,
+        "sale": "2023-12-22",
+        "maintenance": "2024-12-21",
+        "support": "2025-12-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-appliance-9-17x-eol.html"
+      },
+      "9.14": {
+        "released": null,
+        "sale": "2022-03-02",
+        "maintenance": "2023-03-02",
+        "support": "2025-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-appliance-eol.html"
+      },
+      "9.8": {
+        "released": null,
+        "sale": "2022-02-04",
+        "maintenance": "2023-02-04",
+        "support": "2025-02-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-eol.html"
+      },
+      "9.15": {
+        "released": null,
+        "sale": "2021-06-17",
+        "maintenance": "2022-06-17",
+        "support": "2024-06-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-744625.html"
+      },
+      "9.13": {
+        "released": null,
+        "sale": "2020-06-22",
+        "maintenance": "2021-06-22",
+        "support": "2023-06-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-743796.html"
+      },
+      "9.10": {
+        "released": null,
+        "sale": "2019-10-09",
+        "maintenance": "2020-10-08",
+        "support": "2022-10-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-742275.html"
+      },
+      "9.6": {
+        "released": null,
+        "sale": "2019-09-13",
+        "maintenance": "2020-09-12",
+        "support": "2022-09-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-742130.html"
+      },
+      "9.7": {
+        "released": null,
+        "sale": "2017-08-25",
+        "maintenance": "2018-08-25",
+        "support": "2022-08-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-738646.html"
+      },
+      "9.2": {
+        "released": null,
+        "sale": "2017-08-25",
+        "maintenance": "2018-08-25",
+        "support": "2022-08-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-738647.html"
+      },
+      "9.1": {
+        "released": null,
+        "sale": "2017-08-25",
+        "maintenance": "2018-08-25",
+        "support": "2022-08-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-738645.html"
+      },
+      "9.5": {
+        "released": null,
+        "sale": "2016-05-03",
+        "maintenance": "2017-05-03",
+        "support": "2021-05-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-5500-series-next-generation-firewalls/eos-eol-notice-c51-736011.html"
+      },
+      "9.12": {
+        "released": null,
+        "sale": "2023-02-27",
+        "maintenance": "2024-02-27",
+        "support": "2026-02-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-appliance-9-12x-eol.html"
+      },
+      "9.9": {
+        "released": null,
+        "sale": "2020-05-22",
+        "maintenance": "2021-05-22",
+        "support": "2023-05-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-743169.html"
+      },
+      "9.4": {
+        "released": null,
+        "sale": "2018-08-28",
+        "maintenance": "2019-08-28",
+        "support": "2021-08-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-740361.html"
+      }
+    },
+    "bulletins": {
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-release-9-23-asav-asdm-release-7-23-eol.html": {
+        "branch": "9.23",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.23(x), Adaptive Security Virtual Appliance (ASAv) Release 9.23(x) and Adaptive Security Device Manager (ASDM) Release 7.23(x)",
+        "sale": "2026-09-29",
+        "maintenance": "2027-09-29",
+        "support": "2028-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-9-16-asav-asdm-release-7-16-eol.html": {
+        "branch": "9.16",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.16(x), Adaptive Security Virtual Appliance (ASAv) Release 9.16(x) and Adaptive Security Device Manager (ASDM) Release 7.16(x)",
+        "sale": "2025-11-18",
+        "maintenance": "2026-11-18",
+        "support": "2027-11-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-9-18-asav-asdm-release-7-18-eol.html": {
+        "branch": "9.18",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.18(x), Adaptive Security Virtual Appliance (ASAv) Release 9.18(x) and Adaptive Security Device Manager (ASDM) Release 7.18(x)",
+        "sale": "2025-11-18",
+        "maintenance": "2026-11-18",
+        "support": "2027-11-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/asa-asav-asdm-release-eol.html": {
+        "branch": "9.19",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.19(x), Adaptive Security Virtual Appliance (ASAv) Release 9.19(x) and Adaptive Security Device Manager (ASDM) Release 7.19(x)",
+        "sale": "2025-11-18",
+        "maintenance": "2026-05-18",
+        "support": "2027-11-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-appliance-9-17x-eol.html": {
+        "branch": "9.17",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.17(x), Adaptive Security Virtual Appliance (ASAv) Release 9.17(x) and Adaptive Security Device Manager (ASDM) Release 7.17(x)",
+        "sale": "2023-12-22",
+        "maintenance": "2024-12-21",
+        "support": "2025-12-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-appliance-eol.html": {
+        "branch": "9.14",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.14(x), Adaptive Security Virtual Appliance (ASAv) Release 9.14(x) and Adaptive Security Device Manager (ASDM) Release 7.14(x)",
+        "sale": "2022-03-02",
+        "maintenance": "2023-03-02",
+        "support": "2025-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-eol.html": {
+        "branch": "9.8",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.8(x), Adaptive Security Virtual Appliance (ASAv) Release 9.8(x) and Adaptive Security Device Manager (ASDM) Release 7.8(x)",
+        "sale": "2022-02-04",
+        "maintenance": "2023-02-04",
+        "support": "2025-02-28"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-744625.html": {
+        "branch": "9.15",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.15(x), Adaptive Security Virtual Appliance (ASAv) Release 9.15(x) and Adaptive Security Device Manager (ASDM) Release 7.15(x)",
+        "sale": "2021-06-17",
+        "maintenance": "2022-06-17",
+        "support": "2024-06-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-743796.html": {
+        "branch": "9.13",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.13(x), Adaptive Security Virtual Appliance (ASAv) Release 9.13(x) and Adaptive Security Device Manager (ASDM) Release 7.13(x)",
+        "sale": "2020-06-22",
+        "maintenance": "2021-06-22",
+        "support": "2023-06-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-742275.html": {
+        "branch": "9.10",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.10(x) Adaptive Security Virtual Appliance (ASAv) Release 9.10(x) and Adaptive Security Device Manager (ASDM) Release 7.10(x)",
+        "sale": "2019-10-09",
+        "maintenance": "2020-10-08",
+        "support": "2022-10-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-742130.html": {
+        "branch": "9.6",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Release 9.6(x), Adaptive Security Virtual Appliance (ASAv) Release 9.6(x) and Adaptive Security Device Manager (ASDM) Release 7.6(x)",
+        "sale": "2019-09-13",
+        "maintenance": "2020-09-12",
+        "support": "2022-09-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-738646.html": {
+        "branch": "9.7",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Software Release 9.7 and Cisco Adaptive Security Device Manager (ASDM) Software Release 7.7",
+        "sale": "2017-08-25",
+        "maintenance": "2018-08-25",
+        "support": "2022-08-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-738647.html": {
+        "branch": "9.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Software Release 9.2 and Adaptive Security Device Manager (ASDM) 7.2",
+        "sale": "2017-08-25",
+        "maintenance": "2018-08-25",
+        "support": "2022-08-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-738645.html": {
+        "branch": "9.1",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Software Release 9.1 and Adaptive Security Device Manager (ASDM) 7.1",
+        "sale": "2017-08-25",
+        "maintenance": "2018-08-25",
+        "support": "2022-08-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-5500-series-next-generation-firewalls/eos-eol-notice-c51-736011.html": {
+        "branch": "9.5",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) Software Release 9.5",
+        "sale": "2016-05-03",
+        "maintenance": "2017-05-03",
+        "support": "2021-05-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/adaptive-security-appliance-9-12x-eol.html": {
+        "branch": "9.12",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance(ASA) 9.12(x) Adaptive Security Virtual Appliance(ASAv) 9.12(x) and Adaptive Security Device Manager(ASDM) 7.12(x)",
+        "sale": "2023-02-27",
+        "maintenance": "2024-02-27",
+        "support": "2026-02-28"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-743169.html": {
+        "branch": "9.9",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance(ASA) 9.9(x), Adaptive Security Virtual Appliance(ASAv) 9.9(x) and Adaptive Security Device Manager(ASDM) 7.9(x)",
+        "sale": "2020-05-22",
+        "maintenance": "2021-05-22",
+        "support": "2023-05-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/security/asa-firepower-services/eos-eol-notice-c51-740361.html": {
+        "branch": "9.4",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco Adaptive Security Appliance (ASA) 9.4(x) and Cisco Adaptive Security Device Manager (ASDM) 7.4(x)",
+        "sale": "2018-08-28",
+        "maintenance": "2019-08-28",
+        "support": "2021-08-31"
+      }
+    }
   }
 }

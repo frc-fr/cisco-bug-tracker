@@ -18,10 +18,10 @@ def test_both_languages_have_the_same_keys():
 
 def test_used_keys_exist():
     used = set(re.findall(r'\bt\("([\w.]+)"', (SITE / "app.js").read_text(encoding="utf-8")))
-    used |= set(re.findall(r'data-(?:text|html|label|placeholder)="([\w.]+)"', (SITE / "index.html").read_text(encoding="utf-8")))
-    dynamic = {"help.bugs", "help.upgrade", "help.news", "help.hardware", "detail.fixedSince", "detail.fixedIn",
-               "detail.knownIn", "detail.openSince", "detail.dropped", "detail.noMention", "hardware.model", "hardware.family",
-               "hardware.count", "hardware.first", "hardware.last", "option.branchActive", "option.branchInactive",
+    used |= set(re.findall(r'data-(?:text|html|label|placeholder|title)="([\w.]+)"', (SITE / "index.html").read_text(encoding="utf-8")))
+    dynamic = {"support.source.iosxe", "support.source.ios", "support.source.nxos", "support.source.iosxr", "support.source.asa", "support.source.ftd", "help.bugs", "help.upgrade", "help.news", "help.hardware", "detail.fixedSince", "detail.fixedIn",
+               "detail.knownIn", "detail.openSince", "detail.dropped", "detail.noMention", "hardware.model", "hardware.status", "hardware.support",
+               "hardware.first", "hardware.last", "option.branchActive", "option.branchInactive",
                "copy.bug", "copy.status", "copy.families", "copy.description", "copy.fix", "count.one", "count.none", "support.until", "support.securityOnly", "support.endedOn",
                "support.ended", "support.undated", "support.titleDated", "support.noteDated", "option.branchUntil", "option.branchEnded"}
     assert used - keys("fr") == set()

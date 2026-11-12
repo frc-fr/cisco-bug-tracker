@@ -39,7 +39,14 @@ const system = (() => {
   return wanted in SYSTEMS ? wanted : DEFAULT_SYSTEM;
 })();
 const systemName = SYSTEMS[system];
-const state = { view: "bugs", shown: PAGE_SIZE, reading: false, ...defaultFilters() };
+const state = { view: "bugs", shown: PAGE_SIZE, reading: false, hardware: "all", ...defaultFilters() };
+// The status tiles of the Hardware tab, as forti-bug-tracker shows them.
+const HARDWARE_STATES = {
+  all: { label: t("hardware.all"), tone: "all" },
+  none: { label: t("hardware.noEnd"), tone: "fixed" },
+  announced: { label: t("hardware.announced"), tone: "change" },
+  stopped: { label: t("hardware.stopped"), tone: "potential" },
+};
 let versions = [];
 let families = [];
 let models = [];
@@ -48,6 +55,10 @@ let documents = [];
 let bugs = [];
 let changes = [];
 let summaries = [];
+let latestBranch = "";
+let hardware = { models: {}, general: [] };
+let familyOf = new Map();
+const modelFamily = (model) => familyOf.get(model) || (hardware.models[model] ? hardware.models[model].family : "");
 let branches = {};
 let lifecycle = null;
 let knownIds = {};
@@ -468,7 +479,7 @@ function renderSupport() {
     return `<a class="support-branch" href="#${escapeHtml(params.toString())}"${current}><strong>${escapeHtml(nameOf(entry))}</strong>${date}</a>`;
   });
   const note = lifecycle
-    ? t("support.noteDated", { url: escapeHtml(lifecycle.source), policy: escapeHtml(lifecycle.policy || lifecycle.source) })
+    ? t("support.noteDated", { url: escapeHtml(lifecycle.source), policy: escapeHtml(lifecycle.policy || lifecycle.source), source: t(`support.source.${system}`) })
     : t("support.note");
   $("support").innerHTML = `<h2>${t(lifecycle ? "support.titleDated" : "support.title")}</h2><div class="support-list">${links.join("")}</div><p class="muted">${note}</p>`;
 }
@@ -555,34 +566,118 @@ function clearPanels() {
   $("notices").innerHTML = "";
   $("version-info").innerHTML = "";
   $("upgrade-notices").innerHTML = "";
+  $("recommendation").innerHTML = "";
   $("more").hidden = true;
+}
+
+/** "EX4300-32F : " before a fact on part of a model, nothing when it covers the model itself. */
+function variantPrefix(variants, model) {
+  return variants.length === 1 && variants[0] === model ? "" : `${variants.join(", ")} : `;
+}
+
+/** The hardware rows: the models of the system, what the notes and Cisco say of them. */
+function hardwareRows() {
+  const today = new Date().toISOString().slice(0, 10);
+  const cited = new Map(summaries.map((summary) => [summary.model, summary]));
+  return Object.entries(hardware.models).map(([model, entry]) => ({
+    model, entry, family: modelFamily(model), summary: cited.get(model), status: hardwareStatus(entry, today, latestBranch),
+  }));
+}
+
+function statusText(group, model) {
+  const date = group.endOfMaintenance && formatDate(group.endOfMaintenance);
+  const text = group.lastSoftware
+    ? t(group.stopped ? "hardware.stoppedAfter" : "hardware.lastBranch", { branch: group.lastSoftware })
+    : group.stopped ? t("hardware.maintenanceEnded", { date })
+    : date ? t("hardware.maintenanceUntil", { date })
+      : group.ended ? t("hardware.supportEnded") : t("hardware.announced");
+  return `${variantPrefix(group.variants, model)}${text}`;
+}
+
+function supportText(group, model) {
+  if (!group.endOfSupport) return "";
+  const date = formatDate(group.endOfSupport);
+  return `${variantPrefix(group.variants, model)}${t(group.ended ? "hardware.endedOn" : "hardware.until", { date })}`;
+}
+
+function statusCell({ model, status }) {
+  if (status.key === "none") return `<span class="badge fixed">${t("hardware.noEnd")}</span>`;
+  return status.groups.map((group) => {
+    const tone = group.stopped || group.ended ? "potential" : "change";
+    const url = group.page || hardware.eol_source;
+    const title = group.bulletin ? ` title="${escapeHtml(t("hardware.bulletin", { id: group.bulletin }))}"` : "";
+    return `<a class="badge ${tone}" href="${escapeHtml(url)}" target="_blank" rel="noopener"${title}>${escapeHtml(statusText(group, model))}</a>`;
+  }).join(" ");
+}
+
+function supportCell({ model, status }) {
+  const parts = status.groups.filter((group) => group.endOfSupport).map((group) => {
+    const tone = group.ended ? "potential" : "fixed";
+    return `<span class="badge ${tone}">${escapeHtml(supportText(group, model))}</span>`;
+  });
+  return parts.length ? parts.join(" ") : "—";
+}
+
+function modelLink(model, cited) {
+  // A model the notes never name links to its family, when some bug names that family.
+  if (!cited && !families.includes(modelFamily(model))) return escapeHtml(model);
+  const params = new URLSearchParams({ system, model: cited ? `m:${model}` : `f:${modelFamily(model)}` });
+  return `<a href="#${escapeHtml(params.toString())}">${escapeHtml(model)}</a>`;
+}
+
+// No column for a suggested release: Palo Alto Networks publishes it for customers only.
+const HARDWARE_COLUMNS = ["model", "first", "last", "status", "support"];
+
+function hardwareTable(rows) {
+  return [HARDWARE_COLUMNS.map((key) => t(`hardware.${key}`, { system: systemName })), ...rows.map((row) => [
+    row.model,
+    row.summary ? row.summary.first : "",
+    row.summary ? row.summary.last : "",
+    row.status.key === "none" ? t("hardware.noEnd") : row.status.groups.map((group) => statusText(group, row.model)).join(" ; "),
+    row.status.groups.map((group) => supportText(group, row.model)).filter(Boolean).join(" ; "),
+  ])];
 }
 
 function renderHardware() {
   const terms = searchTerms($("hardware-query").value);
-  const listed = summaries
-    .map((entry) => ({ ...entry, family: families[entry.family] }))
-    .filter(({ model, family }) => terms.every((term) => `${model} ${family}`.toLowerCase().includes(term)))
+  const matching = hardwareRows().filter(({ model, family, entry }) => {
+    const names = [model, family, ...entry.eol.flatMap(([variants]) => variants), ...entry.suggested.map(([platform]) => platform)];
+    return terms.every((term) => names.join(" ").toLowerCase().includes(term));
+  });
+  const counts = { all: matching.length };
+  for (const row of matching) counts[row.status.key] = (counts[row.status.key] || 0) + 1;
+  $("chips").innerHTML = Object.entries(HARDWARE_STATES)
+    .map(([key, { label, tone }]) => tile("hardware", key, label, tone, counts[key], state.hardware === key)).join("");
+  const listed = matching
+    .filter((row) => state.hardware === "all" || row.status.key === state.hardware)
     .sort((a, b) => a.model.localeCompare(b.model, "fr", { numeric: true }));
-  const columns = ["model", "family", "count", "first", "last"];
-  copiedTable = () => [columns.map((key) => t(`hardware.${key}`)), ...listed.map((entry) => [entry.model, entry.family, entry.count, entry.first, entry.last])];
+  copiedTable = () => hardwareTable(listed);
   $("copy").hidden = !listed.length;
   $("copy").textContent = t("list.copy");
-  $("chips").innerHTML = "";
-  const rows = listed.map((entry) => {
-    const filter = new URLSearchParams({ system, model: `m:${entry.model}` });
-    const family = new URLSearchParams({ system, model: `f:${entry.family}` });
-    return `<tr><th scope="row"><a href="#${escapeHtml(filter.toString())}">${escapeHtml(entry.model)}</a></th>
-      <td><a href="#${escapeHtml(family.toString())}">${escapeHtml(entry.family)}</a></td><td>${formatNumber(entry.count)}</td>
-      <td>${escapeHtml(entry.first)}</td><td>${escapeHtml(entry.last)}</td></tr>`;
-  });
+  const rows = listed.map((row) => `<tr><th scope="row">${modelLink(row.model, Boolean(row.summary))}</th>
+      <td>${row.summary ? escapeHtml(row.summary.first) : "—"}</td><td>${row.summary ? escapeHtml(row.summary.last) : "—"}</td>
+      <td>${statusCell(row)}</td><td>${supportCell(row)}</td></tr>`);
   $("results").innerHTML = rows.length
-    ? `<table class="hardware-table"><thead><tr>${columns.map((key) => `<th scope="col">${t(`hardware.${key}`)}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table>`
+    ? `<table class="hardware-table"><thead><tr>${HARDWARE_COLUMNS.map((key) => `<th scope="col">${t(`hardware.${key}`, { system: systemName })}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table>`
     : "";
-  $("count").textContent = rows.length ? t("hardware.listed", { count: formatNumber(rows.length) }) : t("hardware.none");
+  $("count").textContent = rows.length ? "" : t("hardware.none");
   clearPanels();
   $("news-summary").innerHTML = "";
   writeHash();
+}
+
+/** What Cisco says of the selected model, above the bugs. */
+function renderRecommendation() {
+  const model = state.model.startsWith("m:") ? state.model.slice(2) : "";
+  const row = model && hardware.models[model] ? hardwareRows().find((candidate) => candidate.model === model) : null;
+  if (!row || row.status.key === "none") {
+    $("recommendation").innerHTML = "";
+    return;
+  }
+  const parts = [t("advice.model", { model: escapeHtml(model) }), statusCell(row)];
+  const support = supportCell(row);
+  if (support !== "—") parts.push(support);
+  $("recommendation").innerHTML = parts.map((part) => `<span>${part}</span>`).join("");
 }
 
 function renderNews() {
@@ -628,6 +723,7 @@ function render() {
   renderChips(counts);
   renderNotices();
   renderVersionInfo();
+  renderRecommendation();
   renderUpgradeNotices();
 
   const waiting = state.view === "upgrade" && (!state.from || !state.version);
@@ -772,7 +868,9 @@ function bindEvents() {
   $("chips").addEventListener("click", (event) => {
     const chip = event.target.closest("button");
     if (!chip) return;
-    if (chip.dataset.scope) {
+    if (chip.dataset.hardware) {
+      update({ hardware: chip.dataset.hardware });
+    } else if (chip.dataset.scope) {
       update({ scope: chip.dataset.scope });
     } else if (chip.dataset.group) {
       update({ group: chip.dataset.group });
@@ -868,6 +966,10 @@ async function start() {
     return;
   }
   summaries = modelSummaries(models, bugs, versions);
+  latestBranch = versions.length ? versions[versions.length - 1].branch : "";
+  hardware = index.hardware || hardware;
+  familyOf = new Map(models.map(([model, family]) => [model, families[family]]));
+  $("recommended-note").innerHTML = t("hardware.recommended");
 
   for (const key of ["version", "from", "model"]) {
     combos[key] = new Combobox($(key), (value) => update({ [key]: value }));
