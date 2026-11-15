@@ -98,8 +98,8 @@ test("copied tables are tab-separated", () => {
 
 test("a Cisco model is stopped once its software maintenance is over", () => {
   const entry = { eol: [[["N9K-C9372PX"], "c51-739451", null, "2023-02-28", "p", "2019-02-03"]], suggested: [] };
-  assert.strictEqual(logic.hardwareStatus(entry, "2026-11-12").key, "stopped");
+  assert.strictEqual(logic.hardwareStatus(entry, "", "2026-11-12").key, "stopped");
   const later = { eol: [[["C9300-24T"], "c51-1", null, "2031-01-31", "p", "2028-01-31"]], suggested: [] };
-  assert.strictEqual(logic.hardwareStatus(later, "2026-11-12").key, "announced");
-  assert.strictEqual(logic.hardwareStatus({ eol: [], suggested: [] }, "2026-11-12").key, "none");
+  assert.strictEqual(logic.hardwareStatus(later, "", "2026-11-12").key, "announced");
+  assert.strictEqual(logic.hardwareStatus({ eol: [], suggested: [] }, "", "2026-11-12").key, "none");
 });

@@ -59,8 +59,8 @@ function firstFixes(events, versions) {
 }
 
 /**
- * Support of a branch on a date. With support dates (IOS XE, from endoflife.date): supported
- * until the end of security support; a branch missing from the table ended if it is older than
+ * Support of a branch on a date. With support dates (Cisco's announcements, tables): supported
+ * until the last date of support; a branch missing from the table ended if it is older than
  * those listed, and is not dated yet if newer. Without dates: active when one of its notes was
  * revised in the last year.
  */
@@ -197,7 +197,15 @@ function compareBranches(a, b) {
   return majorA - majorB || minorA - minorB;
 }
 
-function hardwareStatus(entry, today, latestBranch = "") {
+/**
+ * What Cisco says of a model's end of life, as groups of variants. A bulletin gives
+ * the end of software maintenance and the last date of support; the Threat Defense
+ * guide also gives the last release of a Firepower platform. A group is "stopped"
+ * when its last release comes before the latest branch or its maintenance is over,
+ * "ended" when its support is over. The model is "stopped" as soon as one of its
+ * groups is, or "announced" when it only has announcements, or "none".
+ */
+function hardwareStatus(entry, latestBranch, today) {
   const groups = entry.eol.map(([variants, bulletin, lastSoftware, endOfSupport, page, endOfMaintenance]) => ({ variants, bulletin, lastSoftware, endOfSupport, page, endOfMaintenance }));
   for (const group of groups) {
     // The Threat Defense guide gives the last release of a platform: past it, no newer branch runs on it.

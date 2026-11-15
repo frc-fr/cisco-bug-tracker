@@ -4,32 +4,19 @@ Site statique de suivi des bugs Cisco et de leurs corrections, construit à part
 publiques de Cisco : IOS, IOS XE, IOS XR, NX-OS, Secure Firewall ASA et Secure Firewall Threat
 Defense (FTD), pour les gammes de routeurs, de commutateurs et de pare-feu.
 
+Site : https://frc-fr.github.io/cisco-bug-tracker/
+
 Ce projet est indépendant. Il n'est pas affilié à Cisco Systems.
 Les informations sont fournies à titre indicatif : vérifiez toujours la documentation officielle.
-
-## Gammes suivies
-
-| Système | Gammes |
-|---|---|
-| IOS XE | ISR 1000, ISR 4000, Catalyst 8200, 8300, 8500, 8000V, ASR 920, ASR 1000, Catalyst 9200, 9300, 9400, 9500, 9600, Catalyst 3850 (16.9 à 16.12) |
-| IOS | Plateformes IOS 15 M&T (Cross Platform Release Notes 15.8(3)M, 15.9(3)M), Catalyst 2960-X, Catalyst 1000 |
-| IOS XR | ASR 9000, NCS 540, NCS 560, NCS 5500, Cisco 8000 |
-| NX-OS | Nexus 3000, Nexus 7000, Nexus 9000 (mode NX-OS) |
-| ASA | Secure Firewall ASA (9.12 et suivantes) |
-| FTD | Secure Firewall Threat Defense (6.4 et suivantes) |
-
-La liste est dans `sources/catalog.json` : une page « Release Notes » par gamme, et pour chaque
-adresse de note le système et la gamme qu'elle documente. Ajouter une gamme, c'est y ajouter sa page
-et le motif de ses notes.
 
 ## Fonctionnalités
 
 - Recherche par identifiant de bug (CSCwu11498) ou mots-clés, par version et par matériel
 - Un onglet par système, chacun avec ses propres données
-- Mise en avant des branches actives, sans masquer les autres
+- Mise en avant des branches supportées, sans masquer les autres
 - Comparaison de deux versions : bugs corrigés, nouveaux problèmes ouverts, problèmes toujours
   présents, et sections de mise à niveau à lire dans les notes de la version cible
-- Liste des modèles cités dans les titres des bugs
+- Onglet Matériel : versions dont les notes citent chaque modèle, statut et fin de support selon Cisco
 - Suivi des nouveautés, avec un flux RSS/Atom
 - Interface en français et en anglais
 
@@ -44,13 +31,11 @@ Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enr
   Un rebuild (17.12.3a, 10.3(4a)M, 9.22(1.1), 7.4.2.1) ne suit que sa version de maintenance.
 - La famille d'un bug est celle des notes qui le listent. Un modèle précis n'est connu que lorsque le
   titre du bug le cite. Le filtre matériel est donc inclusif : avec un modèle choisi, il garde les bugs
-  qui le citent et ceux de sa famille qui ne citent aucun modèle.
-- Dates de support : pour IOS XE, fin de maintenance, fin de support et branches LTS proviennent
-  d'[endoflife.date](https://endoflife.date/cisco-ios-xe), qui les recense d'après les bulletins de
-  Cisco. NX-OS : tableau du [Cisco NX-OS Software Lifecycle Support Statement](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/nx-os-software/guide_c07-658595.html).
+  qui le citent, ceux qui ne citent que sa famille et ceux qui ne citent aucun matériel.
+- Dates de support, toutes publiées par Cisco. IOS XE, IOS XR et ASA : annonces End-of-Sale and
+  End-of-Life de leur page « EoS/EoL notices », une par branche, chacune lue une fois. NX-OS : tableau du [Cisco NX-OS Software Lifecycle Support Statement](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/nx-os-software/guide_c07-658595.html).
   FTD : tableaux du [Secure Firewall Threat Defense Compatibility Guide](https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/compatibility/threat-defense-compatibility.html),
-  avec la dernière version FTD de chaque plateforme Firepower ou ASA arrêtée. IOS XR et ASA : annonces
-  End-of-Sale and End-of-Life de leur page « EoS/EoL notices », chacune lue une fois. Une branche pas
+  avec la dernière version FTD de chaque plateforme Firepower ou ASA arrêtée. Une branche pas
   encore annoncée reste supportée, sans date. IOS : sans table publiée, une branche est dite active quand
   l'une de ses notes a été révisée dans les douze derniers mois. Le site le précise.
 - Les avis de sécurité sont écartés et les références CVE retirées des titres.
@@ -61,6 +46,23 @@ Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enr
 
 ## Sources
 
+### Gammes suivies
+
+| Système | Gammes |
+|---|---|
+| IOS XE | ISR 1000, ISR 4000, Catalyst 8200, 8300, 8500, 8000V, ASR 920, ASR 1000, Catalyst 9200, 9300, 9400, 9500, 9600, Catalyst 3850 (16.9 à 16.12) |
+| IOS | Plateformes IOS 15 M&T (Cross Platform Release Notes 15.8(3)M, 15.9(3)M), Catalyst 2960-X, Catalyst 1000 |
+| IOS XR | ASR 9000, NCS 540, NCS 560, NCS 5500, Cisco 8000 |
+| NX-OS | Nexus 3000, Nexus 7000, Nexus 9000 (mode NX-OS) |
+| ASA | Secure Firewall ASA (9.12 et suivantes) |
+| FTD | Secure Firewall Threat Defense (6.4 et suivantes) |
+
+La liste est dans `sources/catalog.json` : une page « Release Notes » par gamme, et pour chaque
+adresse de note le système et la gamme qu'elle documente. Ajouter une gamme, c'est y ajouter sa page
+et le motif de ses notes.
+
+### Documents lus
+
 - Release Notes sur `www.cisco.com/c/en/us/td/docs/`, dont le robots.txt autorise les robots, comme
   les pages « Release Notes » de chaque gamme sous `/c/en/us/support/`. Les notes sont lues dans leur
   version HTML : leurs tableaux de bugs y sont structurés, et chaque bug renvoie à la page exacte qui le
@@ -69,10 +71,10 @@ Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enr
   en a une : une requête HEAD sur ce PDF indique si la note a changé, et seule une note modifiée est
   téléchargée à nouveau. Les notes inchangées depuis plus de 18 mois ne sont vérifiées qu'une fois par
   semaine. Deux secondes séparent deux requêtes.
-- Dates de support d'IOS XE : API d'endoflife.date (`/api/v1/products/cisco-ios-xe`), dont le
-  robots.txt autorise les robots, lue à chaque collecte et enregistrée dans `sources/lifecycle.json`.
-  Si elle ne répond pas, les dernières dates sont gardées. Les pages Cisco (NX-OS, FTD, annonces IOS XR et
-  ASA) sont lues à chaque collecte, dans le même fichier ; une page illisible garde ses dernières dates.
+- Dates de support : pages Cisco (NX-OS, FTD, listes d'annonces IOS XE, IOS XR et ASA) lues à chaque
+  collecte et enregistrées dans `sources/lifecycle.json` ; une page illisible garde ses dernières dates.
+  IOS XE : Cisco annonce chaque branche à son tour (16.12, puis 17.2 à 17.18) ; une branche plus ancienne
+  que la dernière annoncée et absente de la liste (17.1) est terminée.
 - Matériel : pages « EoS/EoL notice listing » des gammes suivies, listées dans `sources/hardware.json`
   avec leurs familles, relues une fois par semaine. Chaque bulletin « End-of-Sale and End-of-Life »
   matériel n'est lu qu'une fois : jalons « HW » (fin de vente, fin des versions de maintenance
@@ -86,9 +88,16 @@ Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enr
 ## Mise à jour
 
 Un traitement GitHub Actions est lancé du lundi au vendredi à 9 h 15, 14 h 15 et 19 h 00, heure de
-Paris, et à la demande. Cet horaire est décrit dans `sources/schedule.yml`, que le site lit pour
-l'afficher. Il collecte, extrait, contrôle, puis publie le site sur GitHub Pages. Si
-un contrôle échoue, le site garde ses dernières données valides.
+Paris, et sur lancement manuel. Cet horaire est décrit dans `sources/schedule.yml`, que le site lit pour
+l'afficher. Il collecte, extrait, contrôle, puis publie le site sur GitHub Pages. Si un contrôle échoue, le
+site garde ses dernières données valides.
+
+## Liens utiles chez Cisco
+
+- [Bug Search Tool](https://bst.cloudapps.cisco.com/bugsearch/) : tous les bugs, compte requis
+- [Support et documentation](https://www.cisco.com/c/en/us/support/index.html), dont les Release Notes de chaque gamme
+- [Politique de fin de vie](https://www.cisco.com/c/en/us/products/eos-eol-policy.html) : définition des jalons des bulletins End-of-Sale and End-of-Life
+- [Téléchargement des logiciels](https://software.cisco.com/download/home) : compte requis
 
 ## Développement
 

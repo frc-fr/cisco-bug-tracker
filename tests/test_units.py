@@ -4,7 +4,6 @@ from datetime import datetime, timezone
 from ciscobugs import collect
 from ciscobugs.extract import diff_releases
 from ciscobugs.build import branch_lifecycle
-from ciscobugs.lifecycle import parse_product
 from ciscobugs.normalize import families_in, family_of_model, models_in
 from ciscobugs.parser import parse_document, parse_page, section_status
 from ciscobugs.versions import find_branch, find_versions, parts, sort_versions, train_of, version_key
@@ -154,14 +153,16 @@ def test_change_log():
 
 
 def test_support_dates():
-    releases = [{"name": f"17.{n}", "releaseDate": "2023-07-28", "eoasFrom": "2026-03-30", "eolFrom": "2027-09-30", "isLts": n == 12}
-                for n in range(12, 18)]
-    product = parse_product({"result": {"releases": releases, "links": {"html": "h", "releasePolicy": "p"}}})
-    assert product["branches"]["17.12"] == {"released": "2023-07-28", "maintenance": "2026-03-30", "support": "2027-09-30", "lts": True}
-    dates = branch_lifecycle("iosxe", ["16.9", "17.12", "26.1"], product)
+    # IOS XE: every branch is announced in turn, so the list reads as a complete table.
+    announced = {"complete": True, "branches": {
+        "16.12": {"released": None, "maintenance": "2022-02-17", "support": "2024-02-29", "lts": False, "page": "p"},
+        "17.12": {"released": None, "maintenance": "2026-03-30", "support": "2028-03-31", "lts": False, "page": "p"},
+        "17.18": {"released": None, "maintenance": "2028-04-29", "support": "2030-03-30", "lts": False, "page": "p"}}}
+    dates = branch_lifecycle("iosxe", ["16.9", "17.1", "17.12", "26.1"], announced)
     assert dates["16.9"] == {"listed": False, "newer": False}
+    assert dates["17.1"] == {"listed": False, "newer": False}
     assert dates["26.1"] == {"listed": False, "newer": True}
-    assert dates["17.12"]["listed"] and dates["17.12"]["lts"]
+    assert dates["17.12"]["listed"] and dates["17.12"]["support"] == "2028-03-31"
 
 
 def test_caption_inside_the_table():

@@ -4,7 +4,7 @@ title: Règles de cisco-bug-tracker
 description: Règles communes aux bug trackers et particularités des systèmes Cisco.
 resource: https://github.com/frc-fr/cisco-bug-tracker
 tags: [rules, cisco, ios, ios-xe, ios-xr, nx-os, asa, ftd, bug-tracker]
-timestamp: 2026-11-09T19:00:00+01:00
+timestamp: 2026-11-15T20:00:00+01:00
 product: IOS, IOS XE, IOS XR, NX-OS, Secure Firewall ASA, Secure Firewall Threat Defense
 site: https://frc-fr.github.io/cisco-bug-tracker/
 ---
@@ -21,7 +21,8 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
   - `collect` : met à jour l'état des sources et télécharge ce qui a changé.
   - `extract` : lit les documents en cache ; échoue au moindre avertissement.
   - `build` : croise les données et génère `dist/`.
-- Modules : `collect`, `parser`, `extract`, `normalize` (matériel), `lifecycle` (dates de support), `build`, `feed`, `cli`.
+- Modules communs : `collect`, `parser`, `extract`, `normalize` (matériel), `build`, `feed`, `cli`.
+- Modules propres au fournisseur (dates de support, fin de vie du matériel, sources annexes) : nommés d'après ce qu'ils lisent, décrits dans ses particularités.
 
 ### Répertoires
 
@@ -63,7 +64,7 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Chaque fait renvoie à la page officielle exacte qui le porte.
 - Textes des bugs laissés en anglais, tels que publiés.
 - Statuts déduits des notes, jamais inventés ; « Inconnu » expliqué et masqué par défaut.
-- Un modèle cité ne veut pas dire « seul ce modèle est touché ». Filtre matériel inclusif.
+- Un modèle cité ne veut pas dire « seul ce modèle est touché ». Filtre matériel inclusif : avec un modèle choisi, bugs qui le citent, ceux qui ne citent que sa famille et ceux qui ne citent aucun matériel.
 - Un bug à la fois correction et changement de comportement n'est compté qu'une fois.
 - Une version annoncée mais pas encore publiée est marquée « non publiée ».
 - Toutes les branches restent consultables ; les branches supportées sont mises en avant.
@@ -91,18 +92,20 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 
 ## Matériel et nouveautés
 
-- Onglet Matériel : pastilles de statut (« Tous » en premier, puis « Plus dans la dernière branche » ou son équivalent).
-- Colonnes : Modèle, Première version, Dernière version, Statut <logiciel>, Version recommandée, Fin de support.
+- Onglet Matériel : pastilles « Tous », « Aucune fin annoncée », « Fin de vie annoncée », « Plus maintenu », dans cet ordre.
+- « Plus maintenu » : le fournisseur ne publie plus de version pour ce modèle (dernière version avant la dernière branche, fin de maintenance logicielle ou fin de support passée). La note de l'onglet dit laquelle.
+- Colonnes : Modèle, Première version, Dernière version, Statut <logiciel>, Version recommandée, Fin de support. Mêmes libellés partout.
+- Filtre « Modèle ou famille » ; un modèle qu'aucun bug ne cite renvoie vers sa famille.
 - Statut tiré d'une source officielle du fournisseur : il dit, sans le deviner, si le matériel est encore maintenu.
 - Fin de vie annoncée par référence : variantes affichées séparément, pièces détachées et modules écartés.
 - Pas de source : « Aucune fin annoncée », jamais « supporté ».
-- Version recommandée seulement si le fournisseur la publie sans compte ; sinon la colonne est absente, et la note dit pourquoi.
+- Version recommandée seulement si le fournisseur la publie sans compte ; sinon la colonne est absente, et la note dit pourquoi. Libellé fidèle au mot du fournisseur (« suggérée », « actuelles ») : ne pas affirmer plus que lui.
 - Rechercher : un modèle choisi affiche ce que le fournisseur dit de lui (statut, version recommandée, fin de support).
-- Quoi de neuf : cartes « Dernière version publiée », « Dernier document mis à jour », puis « Recommandée par <fournisseur> » si elle existe.
+- Quoi de neuf : cartes « Dernière version publiée », « Dernière note mise à jour », puis la version recommandée du fournisseur si elle existe, avec son mot (« Recommandée par Fortinet », « Suggérée par Juniper »).
 
 ## Design
 
-- Même structure et mêmes jetons de couleur dans les trois sites.
+- Même structure et mêmes jetons de couleur dans les cinq sites.
 - Couleur du fournisseur en touche seulement : bordure haute et nom du produit.
 - Contraste professionnel, rien qui « pique les yeux ».
 - Cohérence entre pages : mêmes pastilles partout, pas de tuiles géantes.
@@ -123,10 +126,12 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Mentions légales FR et EN, avec la liste des services et composants tiers.
 - Code sous AGPL 3.0 ou ultérieure ; contenus du fournisseur exclus.
 - README générique : rien de sensible ni de personnel.
+- Plan unique des README : Fonctionnalités, Ce que disent les notes, Sources, Mise à jour, Liens utiles chez <fournisseur>, Développement, Licence, Contact.
+- Plan unique des particularités de ce fichier : Logiciels (si plusieurs), Versions, Sources, Extraction, Matériel, Affichage, Citations.
 
-# Particularités Cisco
+# Particularités IOS, IOS XE, IOS XR, NX-OS, ASA et FTD
 
-## Six systèmes
+## Six logiciels
 
 - IOS, IOS XE, IOS XR, NX-OS, ASA, FTD : un onglet et des données par système.
 - Le sélecteur choisit un logiciel, jamais un matériel : libellé visible « Logiciel », nom complet en infobulle.
@@ -159,10 +164,10 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Pages HTML sans ETag ni Last-Modified : HEAD sur le PDF généré de la note pour savoir si elle a changé.
 - Note inchangée depuis plus de 18 mois : vérifiée une fois par semaine.
 - Bug Search Tool jamais interrogé : il demande un compte.
-- Dates de support IOS XE : endoflife.date (fin de maintenance, fin de support, LTS).
+- IOS XE : annonces End-of-Sale and End-of-Life des listes « ios-xe-17 » et « ios-xe-16 » (End of SW Maintenance Releases, Last Date of Support). Chaque branche est annoncée à son tour : une branche absente et plus ancienne que la dernière annoncée est terminée (17.1).
 - NX-OS : tableau du Cisco NX-OS Software Lifecycle Support Statement (EoSWM, EoVSS/LDoS ; la plus tardive des deux dates).
 - FTD : tableaux du Threat Defense Compatibility Guide ; dernière version FTD par plateforme Firepower/ASA (« Arrêt après »).
-- IOS XR, ASA : annonces End-of-Sale and End-of-Life de leur page « EoS/EoL notices », chacune lue une fois.
+- IOS XE, IOS XR, ASA : annonces End-of-Sale and End-of-Life de leur page « EoS/EoL notices », chacune lue une fois.
 - Liste d'annonces : une branche non annoncée reste supportée sans date, sauf si elle est plus ancienne que toutes les annoncées.
 - Lignes de modules (« Firepower 9300: SM-24… ») ignorées : le châssis continue avec d'autres modules.
 - IOS : pas de table Cisco. Branche « active » si une note a été révisée dans les 12 derniers mois, et le site le précise.
@@ -196,4 +201,8 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 # Citations
 
 [1] [robots.txt de www.cisco.com](https://www.cisco.com/robots.txt)
-[2] [endoflife.date Cisco IOS XE](https://endoflife.date/cisco-ios-xe)
+[2] [IOS XE EoS/EoL notices](https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xe-17/eos-eol-notice-listing.html)
+[3] [Cisco NX-OS Software Lifecycle Support Statement](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/nx-os-software/guide_c07-658595.html)
+[4] [Secure Firewall Threat Defense Compatibility Guide](https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/compatibility/threat-defense-compatibility.html)
+[5] [IOS XR EoS/EoL notices](https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xr-software/eos-eol-notice-listing.html)
+[6] [ASA EoS/EoL notices](https://www.cisco.com/c/en/us/products/security/asa-firepower-services/eos-eol-notice-listing.html)

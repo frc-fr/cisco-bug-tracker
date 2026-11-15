@@ -1,10 +1,9 @@
-"""Support dates of the branches, from endoflife.date, for the systems it covers.
+"""Support dates of the branches, from Cisco's own sources.
 
-Cisco publishes no single table of support dates. endoflife.date gathers those of
-IOS XE from Cisco's bulletins: release date, end of maintenance, end of security
-support, and the long-term (LTS) branches. Its robots.txt allows every robot.
-Read when the data is collected, never by the browser. An answer that no longer
-parses keeps the last dates.
+Cisco publishes no single table of support dates: a lifecycle statement for NX-OS,
+a compatibility guide for Threat Defense, and End-of-Sale and End-of-Life
+announcements, one per branch, for IOS XE, IOS XR and ASA. Read when the data is
+collected, never by the browser. A source that no longer parses keeps its last dates.
 """
 import json
 import logging
@@ -12,49 +11,14 @@ from pathlib import Path
 
 log = logging.getLogger(__name__)
 
-API = "https://endoflife.date/api/v1/products/{product}"
-PRODUCTS = {"iosxe": "cisco-ios-xe"}
-MINIMUM_BRANCHES = 5
-
-
-def parse_product(data: dict) -> dict:
-    """{page, policy, branches: {branch: {released, maintenance, support, lts}}}; raise if it looks wrong."""
-    result = data["result"]
-    branches = {}
-    for release in result["releases"]:
-        branches[release["name"]] = {
-            "released": release.get("releaseDate"),
-            "maintenance": release.get("eoasFrom"),
-            "support": release.get("eolFrom"),
-            "lts": bool(release.get("isLts")),
-        }
-    if len(branches) < MINIMUM_BRANCHES:
-        raise ValueError(f"only {len(branches)} branches")
-    links = result.get("links") or {}
-    return {"page": links.get("html"), "policy": links.get("releasePolicy"), "branches": branches}
-
 
 def load_lifecycle(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
 
 
-def update_lifecycle(path: Path, client) -> None:
-    """Refresh the dates; the Release Notes must not depend on this source."""
-    known = load_lifecycle(path)
-    for system, product in PRODUCTS.items():
-        try:
-            response = client.request("GET", API.format(product=product))
-            response.raise_for_status()
-            known[system] = {"source": f"https://endoflife.date/{product}", **parse_product(response.json())}
-        except (RuntimeError, ValueError, KeyError, OSError) as error:
-            log.error("%s: support dates kept as they were: %s", system, error)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(known, indent=2) + "\n", encoding="utf-8")
-
-
-# Cisco's own sources, for the systems endoflife.date does not cover. A table gives every
-# branch ("complete"); a list of end-of-life announcements only the branches announced so
-# far: a branch it does not name is still supported, unless it is older than all of them.
+# A table gives every branch ("complete"); a list of end-of-life announcements only the
+# branches announced so far: a branch it does not name is still supported, unless it is
+# older than all of them.
 import html as _html
 import re
 from datetime import datetime
@@ -64,11 +28,17 @@ from urllib.parse import urljoin
 NXOS_URL = "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/nx-os-software/guide_c07-658595.html"
 FTD_URL = "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/compatibility/threat-defense-compatibility.html"
 LISTINGS = {
-    "iosxr": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xr-software/eos-eol-notice-listing.html",
-    "asa": "https://www.cisco.com/c/en/us/products/security/asa-firepower-services/eos-eol-notice-listing.html",
+    "iosxe": ["https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xe-17/eos-eol-notice-listing.html",
+              "https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xe-16/eos-eol-notice-listing.html"],
+    "iosxr": ["https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xr-software/eos-eol-notice-listing.html"],
+    "asa": ["https://www.cisco.com/c/en/us/products/security/asa-firepower-services/eos-eol-notice-listing.html"],
 }
+# Cisco announces every IOS XE branch in turn, 16.12 then 17.2 to 17.18: one it does not
+# name and older than the newest announced has ended (17.1), as in a complete table.
+COMPLETE = {"iosxe"}
 # The branch an announcement is about: "IOS XR Software Release 25.1", "ASA) Release 9.19(x)", "Software Release 9.2 and".
 ANNOUNCED = {
+    "iosxe": re.compile(r"Cisco IOS XE (\d+\.\d+)\.x\b"),
     "iosxr": re.compile(r"IOS XR Software Release (\d+\.\d+)\b"),
     "asa": re.compile(r"Adaptive Security Appliance\s?\(ASA\)\s*(?:Software\s+)?(?:Release\s+)?(9\.\d+)"),
 }
@@ -173,19 +143,20 @@ def update_announcements(system: str, known: dict, client) -> dict:
     """The branches of a list of end-of-life announcements; each announcement is read once."""
     state = known.get(system, {})
     bulletins = state.get("bulletins", {})
-    listing = client.request("GET", LISTINGS[system])
-    listing.raise_for_status()
-    for href, label in LINK.findall(listing.text):
-        title = text_of(label)
-        match = ANNOUNCED[system].search(title)
-        url = urljoin(LISTINGS[system], href)
-        if not match or re.search(r"-[a-z]{2}\.html$", url) or url in bulletins:
-            continue
-        response = client.request("GET", url)
-        if response.status_code != 200:
-            log.error("%s returned %s", url, response.status_code)
-            continue
-        bulletins[url] = {"branch": match.group(1), "title": title, **parse_announcement(response.text)}
+    for address in LISTINGS[system]:
+        listing = client.request("GET", address)
+        listing.raise_for_status()
+        for href, label in LINK.findall(listing.text):
+            title = text_of(label)
+            match = ANNOUNCED[system].search(title)
+            url = urljoin(address, href)
+            if not match or re.search(r"-[a-z]{2}\.html$", url) or url in bulletins:
+                continue
+            response = client.request("GET", url)
+            if response.status_code != 200:
+                log.error("%s returned %s", url, response.status_code)
+                continue
+            bulletins[url] = {"branch": match.group(1), "title": title, **parse_announcement(response.text)}
     branches: Dict[str, dict] = {}
     for url, bulletin in bulletins.items():
         entry = {"released": None, "sale": bulletin.get("sale"), "maintenance": bulletin.get("maintenance"),
@@ -195,7 +166,7 @@ def update_announcements(system: str, known: dict, client) -> dict:
             branches[bulletin["branch"]] = entry
     if not branches:
         raise ValueError(f"no {system} announcement")
-    return {"source": LISTINGS[system], "page": LISTINGS[system], "policy": None, "complete": False,
+    return {"source": LISTINGS[system][0], "page": LISTINGS[system][0], "policy": None, "complete": system in COMPLETE,
             "branches": branches, "bulletins": bulletins}
 
 

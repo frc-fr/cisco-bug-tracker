@@ -1,128 +1,281 @@
 {
   "iosxe": {
-    "source": "https://endoflife.date/cisco-ios-xe",
-    "page": "https://endoflife.date/cisco-ios-xe",
-    "policy": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-16/bulletin-c25-2378701.html",
+    "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xe-17/eos-eol-notice-listing.html",
+    "page": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xe-17/eos-eol-notice-listing.html",
+    "policy": null,
+    "complete": true,
     "branches": {
-      "26.1": {
-        "released": "2026-06-03",
-        "maintenance": null,
-        "support": null,
-        "lts": true
-      },
       "17.18": {
-        "released": "2025-08-08",
-        "maintenance": "2028-02-08",
-        "support": "2029-08-08",
-        "lts": true
+        "released": null,
+        "sale": "2027-04-30",
+        "maintenance": "2028-04-29",
+        "support": "2030-03-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-18-x-eol.html"
       },
       "17.17": {
-        "released": "2025-03-31",
+        "released": null,
+        "sale": "2026-01-30",
         "maintenance": "2026-07-30",
-        "support": "2026-07-30",
-        "lts": false
+        "support": "2029-01-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/15796-cisco-ios-xe-17-17-x-eol.html"
       },
       "17.16": {
-        "released": "2024-12-11",
+        "released": null,
+        "sale": "2025-07-15",
         "maintenance": "2026-01-13",
-        "support": "2026-01-13",
-        "lts": false
+        "support": "2028-06-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-16-x-eol.html"
       },
       "17.15": {
-        "released": "2024-08-09",
+        "released": null,
+        "sale": "2026-03-30",
         "maintenance": "2027-03-30",
-        "support": "2028-09-30",
-        "lts": true
+        "support": "2029-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-15-x-eol.html"
       },
       "17.14": {
-        "released": "2024-04-13",
+        "released": null,
+        "sale": "2024-11-30",
         "maintenance": "2025-05-31",
-        "support": "2025-05-31",
-        "lts": false
+        "support": "2027-11-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-14-x-eol.html"
       },
       "17.13": {
-        "released": "2023-11-30",
+        "released": null,
+        "sale": "2024-06-30",
         "maintenance": "2024-12-31",
-        "support": "2024-12-31",
-        "lts": false
+        "support": "2027-07-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-13-x-eol.html"
       },
       "17.12": {
-        "released": "2023-07-28",
+        "released": null,
+        "sale": "2025-03-30",
         "maintenance": "2026-03-30",
-        "support": "2027-09-30",
-        "lts": true
+        "support": "2028-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-12-x-eol.html"
       },
       "17.11": {
-        "released": "2023-03-28",
+        "released": null,
+        "sale": "2023-11-14",
         "maintenance": "2024-05-14",
-        "support": "2024-05-14",
-        "lts": false
+        "support": "2026-11-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-11-x-eol.html"
       },
       "17.10": {
-        "released": "2022-11-30",
+        "released": null,
+        "sale": "2023-07-05",
         "maintenance": "2024-01-03",
-        "support": "2024-01-03",
-        "lts": false
+        "support": "2026-07-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-10-x-eol.html"
       },
       "17.9": {
-        "released": "2022-07-29",
+        "released": null,
+        "sale": "2024-03-30",
         "maintenance": "2025-03-30",
-        "support": "2026-09-30",
-        "lts": true
+        "support": "2027-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-9-x-eol.html"
       },
       "17.8": {
-        "released": "2022-04-11",
+        "released": null,
+        "sale": "2022-11-29",
         "maintenance": "2023-05-30",
-        "support": "2023-05-30",
-        "lts": false
+        "support": "2027-11-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-8-x-eol.html"
       },
       "17.7": {
-        "released": "2021-11-30",
+        "released": null,
+        "sale": "2022-07-30",
         "maintenance": "2023-01-30",
-        "support": "2023-01-30",
-        "lts": false
+        "support": "2027-07-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-7-x-eol.html"
       },
       "17.6": {
-        "released": "2021-07-30",
+        "released": null,
+        "sale": "2023-04-01",
         "maintenance": "2024-03-31",
-        "support": "2024-09-30",
-        "lts": true
+        "support": "2026-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-6-x-eol.html"
       },
       "17.5": {
-        "released": "2021-03-31",
+        "released": null,
+        "sale": "2021-11-29",
         "maintenance": "2022-05-30",
-        "support": "2022-05-30",
-        "lts": false
+        "support": "2026-11-30",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-5-x-eol.html"
       },
       "17.4": {
-        "released": "2020-11-30",
+        "released": null,
+        "sale": "2021-07-30",
         "maintenance": "2022-01-28",
-        "support": "2022-01-28",
-        "lts": false
+        "support": "2026-07-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/eos-eol-notice-c51-2442351.html"
       },
       "17.3": {
-        "released": "2020-07-31",
+        "released": null,
+        "sale": "2022-03-31",
         "maintenance": "2023-03-31",
-        "support": "2023-09-30",
-        "lts": true
+        "support": "2027-03-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-3-x-eol.html"
       },
       "17.2": {
-        "released": "2020-03-30",
+        "released": null,
+        "sale": "2021-01-15",
         "maintenance": "2021-07-15",
-        "support": "2021-07-15",
-        "lts": false
-      },
-      "17.1": {
-        "released": "2019-11-21",
-        "maintenance": "2020-12-30",
-        "support": "2020-12-30",
-        "lts": false
+        "support": "2026-01-31",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/eos-eol-notice-c51-744388.html"
       },
       "16.12": {
-        "released": "2019-07-31",
+        "released": null,
+        "sale": "2021-02-17",
         "maintenance": "2022-02-17",
-        "support": "2022-08-18",
-        "lts": true
+        "support": "2026-02-28",
+        "lts": false,
+        "page": "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-16/eos-eol-notice-c51-744154.html"
+      }
+    },
+    "bulletins": {
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-18-x-eol.html": {
+        "branch": "17.18",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.18.x",
+        "sale": "2027-04-30",
+        "maintenance": "2028-04-29",
+        "support": "2030-03-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/15796-cisco-ios-xe-17-17-x-eol.html": {
+        "branch": "17.17",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.17.x",
+        "sale": "2026-01-30",
+        "maintenance": "2026-07-30",
+        "support": "2029-01-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-16-x-eol.html": {
+        "branch": "17.16",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.16.x",
+        "sale": "2025-07-15",
+        "maintenance": "2026-01-13",
+        "support": "2028-06-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-15-x-eol.html": {
+        "branch": "17.15",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.15.x",
+        "sale": "2026-03-30",
+        "maintenance": "2027-03-30",
+        "support": "2029-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-14-x-eol.html": {
+        "branch": "17.14",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.14.x",
+        "sale": "2024-11-30",
+        "maintenance": "2025-05-31",
+        "support": "2027-11-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-13-x-eol.html": {
+        "branch": "17.13",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.13.x",
+        "sale": "2024-06-30",
+        "maintenance": "2024-12-31",
+        "support": "2027-07-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-12-x-eol.html": {
+        "branch": "17.12",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.12.x",
+        "sale": "2025-03-30",
+        "maintenance": "2026-03-30",
+        "support": "2028-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-11-x-eol.html": {
+        "branch": "17.11",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.11.x",
+        "sale": "2023-11-14",
+        "maintenance": "2024-05-14",
+        "support": "2026-11-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-10-x-eol.html": {
+        "branch": "17.10",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.10.x",
+        "sale": "2023-07-05",
+        "maintenance": "2024-01-03",
+        "support": "2026-07-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-9-x-eol.html": {
+        "branch": "17.9",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.9.x",
+        "sale": "2024-03-30",
+        "maintenance": "2025-03-30",
+        "support": "2027-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-8-x-eol.html": {
+        "branch": "17.8",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.8.x",
+        "sale": "2022-11-29",
+        "maintenance": "2023-05-30",
+        "support": "2027-11-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-7-x-eol.html": {
+        "branch": "17.7",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.7.x",
+        "sale": "2022-07-30",
+        "maintenance": "2023-01-30",
+        "support": "2027-07-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-6-x-eol.html": {
+        "branch": "17.6",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.6.x",
+        "sale": "2023-04-01",
+        "maintenance": "2024-03-31",
+        "support": "2026-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-5-x-eol.html": {
+        "branch": "17.5",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.5.x",
+        "sale": "2021-11-29",
+        "maintenance": "2022-05-30",
+        "support": "2026-11-30"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/eos-eol-notice-c51-2442351.html": {
+        "branch": "17.4",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.4.x",
+        "sale": "2021-07-30",
+        "maintenance": "2022-01-28",
+        "support": "2026-07-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-17-3-x-eol.html": {
+        "branch": "17.3",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.3.x",
+        "sale": "2022-03-31",
+        "maintenance": "2023-03-31",
+        "support": "2027-03-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/eos-eol-notice-c51-744388.html": {
+        "branch": "17.2",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 17.2.x",
+        "sale": "2021-01-15",
+        "maintenance": "2021-07-15",
+        "support": "2026-01-31"
+      },
+      "https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-16/eos-eol-notice-c51-744154.html": {
+        "branch": "16.12",
+        "title": "End-of-Sale and End-of-Life Announcement for the Cisco IOS XE 16.12.x",
+        "sale": "2021-02-17",
+        "maintenance": "2022-02-17",
+        "support": "2026-02-28"
       }
     }
   },

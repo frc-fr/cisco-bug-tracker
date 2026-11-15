@@ -580,24 +580,41 @@ function hardwareRows() {
   const today = new Date().toISOString().slice(0, 10);
   const cited = new Map(summaries.map((summary) => [summary.model, summary]));
   return Object.entries(hardware.models).map(([model, entry]) => ({
-    model, entry, family: modelFamily(model), summary: cited.get(model), status: hardwareStatus(entry, today, latestBranch),
+    model, entry, family: modelFamily(model), summary: cited.get(model), status: hardwareStatus(entry, latestBranch, today),
   }));
 }
 
-function statusText(group, model) {
+function statusLabel(group) {
   const date = group.endOfMaintenance && formatDate(group.endOfMaintenance);
   const text = group.lastSoftware
     ? t(group.stopped ? "hardware.stoppedAfter" : "hardware.lastBranch", { branch: group.lastSoftware })
     : group.stopped ? t("hardware.maintenanceEnded", { date })
     : date ? t("hardware.maintenanceUntil", { date })
       : group.ended ? t("hardware.supportEnded") : t("hardware.announced");
-  return `${variantPrefix(group.variants, model)}${text}`;
+  return text;
+}
+
+function statusText(group, model) {
+  return `${variantPrefix(group.variants, model)}${statusLabel(group)}`;
+}
+
+function supportLabel(group) {
+  return t(group.ended ? "hardware.endedOn" : "hardware.until", { date: formatDate(group.endOfSupport) });
 }
 
 function supportText(group, model) {
-  if (!group.endOfSupport) return "";
-  const date = formatDate(group.endOfSupport);
-  return `${variantPrefix(group.variants, model)}${t(group.ended ? "hardware.endedOn" : "hardware.until", { date })}`;
+  return group.endOfSupport ? `${variantPrefix(group.variants, model)}${supportLabel(group)}` : "";
+}
+
+/** A group's variants beside its badge: three at most, all of them in the tooltip (a bulletin can name dozens). */
+function variantsHtml(variants, model) {
+  if (variants.length === 1 && variants[0] === model) return "";
+  const more = variants.length > 3 ? ` ${t("hardware.moreVariants", { count: variants.length - 3 })}` : "";
+  return ` <span class="hardware-variants" title="${escapeHtml(variants.join(", "))}">${escapeHtml(variants.slice(0, 3).join(", "))}${more}</span>`;
+}
+
+function groupHtml(badge, group, model) {
+  return `<span class="hardware-group">${badge}${variantsHtml(group.variants, model)}</span>`;
 }
 
 function statusCell({ model, status }) {
@@ -606,14 +623,14 @@ function statusCell({ model, status }) {
     const tone = group.stopped || group.ended ? "potential" : "change";
     const url = group.page || hardware.eol_source;
     const title = group.bulletin ? ` title="${escapeHtml(t("hardware.bulletin", { id: group.bulletin }))}"` : "";
-    return `<a class="badge ${tone}" href="${escapeHtml(url)}" target="_blank" rel="noopener"${title}>${escapeHtml(statusText(group, model))}</a>`;
+    return groupHtml(`<a class="badge ${tone}" href="${escapeHtml(url)}" target="_blank" rel="noopener"${title}>${escapeHtml(statusLabel(group))}</a>`, group, model);
   }).join(" ");
 }
 
 function supportCell({ model, status }) {
   const parts = status.groups.filter((group) => group.endOfSupport).map((group) => {
     const tone = group.ended ? "potential" : "fixed";
-    return `<span class="badge ${tone}">${escapeHtml(supportText(group, model))}</span>`;
+    return groupHtml(`<span class="badge ${tone}">${escapeHtml(supportLabel(group))}</span>`, group, model);
   });
   return parts.length ? parts.join(" ") : "—";
 }
@@ -625,7 +642,7 @@ function modelLink(model, cited) {
   return `<a href="#${escapeHtml(params.toString())}">${escapeHtml(model)}</a>`;
 }
 
-// No column for a suggested release: Palo Alto Networks publishes it for customers only.
+// No column for a recommended release: Cisco publishes none without an account.
 const HARDWARE_COLUMNS = ["model", "first", "last", "status", "support"];
 
 function hardwareTable(rows) {

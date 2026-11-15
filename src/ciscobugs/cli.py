@@ -28,7 +28,6 @@ def main() -> None:
     if args.command == "collect":
         from . import collect, hardware, lifecycle
         client = collect.Client()
-        lifecycle.update_lifecycle(args.lifecycle, client)
         lifecycle.update_cisco(args.lifecycle, client)
         hardware.update_hardware(args.hardware, client)
         downloaded = collect.update(args.manifest, args.catalog, args.cache, client)
