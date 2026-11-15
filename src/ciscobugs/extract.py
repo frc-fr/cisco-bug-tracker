@@ -11,8 +11,9 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
 from .collect import cached_pages, load_manifest
+from . import report
 from .parser import Document, parse_document
-from .versions import version_key
+from .versions import SYSTEMS, version_key
 
 log = logging.getLogger(__name__)
 
@@ -106,42 +107,91 @@ def write_changes(path: Path, changes: List[dict]) -> None:
     path.write_text(f"[\n{lines}\n]\n", encoding="utf-8")
 
 
-def extract_all(manifest_path: Path, cache: Path, output: Path, changes_path: Path,
-                date: Optional[str] = None) -> Dict[str, List[str]]:
-    """Parse every cached note; return the problems that must stop the update.
+def extract_all(manifest_path: Path, cache: Path, output: Path, changes_path: Path, report_path: Path,
+                date: Optional[str] = None) -> List[str]:
+    """Parse every cached note, write what is read and the processing report; return why the update stops.
 
-    Any warning stops it: a table the parser cannot place, a note that no longer
-    parses, or that lost all the bugs it had. The layouts the site leaves out on
-    purpose are listed in the "left_out" field of their note instead.
+    A note is published for what the code reads of it; what it does not read is in the
+    report. A note that no longer parses, or loses most of its bugs, keeps its last
+    reading. The update stops only when too few notes are read (report.PUBLISH_MINIMUM):
+    the site then keeps its last version rather than an empty one.
     """
     date = date or today()
     manifest = load_manifest(manifest_path)
     before = load_documents(output)
+    previous = {d["key"]: d for d in report.load(report_path).get("documents", [])}
     baseline = not changes_path.exists()
-    problems: Dict[str, List[str]] = {}
     written = {}
+    entries: List[dict] = []
+    groups: Dict[str, dict] = {}
+    headings: Dict[str, Dict[str, bool]] = {}
+    urls: Dict[str, str] = {}
+    prose: List[dict] = []
+    total = 0
     for key, entry in sorted(manifest.items()):
         folder = cache / key
-        if not (folder / "pages.json").exists():
+        old = before.get(key)
+        if not (folder / "pages.json").exists() and not entry.get("unavailable"):
             continue
-        try:
-            document = parse_document(cached_pages(folder), entry["system"])
-        except Exception as error:  # A note that breaks the parser must not pass silently.
-            problems[key] = [f"cannot parse: {error!r}"]
-            continue
-        previous = before.get(key)
-        if previous and previous["observations"] and not document.observations:
-            problems[key] = ["the note had bugs and has none now"]
-            continue
-        target = output / entry["system"] / f"{key}.json"
-        write_document(target, key, entry, document)
-        written[key] = json.loads(target.read_text(encoding="utf-8"))
-        if document.warnings:
-            problems[key] = document.warnings
-        log.info("%s: %d observations, %d security entries left out", key, len(document.observations), document.skipped)
-    if problems:
-        return problems
+        total += 1
+        url, group = entry["url"], SYSTEMS[entry["system"]]
+        findings: List[dict] = []
+        document = None
+        if (folder / "pages.json").exists():
+            try:
+                document = parse_document(cached_pages(folder), entry["system"])
+            except Exception as error:  # A note that breaks the parser must not pass silently.
+                findings.append(report.finding("not_understood", "parse_error", url, "", [], f"the parser stops: {error!r}"))
+        if entry.get("unavailable"):
+            findings.append(report.finding("unreachable", "http", url, "", [],
+                                           "the note no longer answers, or redirects elsewhere: its last reading stays"))
+        ids = {"vendor": set(), "read": set(), "ruled": set(), "failed": set(), "unaccounted": set()}
+        if document:
+            findings += document.findings
+            ids = document.accounting()
+            places: Dict[Tuple[str, str], List[str]] = {}
+            for bug in sorted(ids["unaccounted"]):
+                places.setdefault(document.listed[bug], []).append(bug)
+            for (page, where), bugs in places.items():
+                findings.append(report.finding("suspect", "unaccounted", page, where, bugs,
+                                               "bug IDs the note lists that no rule of the code accounts for"))
+            count = len(ids["read"])
+            had = len({o["bug_id"] for o in old["observations"]}) if old else 0
+            if had and not count:
+                findings.append(report.finding("suspect", "lost_bugs", url, "", [], f"the note had {had} bugs and has none now"))
+            elif had and count < (1 - report.DROP_LIMIT) * had:
+                findings.append(report.finding("suspect", "drop", url, "", [], f"{count} bugs read, {had} before"))
+            headings[key] = document.headings
+            if document.prose:
+                prose.append({"key": key, "title": document.title, "page": url, "count": len(document.prose),
+                              "ids": sorted(document.prose)[:report.EXAMPLES]})
+        urls[key] = url
+        keep = document is None or any(f["rule"] in ("lost_bugs", "drop") for f in findings)
+        if document and not keep:
+            target = output / entry["system"] / f"{key}.json"
+            write_document(target, key, entry, document)
+            written[key] = json.loads(target.read_text(encoding="utf-8"))
+            log.info("%s: %d observations, %d security entries left out", key, len(document.observations), document.skipped)
+        totals = groups.setdefault(group, {"name": group, "documents": 0, "vendor": 0, "read": 0, "ruled": 0, "failed": 0, "unaccounted": 0})
+        totals["documents"] += 1
+        for bucket in ("vendor", "read", "ruled", "failed", "unaccounted"):
+            totals[bucket] += len(ids[bucket])
+        if report.status_of(findings) != "read":
+            kept = (old.get("revised") or "—") if keep and old else None
+            # An unreachable note may have cached a landing page: its last reading names it better.
+            title = (old or {}).get("title") if old and (entry.get("unavailable") or not document) else None
+            title = title or (document.title if document else url)
+            entries.append(report.document(key, group, title, url, findings, ids, previous.get(key), kept))
+    for found in entries:
+        if found["status"] in report.TO_FIX:
+            log.warning("%s: %s %s", found["key"], found["status"], ", ".join(sorted({f["rule"] for f in found["findings"]})))
+    order = list(SYSTEMS.values())
+    summary = report.build(report_path, entries, total, sorted(groups.values(), key=lambda g: order.index(g["name"])),
+                           report.unused_sections(headings, urls), prose)
+    publication = summary["publication"]
+    if not publication["published"]:
+        return [f"only {publication['read_share']:.0%} of the notes read, under {publication['minimum']:.0%}: the site keeps its last version"]
     after = {**before, **written}
     changes = read_changes(changes_path) + diff_releases(before, after, date, baseline)
     write_changes(changes_path, changes)
-    return problems
+    return []

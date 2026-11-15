@@ -313,3 +313,22 @@ def test_a_branch_not_announced_yet_is_still_supported():
     assert found["7.4"] == {"listed": False, "newer": True} and found["6.4"] == {"listed": False, "newer": False}
     table = {"branches": {"10.4": {"support": "2028-02-29"}, "10.6": {"support": "2030-02-28"}}}
     assert branch_lifecycle("nxos", ["10.5"], table)["10.5"]["newer"] is False
+
+
+def test_every_listed_bug_is_accounted_for():
+    html = page(
+        "<h3>Open Bugs in Cisco IOS XE 17.15.1a</h3>"
+        + table(("CSCwk95044", "CSCwj42249.SPA.smu.bin drops"), ("CSCwk00001", "IKEv2 denial of service vulnerability"))
+        + "<h3>Resolved and Open Bugs</h3>" + table(("CSCwk00002", "No status"))
+        + "<h3>Resolved and Open Bugs</h3><p class=\"pTableCaptionCMT\">Table 3. Bugs of the release</p>" + table(("CSCwk00003", "Unknown"))
+        + "<h3>ROMmon Release Requirements</h3>" + table(("17.15(1r)", "CSCwf98335 Fixes for Intel IPU")),
+        "Release Notes for Cisco 1000 Series, Cisco IOS XE Release 17.15.x")
+    document = parse_document([(URL, html)], "iosxe")
+    buckets = document.accounting()
+    assert buckets["read"] == {"CSCwk95044"}
+    assert buckets["ruled"] == {"CSCwk00001", "CSCwk00002"}
+    assert buckets["failed"] == {"CSCwk00003"}
+    assert buckets["unaccounted"] == {"CSCwf98335"}
+    assert document.listed["CSCwf98335"] == (URL, "ROMmon Release Requirements")
+    assert [f["rule"] for f in document.findings] == ["security", "no_caption", "status_unknown"]
+    assert document.warnings and document.skipped == 1

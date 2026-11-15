@@ -18,6 +18,7 @@ Les informations sont fournies à titre indicatif : vérifiez toujours la docume
   présents, et sections de mise à niveau à lire dans les notes de la version cible
 - Onglet Matériel : versions dont les notes citent chaque modèle, statut et fin de support selon Cisco
 - Suivi des nouveautés, avec un flux RSS/Atom
+- Page « État du traitement », en bas de page : ce que le dernier traitement n'a pas lu, et pourquoi
 - Interface en français et en anglais
 
 Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enregistrés ni transmis.
@@ -41,8 +42,11 @@ Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enr
 - Les avis de sécurité sont écartés et les références CVE retirées des titres.
 - Certains tableaux ne disent pas assez pour être lus sans deviner : bugs d'une branche sans version
   nommée, tableau sans légende sous un titre « Resolved and Open Bugs », bug cité dans une section
-  « Behavior Changes ». Ils sont écartés et listés dans le champ `left_out` de la note extraite. Tout
-  autre tableau que l'extraction ne sait pas situer arrête la mise à jour.
+  « Behavior Changes ». Ils sont écartés par une règle connue. Un tableau que l'extraction ne sait pas
+  situer est « non compris » : le reste de la note est publié, et la page « État du traitement » le montre.
+- Chaque identifiant de bug listé par une note finit lu, écarté par une règle ou non compris. Un identifiant
+  compté nulle part rend la note « suspecte » : c'est le cas des correctifs des tableaux « What's New in the
+  ROMMon Release », que le site ne lit pas.
 
 ## Sources
 
@@ -89,8 +93,10 @@ et le motif de ses notes.
 
 Un traitement GitHub Actions est lancé du lundi au vendredi à 9 h 15, 14 h 15 et 19 h 00, heure de
 Paris, et sur lancement manuel. Cet horaire est décrit dans `sources/schedule.yml`, que le site lit pour
-l'afficher. Il collecte, extrait, contrôle, puis publie le site sur GitHub Pages. Si un contrôle échoue, le
-site garde ses dernières données valides.
+l'afficher. Il collecte, extrait, publie le site sur GitHub Pages, puis contrôle. Ce que le code ne sait pas
+lire est publié dans `data/report.json` et sur la page « État du traitement » ; le passage finit en échec
+pour le signaler. La mise à jour ne s'arrête que si moins de 75 % des notes sont lues : le site garde alors
+sa version précédente.
 
 ## Liens utiles chez Cisco
 
@@ -113,6 +119,7 @@ Pour récupérer les notes puis prévisualiser le site :
 ```sh
 .venv/bin/ciscobugs collect
 .venv/bin/ciscobugs extract
+.venv/bin/ciscobugs check
 .venv/bin/ciscobugs --base-url http://localhost:8030/ build
 python3 -m http.server 8030 --directory dist
 ```

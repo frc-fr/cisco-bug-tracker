@@ -12,6 +12,7 @@ from .extract import load_documents, read_changes
 from .feed import build_feed, latest_changes
 from .hardware import hardware_index, load_state
 from .lifecycle import load_lifecycle
+from .report import load as load_report
 from .normalize import families_in, family_of_model, model_sort_key, models_in
 from .versions import SYSTEMS, branch_key, is_rebuild, parts, train_of, version_key
 
@@ -187,7 +188,7 @@ def build_system(system: str, documents: List[dict], manifest: Dict[str, dict], 
 
 def build_site(extracted: Path, manifest_path: Path, changes_path: Path, schedule_path: Path,
                sources: Path, dist: Path, base_url: str, lifecycle_path: Path = Path("sources/lifecycle.json"),
-               hardware_path: Path = Path("sources/hardware.json")) -> dict:
+               hardware_path: Path = Path("sources/hardware.json"), report_path: Path = Path("data/report.json")) -> dict:
     documents = load_documents(extracted)
     manifest = load_manifest(manifest_path)
     now = datetime.now(timezone.utc)
@@ -231,4 +232,8 @@ def build_site(extracted: Path, manifest_path: Path, changes_path: Path, schedul
     ids = {bug: sorted(systems) for bug, systems in references.items()}
     (dist / "data" / "ids.json").write_text(json.dumps(ids, separators=(",", ":")), encoding="utf-8")
     (dist / "feed.xml").write_bytes(build_feed(latest_changes(all_changes, documents), descriptions, base_url))
+    # What the last run could not read, for etat.html.
+    processing = load_report(report_path)
+    processing["updated"] = updated
+    (dist / "data" / "report.json").write_text(json.dumps(processing, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return summary

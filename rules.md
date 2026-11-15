@@ -19,9 +19,10 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Python côté collecte, JavaScript sans framework côté navigateur.
 - Paquet Python `<fournisseur>bugs`, une commande par étape :
   - `collect` : met à jour l'état des sources et télécharge ce qui a changé.
-  - `extract` : lit les documents en cache ; échoue au moindre avertissement.
+  - `extract` : lit les documents en cache et écrit le rapport de traitement ; n'échoue que sous le seuil de publication.
   - `build` : croise les données et génère `dist/`.
-- Modules communs : `collect`, `parser`, `extract`, `normalize` (matériel), `build`, `feed`, `cli`.
+  - `check` : échoue s'il reste un document non compris, suspect ou inaccessible, ou une source en échec.
+- Modules communs : `collect`, `parser`, `extract`, `normalize` (matériel), `build`, `feed`, `report` (identique partout), `cli`.
 - Modules propres au fournisseur (dates de support, fin de vie du matériel, sources annexes) : nommés d'après ce qu'ils lisent, décrits dans ses particularités.
 
 ### Répertoires
@@ -30,6 +31,7 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - `.cache/` : documents bruts. Non versionné, gardé par le cache de la CI.
 - `data/extracted/` : un JSON par document, une ligne par bug pour des diffs lisibles. Commité.
 - `data/changes.json` : journal des nouveautés. Absent au départ : la première extraction sert de référence.
+- `data/report.json` : rapport du dernier traitement, une ligne par document. Commité.
 - `site/` : `index.html`, `app.js` (affichage), `logic.js` (règles de statut, testables), `i18n.js`, `theme.js`, `style.css`, mentions légales FR/EN.
 - `dist/` : site généré, avec `data/*.json` compacts et `feed.xml`. Non versionné.
 
@@ -53,7 +55,8 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - 2 secondes minimum entre deux requêtes, User-Agent du projet.
 - Ne recharger que ce qui a changé (ETag, Last-Modified, lastmod du sitemap).
 - Résultats d'extraction commités dans `data/` : vider le cache CI ne relance pas tout.
-- Un avertissement d'extraction arrête la mise à jour : le site garde ses dernières données valides.
+- Un document non compris est publié pour ce qui est compris ; un document qui ne se lit plus ou perd plus de la moitié de ses bugs garde sa dernière lecture valide.
+- La mise à jour ne s'arrête que si moins de 75 % des documents sont lus : le site garde alors sa version précédente plutôt qu'un site vide.
 - Une source annexe (dates de support…) en échec garde ses dernières valeurs.
 - Le navigateur ne contacte jamais de service tiers.
 
@@ -90,6 +93,17 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Données uniformes entre fournisseurs : pas d'information propre à un seul fournisseur si elle n'aide pas l'exploitation (ex. date de mise en vente).
 - Plusieurs systèmes : sélecteur de logiciel, libellé visible « Logiciel », jamais un choix de matériel.
 
+## État du traitement
+
+- Page `etat.html`, liée en bas de page sur la ligne des mentions légales, en petit. Aucune pastille ailleurs.
+- Même page, même `status.js`, même style et mêmes textes dans les cinq sites ; seuls les codes de règle propres au fournisseur diffèrent.
+- Statuts : lu, écarté par règle, suspect, non compris, inaccessible. Seuls les quatre derniers sont détaillés.
+- Chaque identifiant de bug listé par l'éditeur finit lu, écarté par règle ou non compris ; sinon il est « non compté » et le document est suspect.
+- Chaque constat donne la page exacte de l'éditeur, l'endroit (section, légende), le nombre de bugs, quelques identifiants et la date depuis laquelle il dure.
+- Contenus non exploités : sections jamais lues, identifiants cités hors des listes de bugs.
+- Sources : chaque étape de la collecte, son dernier succès et ses erreurs.
+- Spécification détaillée : `bug-trackers-status-spec.md` (hors dépôts).
+
 ## Matériel et nouveautés
 
 - Onglet Matériel : pastilles « Tous », « Aucune fin annoncée », « Fin de vie annoncée », « Plus maintenu », dans cet ordre.
@@ -115,7 +129,7 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Cron du lundi au vendredi : 9 h 15, 14 h 15, 19 h 00, Europe/Paris.
 - Horaire décrit dans `sources/schedule.yml` et affiché sur le site, qui le lit au build.
 - Workflow GitHub sans déclencheur `schedule` (retardé ou oublié par GitHub) : lancé par `workflow_dispatch`.
-- Ordre : tests, collecte, extraction, tests sur le corpus réel, commit des données, build, GitHub Pages.
+- Ordre : tests, collecte, extraction, commit des données, build, GitHub Pages, puis tests sur le corpus réel et `check` : un passage rouge demande d'adapter le code, le site est déjà à jour.
 - Flux RSS/Atom des nouveautés.
 - CSP stricte : aucun script, style ou service tiers.
 
@@ -123,7 +137,7 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 
 - Outil créé et maintenu par FR Consulting ; contact@fr-consulting.fr ; lien vers fr-consulting.fr.
 - Site indépendant, non affilié au fournisseur. Jamais « approuvé par ».
-- Mentions légales FR et EN, avec la liste des services et composants tiers.
+- Mentions légales FR et EN, avec la liste des services et composants tiers. Lien « État du traitement » sur la même ligne.
 - Code sous AGPL 3.0 ou ultérieure ; contenus du fournisseur exclus.
 - README générique : rien de sensible ni de personnel.
 - Plan unique des README : Fonctionnalités, Ce que disent les notes, Sources, Mise à jour, Liens utiles chez <fournisseur>, Développement, Licence, Contact.
@@ -177,7 +191,10 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Les notes ne listent qu'une sélection de bugs ouverts et résolus : le site le dit.
 - Un tableau = un bug par ligne, identifiant `CSCwu11498` et titre.
 - Le titre de section donne la version ; la légende du tableau donne le statut.
-- Bugs d'une branche sans version nommée : écartés et signalés dans `warnings`.
+- Règles propres à Cisco : `no_caption` (tableau sans légende sous « Resolved and Open Bugs »), `behavior_change` (bugs cités dans « Behavior Changes »), `branch_unnamed` (bugs d'une branche sans version nommée).
+- Identifiant listé : cellule qui commence par `CSC…` ; dans une ligne déjà lue, seule la cellule de l'identifiant compte.
+- Tableaux « What's New in the ROMMon Release » : non lus, donc « non comptés » ; une règle reste à décider.
+- Sections du cadre cisco.com (« Bias-Free Language », « Contact Cisco »…) jamais listées comme contenus non exploités.
 - Avis de sécurité écartés, CVE retirées des titres.
 
 ## Matériel

@@ -10,18 +10,25 @@ caption for the status.
 A note can be one page or a "book" whose table of contents links one page per
 chapter: the chapters that hold bugs are read in turn. Security advisories are
 left out, and CVE references are removed. Anything that does not fit is reported
-in `warnings` rather than guessed.
+rather than guessed.
+
+Every bug ID of a bug table ends in one bucket of the processing report: read, left
+out by a known rule ("ruled"), or not understood ("failed"). An ID of a table found in
+none of them is a silent path of the code: the report calls the note suspect.
 """
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from html.parser import HTMLParser
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 from urllib.parse import urljoin, urlsplit
 
+from .report import accounting, finding
 from .versions import find_branch, find_versions, in_scope, only_out_of_scope, parts, sort_versions, version_key
 
 BUG = re.compile(r"\bCSC[a-z]{2}\d{5}\b")
+# A cell that starts with a bug ID: what the note lists, even in a form the parser does not read.
+LISTED = re.compile(r"^\W*(CSC[a-z]{2}\d{5})\b")
 VULNERABILITY = re.compile(r"vulnerabilit|\bCVE-\d{4}-\d+|\bPSIRT\b|security advisory", re.I)
 CVE_REFERENCE = re.compile(r"[\s(,;]*\bCVE-\d{4}-\d{4,}\b[)]?", re.I)
 HEADLINE_PREFIX = re.compile(r"^(?:Headline|Symptom)\s*:\s*", re.I)
@@ -34,6 +41,12 @@ NOTICE = re.compile(
     r"unsupported|no longer supported|compatib", re.I)
 CHAPTER = re.compile(r"bug|caveat|issue|open|resolved|known|upgrad|limitation|restriction|important|behavio", re.I)
 MAX_HEADING = 160
+# The frame of every cisco.com page, not the note: never reported as content left unread.
+CHROME = re.compile(
+    r"^(bias-free language|available languages|download options|contact cisco|was this document helpful|"
+    r"yes no feedback|this document applies to these products|documentation feedback|related documentation|"
+    r"cisco bug search tool|obtaining documentation|communications, services|full cisco trademarks|"
+    r"introduction|table of contents)", re.I)
 SUBTITLE = re.compile(r"^(resolved|open|fixed|outstanding|known)\b.{0,20}\b(bugs?|issues?|caveats?)\b", re.I)
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 DATE = re.compile(rf"\b(?:({MONTHS})\s+(\d{{1,2}}),?\s+(\d{{4}})|(\d{{4}})-(\d{{2}})-(\d{{2}})|(\d{{1,2}})\s+({MONTHS}),?\s+(\d{{4}}))\b", re.I)
@@ -139,6 +152,10 @@ def flatten(html: str) -> Tuple[List[object], List[str]]:
     return parser.items, parser.links
 
 
+def as_text(found: dict) -> str:
+    return f"{found['page']}: {found['count']} bugs under {found['where']!r}: {found['detail']}"
+
+
 @dataclass
 class Page:
     url: str
@@ -146,12 +163,13 @@ class Page:
     observations: List[dict]
     notices: List[list]
     released: Dict[str, str]
-    warnings: List[str]
-    skipped: int
+    findings: List[dict]
     has_bugs: bool
     chapters: List[str] = field(default_factory=list)
     sections: List[str] = field(default_factory=list)
-    left_out: List[str] = field(default_factory=list)
+    listed: Dict[str, str] = field(default_factory=dict)
+    headings: Dict[str, bool] = field(default_factory=dict)
+    prose: Set[str] = field(default_factory=set)
 
 
 def is_heading(block: Block) -> bool:
@@ -275,20 +293,30 @@ def parse_page(html: str, url: str, system: str, doc_title: Optional[str] = None
     observations: List[dict] = []
     notices: List[list] = []
     released: Dict[str, str] = {}
-    warnings: List[str] = []
-    # Known layouts the site does not read, on purpose: recorded with the note, not blocking.
-    left_out: List[str] = []
-    skipped = 0
+    # What is not read, and why: a known rule ("left_out"), or a layout to adapt the code to.
+    findings: List[dict] = []
     heading, caption = "", ""
     has_bugs = False
     sections: List[str] = []
+    # Each bug ID the note lists, with where it lists it.
+    listed: Dict[str, str] = {}
+    # Each section title, and whether the site reads something under it.
+    headings: Dict[str, bool] = {}
+    prose: Set[str] = set()
+
+    def note(kind: str, rule: str, rows: List[List[str]], detail: str) -> None:
+        where = " / ".join(part for part in (heading, caption) if part)
+        findings.append(finding(kind, rule, url, where, row_ids(rows), detail))
 
     for item in items:
         if isinstance(item, Block):
+            prose.update(BUG.findall(item.text))
             if is_caption(item) or is_subtitle(item):
                 caption = item.text
             elif is_heading(item):
                 heading, caption = item.text, ""
+                if not CHROME.search(heading):
+                    headings.setdefault(heading, bool(NOTICE.search(heading)))
                 # A release with a bug section of its own, even an empty one, is documented.
                 if section_status(item.text) in ("open", "resolved"):
                     sections += [v for v in find_versions(system, item.text) if v not in sections]
@@ -296,6 +324,11 @@ def parse_page(html: str, url: str, system: str, doc_title: Optional[str] = None
                     notices.append([item.text, url])
             continue
         rows = [row for row in item.rows if any(BUG.fullmatch(cell.strip()) for cell in row)]
+        for row in item.rows:
+            # A row with a bug ID cell lists that bug; its other cells describe it.
+            own = [cell.strip() for cell in row if BUG.fullmatch(cell.strip())]
+            for bug in own[:1] or [m.group(1) for cell in row for m in [LISTED.match(cell)] if m]:
+                listed.setdefault(bug, " / ".join(part for part in (heading, caption) if part))
         header = " ".join(item.rows[0]).lower() if item.rows else ""
         if "date" in header and not rows:
             revision_dates(item.rows, system, released)
@@ -303,24 +336,27 @@ def parse_page(html: str, url: str, system: str, doc_title: Optional[str] = None
         if not rows:
             continue
         has_bugs = True
+        headings[heading] = True
         status = section_status(caption) if caption else None
         status = status or section_status(heading)
         # A note, or a section, of releases older than the scope of the site.
         if only_out_of_scope(system, heading) or (not title_versions and only_out_of_scope(system, context_title)):
+            note("left_out", "out_of_scope", rows, "releases older than the scope of the site")
             continue
         if status is None and not title_versions and title_branch and not in_scope(system, title_branch):
+            note("left_out", "out_of_scope", rows, "a branch older than the scope of the site")
             continue
         if status is None and not caption and re.search(r"\bresolved\b.*\bopen\b|\bopen\b.*\bresolved\b", heading, re.I):
-            left_out.append(f"{url}: {len(rows)} bugs under {heading!r}, a table without caption: open or resolved, the note does not say")
+            note("left_out", "no_caption", rows, "a table without caption: open or resolved, the note does not say")
             continue
         if status is None and re.search(r"behaviou?r change", heading, re.I):
-            left_out.append(f"{url}: {len(rows)} bugs cited in {heading!r}: a change of behavior, not a bug list")
+            note("left_out", "behavior_change", rows, "a change of behavior, not a bug list")
             continue
         if status is None:
-            warnings.append(f"{url}: {len(rows)} bugs under {heading!r} / {caption!r}: status unknown, left out")
+            note("not_understood", "status_unknown", rows, "neither the section title nor the caption says open or resolved")
             continue
         if status == "security":
-            skipped += len(rows)
+            note("left_out", "security", rows, "a list of security fixes")
             continue
         versions = find_versions(system, heading) or find_versions(system, caption)
         branch = None
@@ -333,17 +369,20 @@ def parse_page(html: str, url: str, system: str, doc_title: Optional[str] = None
                     branch = title_branch
         if not versions and not branch:
             if title_branch and not in_scope(system, title_branch):
-                continue  # A note of a release older than the scope of the site.
-            warnings.append(f"{url}: {len(rows)} bugs under {heading!r}: release unknown, left out")
+                note("left_out", "out_of_scope", rows, "a note of a release older than the scope of the site")
+                continue
+            note("not_understood", "release_unknown", rows, "no release in the section title, the caption or the note title")
             continue
         if branch and not in_scope(system, branch):
+            note("left_out", "out_of_scope", rows, "a branch older than the scope of the site")
             continue
+        vulnerable = []
         for row in rows:
             bug_cell = next(cell for cell in row if BUG.fullmatch(cell.strip()))
             others = [cell for cell in row if cell is not bug_cell and cell.strip()]
             description = clean_description(max(others, key=len)) if others else ""
             if VULNERABILITY.search(description):
-                skipped += 1
+                vulnerable.append(row)
                 continue
             for version in versions or [None]:
                 observations.append({
@@ -354,10 +393,17 @@ def parse_page(html: str, url: str, system: str, doc_title: Optional[str] = None
                     "description": description,
                     "url": url,
                 })
-    page = Page(url, title, observations, notices, released, warnings, skipped, has_bugs, sections=sections, left_out=left_out)
+        if vulnerable:
+            note("left_out", "security", vulnerable, "a vulnerability fix in a bug list")
+    page = Page(url, title, observations, notices, released, findings, has_bugs, sections=sections, listed=listed,
+                headings=headings, prose=prose)
     if not has_bugs and not doc_title:
         page.chapters = chapter_links(links, url)
     return page
+
+
+def row_ids(rows: List[List[str]]) -> List[str]:
+    return list(dict.fromkeys(next(cell.strip() for cell in row if BUG.fullmatch(cell.strip())) for row in rows))
 
 
 @dataclass
@@ -367,10 +413,31 @@ class Document:
     released: Dict[str, str]
     observations: List[dict]
     notices: List[list]
-    warnings: List[str]
-    skipped: int
+    findings: List[dict]
     pages: List[str]
-    left_out: List[str] = field(default_factory=list)
+    # Bug ID: (page, place) where the note lists it.
+    listed: Dict[str, Tuple[str, str]] = field(default_factory=dict)
+    headings: Dict[str, bool] = field(default_factory=dict)
+    prose: Set[str] = field(default_factory=set)
+
+    @property
+    def warnings(self) -> List[str]:
+        """What the code cannot read: it has to be adapted."""
+        return [as_text(f) for f in self.findings if f["kind"] == "not_understood"]
+
+    @property
+    def left_out(self) -> List[dict]:
+        """What a known rule leaves out, security fixes aside."""
+        return [f for f in self.findings if f["kind"] == "left_out" and f["rule"] != "security"]
+
+    @property
+    def skipped(self) -> int:
+        """The security fixes left out."""
+        return sum(f["count"] for f in self.findings if f["rule"] == "security")
+
+    def accounting(self) -> Dict[str, Set[str]]:
+        """Each bug ID the note lists, in one bucket: read, ruled out, failed, or unaccounted."""
+        return accounting(set(self.listed), {o["bug_id"] for o in self.observations}, self.findings)
 
 
 def parse_document(pages: List[Tuple[str, str]], system: str) -> Document:
@@ -383,8 +450,7 @@ def parse_document(pages: List[Tuple[str, str]], system: str) -> Document:
     first = parse_page(main_html, main_url, system)
     parsed = [first] + [parse_page(html, url, system, first.title) for url, html in pages[1:]]
     observations = [o for page in parsed for o in page.observations]
-    warnings = [w for page in parsed for w in page.warnings]
-    left_out = [w for page in parsed for w in page.left_out]
+    findings = [f for page in parsed for f in page.findings]
     released: Dict[str, str] = {}
     for page in parsed:
         for version, date in page.released.items():
@@ -393,18 +459,19 @@ def parse_document(pages: List[Tuple[str, str]], system: str) -> Document:
     known = {o["version"] for o in observations if o["version"]} | {v for page in parsed for v in page.sections}
     known |= {v for v in find_versions(system, first.title)}
     resolved = []
-    unplaced: Dict[Tuple[str, str], int] = {}
+    unplaced: Dict[Tuple[str, str], List[str]] = {}
     for o in observations:
         if o["version"]:
             resolved.append(o)
             continue
         on_branch = [v for v in known if parts(system, v)[0] == o["branch"]]
         if not on_branch:
-            unplaced[(o["url"], o["branch"])] = unplaced.get((o["url"], o["branch"]), 0) + 1
+            unplaced.setdefault((o["url"], o["branch"]), []).append(o["bug_id"])
             continue
         resolved.append({**o, "version": sort_versions(system, on_branch)[-1]})
-    for (url, branch), count in unplaced.items():
-        left_out.append(f"{url}: {count} bugs listed for branch {branch}, which names none of its releases")
+    for (url, branch), ids in unplaced.items():
+        findings.append(finding("left_out", "branch_unnamed", url, f"{branch}.x", list(dict.fromkeys(ids)),
+                                f"bugs listed for branch {branch}, which names none of its releases"))
     for o in resolved:
         o.pop("branch", None)
     # One fact per bug, release and status: a table repeated in two chapters says it once.
@@ -418,5 +485,14 @@ def parse_document(pages: List[Tuple[str, str]], system: str) -> Document:
             if title not in [n[0] for n in notices]:
                 notices.append([title, url])
     versions = sort_versions(system, known)
-    return Document(first.title, versions, released, observations, notices, warnings,
-                    sum(page.skipped for page in parsed), [url for url, _ in pages], left_out)
+    headings: Dict[str, bool] = {}
+    for page in parsed:
+        for text, used in page.headings.items():
+            headings[text] = headings.get(text, False) or used
+    listed: Dict[str, Tuple[str, str]] = {}
+    for page in parsed:
+        for bug, where in page.listed.items():
+            listed.setdefault(bug, (page.url, where))
+    prose = {i for page in parsed for i in page.prose} - set(listed)
+    return Document(first.title, versions, released, observations, notices, findings, [url for url, _ in pages],
+                    listed=listed, headings=headings, prose=prose)
