@@ -1048,8 +1048,10 @@
         "ISR 4000"
       ],
       "chapters": [],
-      "revised": null,
-      "etags": []
+      "revised": "2026-09-11",
+      "etags": [
+        "4cb40-65b3c23830cc4"
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/release/xe-17-5/isr4k-rel-notes-xe-17-5.html",
