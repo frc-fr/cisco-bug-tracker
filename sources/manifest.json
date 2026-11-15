@@ -224,10 +224,11 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-09-29",
+      "revised": "2026-11-14",
       "chapters": [],
       "etags": [
-        "2294d0-65c9d0ff4c626"
+        "2294d0-65c9d0ff4c626",
+        "235209-66037da459ad7"
       ]
     },
     {
@@ -249,10 +250,11 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-09-28",
+      "revised": "2026-11-14",
       "chapters": [],
       "etags": [
-        "25f85f-65c83d1769514"
+        "25f85f-65c83d1769514",
+        "2678a5-66033b85fbcab"
       ]
     },
     {
