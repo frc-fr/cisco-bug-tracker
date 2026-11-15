@@ -45,8 +45,8 @@ Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enr
   « Behavior Changes ». Ils sont écartés par une règle connue. Un tableau que l'extraction ne sait pas
   situer est « non compris » : le reste de la note est publié, et la page « État du traitement » le montre.
 - Chaque identifiant de bug listé par une note finit lu, écarté par une règle ou non compris. Un identifiant
-  compté nulle part rend la note « suspecte » : c'est le cas des correctifs des tableaux « What's New in the
-  ROMMon Release », que le site ne lit pas.
+  compté nulle part rend la note « suspecte ». Les correctifs du firmware ROMMon et les notes retirées par
+  Cisco (leur adresse mène à une page d'accueil du support) sont écartés par une règle.
 
 ## Sources
 

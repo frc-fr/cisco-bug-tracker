@@ -142,9 +142,12 @@ def extract_all(manifest_path: Path, cache: Path, output: Path, changes_path: Pa
                 document = parse_document(cached_pages(folder), entry["system"])
             except Exception as error:  # A note that breaks the parser must not pass silently.
                 findings.append(report.finding("not_understood", "parse_error", url, "", [], f"the parser stops: {error!r}"))
-        if entry.get("unavailable"):
+        if entry.get("unavailable") == "withdrawn":
+            findings.append(report.finding("left_out", "withdrawn", url, "", [],
+                                           "Cisco withdrew the note: its address leads to a support landing page"))
+        elif entry.get("unavailable"):
             findings.append(report.finding("unreachable", "http", url, "", [],
-                                           "the note no longer answers, or redirects elsewhere: its last reading stays"))
+                                           "the note no longer answers: its last reading stays"))
         ids = {"vendor": set(), "read": set(), "ruled": set(), "failed": set(), "unaccounted": set()}
         if document:
             findings += document.findings
@@ -181,6 +184,9 @@ def extract_all(manifest_path: Path, cache: Path, output: Path, changes_path: Pa
             # An unreachable note may have cached a landing page: its last reading names it better.
             title = (old or {}).get("title") if old and (entry.get("unavailable") or not document) else None
             title = title or (document.title if document else url)
+            if entry.get("unavailable") == "withdrawn":
+                # What the address now shows is a landing page: the file name names the note better.
+                title = url.rsplit("/", 1)[-1]
             entries.append(report.document(key, group, title, url, findings, ids, previous.get(key), kept))
     for found in entries:
         if found["status"] in report.TO_FIX:

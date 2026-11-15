@@ -171,33 +171,44 @@ def due(entry: dict, today: datetime) -> bool:
     return weekly(entry, today)
 
 
-def fetch_html(client: Client, url: str) -> Optional[str]:
+class Unreachable(Exception):
+    """A note that cannot be read: "withdrawn" by Cisco, or failing ("http")."""
+
+    def __init__(self, reason: str):
+        super().__init__(reason)
+        self.reason = reason
+
+
+def fetch_html(client: Client, url: str) -> str:
     response = client.request("GET", url)
     if response.status_code != 200:
         log.error("%s returned %s", url, response.status_code)
-        return None
+        raise Unreachable("http")
     if "/td/docs/" not in urlsplit(response.url).path:
-        # A withdrawn note redirects to a support landing page.
-        log.error("%s redirects to %s", url, response.url)
-        return None
+        # A withdrawn note redirects to a support landing page: recorded with the note, not an error.
+        log.warning("%s redirects to %s: withdrawn", url, response.url)
+        raise Unreachable("withdrawn")
     response.encoding = response.encoding or "utf-8"
     return response.text
 
 
-def download_document(client: Client, entry: dict, folder: Path) -> bool:
-    """The note and the chapters holding its bugs, into <cache>/<key>/; False if unreachable."""
-    html = fetch_html(client, entry["url"])
-    if html is None:
-        return False
+def download_document(client: Client, entry: dict, folder: Path) -> Optional[str]:
+    """The note and the chapters holding its bugs, into <cache>/<key>/; why not, when unreachable."""
+    try:
+        html = fetch_html(client, entry["url"])
+    except Unreachable as refusal:
+        return refusal.reason
     page = parse_page(html, entry["url"], entry["system"])
     chapters = page.chapters
     pages = [("index.html", html)]
     fetched = [entry["url"]]
     for url in chapters:
-        chapter = fetch_html(client, url)
-        if chapter is not None:
-            pages.append((url.rsplit("/", 1)[-1], chapter))
-            fetched.append(url)
+        try:
+            chapter = fetch_html(client, url)
+        except Unreachable:
+            continue
+        pages.append((url.rsplit("/", 1)[-1], chapter))
+        fetched.append(url)
     if folder.exists():
         for old in folder.glob("*.html"):
             old.unlink()
@@ -206,7 +217,7 @@ def download_document(client: Client, entry: dict, folder: Path) -> bool:
         (folder / name).write_text(content, encoding="utf-8")
     (folder / "pages.json").write_text(json.dumps(fetched), encoding="utf-8")
     entry["chapters"] = chapters
-    return True
+    return None
 
 
 def update(manifest_path: Path, catalog_path: Path, cache: Path, client: Client, today: Optional[datetime] = None) -> List[str]:
@@ -244,7 +255,8 @@ def update(manifest_path: Path, catalog_path: Path, cache: Path, client: Client,
                     continue
             elif etag in etags or (copy and seen and copy <= seen):
                 continue
-        if download_document(client, entry, folder):
+        refusal = download_document(client, entry, folder)
+        if refusal is None:
             if etag:
                 entry["etags"] = (etags + [etag])[-KNOWN_ETAGS:]
             entry.pop("unavailable", None)
@@ -254,7 +266,7 @@ def update(manifest_path: Path, catalog_path: Path, cache: Path, client: Client,
                 # A long first collection keeps what it got if it is stopped.
                 save_manifest(manifest_path, manifest)
         else:
-            entry["unavailable"] = True
+            entry["unavailable"] = refusal
     save_manifest(manifest_path, manifest)
     return downloaded
 

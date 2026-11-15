@@ -197,7 +197,7 @@ def test_an_etag_seen_before_means_unchanged(tmp_path, monkeypatch):
     answers = iter(["8c0fd-63fa0bd001c20", "8c0fd-6406e3384ad3e", "c-63a7f398a8da6", "9-65cbe4add47e2"])
     downloads = []
     monkeypatch.setattr(collect, "pdf_state", lambda client, u: next(answers))
-    monkeypatch.setattr(collect, "download_document", lambda client, e, folder: downloads.append(e["url"]) or True)
+    monkeypatch.setattr(collect, "download_document", lambda client, e, folder: downloads.append(e["url"]))
     for _ in range(3):
         collect.update(manifest, catalog, tmp_path / "cache", None, datetime(2026, 11, 9, tzinfo=timezone.utc))
     assert downloads == []
@@ -321,14 +321,15 @@ def test_every_listed_bug_is_accounted_for():
         + table(("CSCwk95044", "CSCwj42249.SPA.smu.bin drops"), ("CSCwk00001", "IKEv2 denial of service vulnerability"))
         + "<h3>Resolved and Open Bugs</h3>" + table(("CSCwk00002", "No status"))
         + "<h3>Resolved and Open Bugs</h3><p class=\"pTableCaptionCMT\">Table 3. Bugs of the release</p>" + table(("CSCwk00003", "Unknown"))
-        + "<h3>ROMmon Release Requirements</h3>" + table(("17.15(1r)", "CSCwf98335 Fixes for Intel IPU")),
+        + "<h3>ROMmon Release Requirements</h3>" + table(("17.15(1r)", "CSCwf98335 Fixes for Intel IPU"))
+        + "<h3>Field Notices</h3>" + table(("FN-1", "CSCwf00009 Reload on boot")),
         "Release Notes for Cisco 1000 Series, Cisco IOS XE Release 17.15.x")
     document = parse_document([(URL, html)], "iosxe")
     buckets = document.accounting()
     assert buckets["read"] == {"CSCwk95044"}
-    assert buckets["ruled"] == {"CSCwk00001", "CSCwk00002"}
+    assert buckets["ruled"] == {"CSCwk00001", "CSCwk00002", "CSCwf98335"}
     assert buckets["failed"] == {"CSCwk00003"}
-    assert buckets["unaccounted"] == {"CSCwf98335"}
-    assert document.listed["CSCwf98335"] == (URL, "ROMmon Release Requirements")
-    assert [f["rule"] for f in document.findings] == ["security", "no_caption", "status_unknown"]
+    assert buckets["unaccounted"] == {"CSCwf00009"}
+    assert document.listed["CSCwf00009"] == (URL, "Field Notices")
+    assert [f["rule"] for f in document.findings] == ["security", "no_caption", "status_unknown", "rommon"]
     assert document.warnings and document.skipped == 1

@@ -28,6 +28,7 @@ from .versions import find_branch, find_versions, in_scope, only_out_of_scope, p
 
 BUG = re.compile(r"\bCSC[a-z]{2}\d{5}\b")
 # A cell that starts with a bug ID: what the note lists, even in a form the parser does not read.
+ROMMON = re.compile(r"\bROMM?on\b", re.I)
 LISTED = re.compile(r"^\W*(CSC[a-z]{2}\d{5})\b")
 VULNERABILITY = re.compile(r"vulnerabilit|\bCVE-\d{4}-\d+|\bPSIRT\b|security advisory", re.I)
 CVE_REFERENCE = re.compile(r"[\s(,;]*\bCVE-\d{4}-\d{4,}\b[)]?", re.I)
@@ -304,9 +305,9 @@ def parse_page(html: str, url: str, system: str, doc_title: Optional[str] = None
     headings: Dict[str, bool] = {}
     prose: Set[str] = set()
 
-    def note(kind: str, rule: str, rows: List[List[str]], detail: str) -> None:
+    def note(kind: str, rule: str, rows: List[List[str]], detail: str, ids: Optional[List[str]] = None) -> None:
         where = " / ".join(part for part in (heading, caption) if part)
-        findings.append(finding(kind, rule, url, where, row_ids(rows), detail))
+        findings.append(finding(kind, rule, url, where, ids if ids is not None else row_ids(rows), detail))
 
     for item in items:
         if isinstance(item, Block):
@@ -334,6 +335,10 @@ def parse_page(html: str, url: str, system: str, doc_title: Optional[str] = None
             revision_dates(item.rows, system, released)
             continue
         if not rows:
+            # ROMMon, the boot firmware: its fixes are listed in its own table, not the software's bugs.
+            firmware = [m.group(1) for row in item.rows for cell in row for m in [LISTED.match(cell)] if m]
+            if firmware and ROMMON.search(f"{heading} {caption}"):
+                note("left_out", "rommon", [], "fixes of the ROMMon boot firmware, not of the software", list(dict.fromkeys(firmware)))
             continue
         has_bugs = True
         headings[heading] = True

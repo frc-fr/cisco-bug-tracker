@@ -193,7 +193,8 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 - Le titre de section donne la version ; la légende du tableau donne le statut.
 - Règles propres à Cisco : `no_caption` (tableau sans légende sous « Resolved and Open Bugs »), `behavior_change` (bugs cités dans « Behavior Changes »), `branch_unnamed` (bugs d'une branche sans version nommée).
 - Identifiant listé : cellule qui commence par `CSC…` ; dans une ligne déjà lue, seule la cellule de l'identifiant compte.
-- Tableaux « What's New in the ROMMon Release » : non lus, donc « non comptés » ; une règle reste à décider.
+- Règle `rommon` : correctifs du firmware ROMMon (tableaux « What's New in the ROMMon Release ») écartés, ce ne sont pas des bugs du logiciel suivi.
+- Règle `withdrawn` : note dont l'adresse mène à une page d'accueil du support, retirée par Cisco ; une erreur HTTP reste « inaccessible ».
 - Sections du cadre cisco.com (« Bias-Free Language », « Contact Cisco »…) jamais listées comme contenus non exploités.
 - Avis de sécurité écartés, CVE retirées des titres.
 
