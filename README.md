@@ -63,7 +63,8 @@ Vos recherches et vos filtres restent dans votre navigateur : ils ne sont ni enr
 
 La liste est dans `sources/catalog.json` : une page « Release Notes » par gamme, et pour chaque
 adresse de note le système et la gamme qu'elle documente. Ajouter une gamme, c'est y ajouter sa page
-et le motif de ses notes.
+et le motif de ses notes. Un lien de ces pages qui ressemble à une note, sans motif ni exclusion
+motivée, fait échouer le passage : une note renommée ou déplacée par Cisco ne passe plus inaperçue.
 
 ### Documents lus
 

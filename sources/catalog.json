@@ -1,5 +1,5 @@
 {
-  "comment": "Release Notes followed by the site. Each listing is a cisco.com 'Release Notes' page of a product series, read to discover new notes; each document pattern gives the system and the families of the notes whose address matches it. The first pattern that matches wins. 'seeds' are notes no listing page links to.",
+  "comment": "Release Notes followed by the site. Each listing is a cisco.com 'Release Notes' page of a product series, read to discover new notes; each document pattern gives the system and the families of the notes whose address matches it. The first pattern that matches wins. 'exclude' lists, with the reason, the pages left out on purpose. A link of a listing page that looks like a note ('note') and that no pattern follows nor any exclusion names is an error of the run: the catalog has to say what to do with it. 'seeds' are notes no listing page links to.",
   "listings": [
     "https://www.cisco.com/c/en/us/support/routers/1000-series-integrated-services-routers-isr/products-release-notes-list.html",
     "https://www.cisco.com/c/en/us/support/routers/4000-series-integrated-services-routers-isr/products-release-notes-list.html",
@@ -29,10 +29,24 @@
     "https://www.cisco.com/c/en/us/support/security/secure-firewall-3100-series/products-release-notes-list.html",
     "https://www.cisco.com/c/en/us/support/security/firepower-ngfw/products-release-notes-list.html"
   ],
-  "exclude": "(?i)localization|_(ja|zh|ko)_|epld|ipfm|ip-fabric-for-media|/aci/|sonic|hotfix|/apic/|/asdm/|/fxos/|/content/en/",
+  "note": "(?i)release[-_]?notes?|rel[-_]?notes|relnotes|_rn\\.html|_rn_",
+  "exclude": [
+    {"pattern": "(?i)localization|_(ja|zh|ko)_|/content/en/", "why": "translations and copies of the English notes"},
+    {"pattern": "(?i)epld|hotfix|/asdm/|/fxos/", "why": "firmware, hotfixes and management tools, not the software followed"},
+    {"pattern": "(?i)ipfm|ip-fabric-for-media|ip_fabric_for_media|/ovsdb/|/aci/|/apic/|sonic|live-protect", "why": "NX-OS variants and add-ons the site does not follow"},
+    {"pattern": "/threat-defense/\\d+/device-manager-release-notes-", "why": "from 10.0, Cisco splits the Threat Defense notes in two, by manager, with the same bugs: the management center ones are read"},
+    {"pattern": "/secure-firewall/integrations/", "why": "Secure Firewall integrations, not Threat Defense"},
+    {"pattern": "/security/firepower/6[0-3]\\d/", "why": "Firepower before 6.4, below the oldest branch followed"},
+    {"pattern": "(?i)/virtual-routers/|cisco-xrd-|cisco-xrv9000-", "why": "XRd and XRv 9000 virtual routers, not followed"},
+    {"pattern": "/routers/ncs[56]000/", "why": "NCS 5000 and NCS 6000, not followed"},
+    {"pattern": "/asr1000/release/notes/asr1k_rn_rel_notes", "why": "IOS XE 3S, before the oldest branch followed"},
+    {"pattern": "/catalyst3850/software/release/(3|16-[1-8]/)", "why": "Catalyst 3850 before IOS XE 16.9, the oldest branch followed"},
+    {"pattern": "/nexus3000/sw/release/703|/datacenter/sw/[67]_x/", "why": "NX-OS 6.x and 7.x, before the oldest branch followed"}
+  ],
   "documents": [
     {"pattern": "/routers/access/1100/release/", "system": "iosxe", "families": ["ISR 1000"]},
     {"pattern": "/routers/access/4400/release/", "system": "iosxe", "families": ["ISR 4000"]},
+    {"pattern": "/routers/access/isr4400/Release-notes/", "system": "iosxe", "families": ["ISR 4000"]},
     {"pattern": "/routers/cloud_edge/c8200/rel_notes/", "system": "iosxe", "families": ["Catalyst 8200"]},
     {"pattern": "/routers/cloud_edge/c8300/rel_notes/.*8200", "system": "iosxe", "families": ["Catalyst 8200", "Catalyst 8300"]},
     {"pattern": "/routers/cloud_edge/c8300/rel_notes/", "system": "iosxe", "families": ["Catalyst 8300"]},
@@ -56,17 +70,19 @@
     {"pattern": "/iosxr/ncs5xx/release-notes/.*/b-release-notes-ncs540", "system": "iosxr", "families": ["NCS 540"]},
     {"pattern": "/routers/iosxr/release-notes/.*/cisco-ncs540-series", "system": "iosxr", "families": ["NCS 540"]},
     {"pattern": "/iosxr/ncs560/release-notes/.*/b-release-notes-ncs560", "system": "iosxr", "families": ["NCS 560"]},
+    {"pattern": "/iosxr/ncs5xx/release-notes/.*/b-release-notes-ncs560", "system": "iosxr", "families": ["NCS 560"]},
     {"pattern": "/routers/iosxr/release-notes/.*/cisco-ncs560-series", "system": "iosxr", "families": ["NCS 560"]},
-    {"pattern": "/iosxr/cisco8000/general/.*/b-release-notes-cisco8k", "system": "iosxr", "families": ["Cisco 8000"]},
+    {"pattern": "/iosxr/cisco8000/general/.*/b-release-notes-cisco8(k|010)", "system": "iosxr", "families": ["Cisco 8000"]},
     {"pattern": "/routers/iosxr/release-notes/.*/cisco-8000-series-routers", "system": "iosxr", "families": ["Cisco 8000"]},
     {"pattern": "/nx-os/nexus9000/\\d+x/release-notes/cisco-nexus-9000-nxos-release-notes", "system": "nxos", "families": ["Nexus 9000"]},
     {"pattern": "/switches/datacenter/nexus9000/sw/9\\dx/release/notes/", "system": "nxos", "families": ["Nexus 9000"]},
     {"pattern": "/switches/datacenter/nexus3000/sw/release/notes/", "system": "nxos", "families": ["Nexus 3000"]},
+    {"pattern": "/switches/datacenter/nexus3(400s|548|600)/sw/", "system": "nxos", "families": ["Nexus 3000"]},
     {"pattern": "/nx-os/nexus3000/\\d+x/release-notes/", "system": "nxos", "families": ["Nexus 3000"]},
     {"pattern": "/switches/datacenter/nexus7000/sw/release/notes/", "system": "nxos", "families": ["Nexus 7000"]},
     {"pattern": "/security/asa/asa\\d+/release/notes/asarn\\d+\\.html", "system": "asa", "families": ["Secure Firewall ASA"]},
-    {"pattern": "/security/secure-firewall/release-notes/threat-defense/\\d+/threat-defense-release-notes-\\d+\\.html", "system": "ftd", "families": ["Secure Firewall Threat Defense"]},
-    {"pattern": "/security/firepower/(6[4-9]0|7\\d+)/(\\d+x/)?relnotes/firepower-release-notes-\\d+x?\\.html", "system": "ftd", "families": ["Secure Firewall Threat Defense"]}
+    {"pattern": "/security/secure-firewall/release-notes/threat-defense/\\d+/(threat-defense|management-center)-release-notes-[\\d-]+\\.html", "system": "ftd", "families": ["Secure Firewall Threat Defense"]},
+    {"pattern": "/security/firepower/(6[4-9]0|7\\d+)/(\\d+x+/)?relnotes/firepower-release-notes-\\d+x*\\.html", "system": "ftd", "families": ["Secure Firewall Threat Defense"]}
   ],
   "seeds": [
     "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/15-9m/release/notes/15-9-3-m-rel-notes.html",

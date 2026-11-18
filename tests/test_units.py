@@ -129,6 +129,32 @@ def test_classification():
     assert collect.classify("https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/26-x/release-notes-catalyst-8200-and-catalyst-8300-series-edge-platforms-release-26-1-x.html", catalog) == ("iosxe", ["Catalyst 8200", "Catalyst 8300"])
     assert collect.classify("https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/104x/ip-fabric-for-media/x/cisco-nexus-9000-nxos-for-ipfm-release-notes-1043F.html", catalog) is None
     assert collect.classify("https://www.cisco.com/c/en/us/td/docs/security/asa/asa922/release/notes/asarn922.html", catalog) == ("asa", ["Secure Firewall ASA"])
+    ftd = "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/release-notes/threat-defense/100/"
+    assert collect.classify(ftd + "management-center-release-notes-10-0.html", catalog) == ("ftd", ["Secure Firewall Threat Defense"])
+    assert collect.classify(ftd + "device-manager-release-notes-10-0.html", catalog) is None
+    assert collect.classify("https://www.cisco.com/c/en/us/td/docs/security/firepower/670/67xx/relnotes/firepower-release-notes-67xx.html", catalog)[0] == "ftd"
+    assert collect.classify("https://www.cisco.com/c/en/us/td/docs/routers/access/isr4400/Release-notes/17-18-x/isr4k-rel-notes-xe-17-18.html", catalog) == ("iosxe", ["ISR 4000"])
+
+
+def test_a_note_the_catalog_does_not_know_is_an_error(caplog):
+    """FTD 10.0 came out under a new name and was missed for weeks: such a link now turns the run red."""
+    catalog = {"listings": ["https://www.cisco.com/c/en/us/support/x/products-release-notes-list.html"],
+               "note": collect.load_catalog(collect.Path("sources/catalog.json"))["note"],
+               "exclude": [{"pattern": "/old/", "why": "not followed"}],
+               "documents": [{"pattern": "/known/", "system": "ftd", "families": ["F"]}], "seeds": []}
+    page = ('<a href="/c/en/us/td/docs/known/release-notes-1.html">'
+            '<a href="/c/en/us/td/docs/old/release-notes-0.html">'
+            '<a href="/c/en/us/td/docs/new/management-center-release-notes-10-0.html">'
+            '<a href="/c/en/us/td/docs/guide/config-guide.html">')
+
+    class Client:
+        def request(self, method, url):
+            return type("R", (), {"status_code": 200, "text": page, "url": url})()
+
+    with caplog.at_level("ERROR"):
+        found = collect.discover(catalog, Client())
+    assert list(found) == ["https://www.cisco.com/c/en/us/td/docs/known/release-notes-1.html"]
+    assert [r.getMessage().split(":")[1] for r in caplog.records] == ["//www.cisco.com/c/en/us/td/docs/new/management-center-release-notes-10-0.html"]
 
 
 def test_weekly_checks_of_old_notes():
@@ -187,7 +213,7 @@ def test_release_dates_table():
 def test_an_etag_seen_before_means_unchanged(tmp_path, monkeypatch):
     """Cisco's servers answer with different ETags for the same PDF: none of those seen triggers a download."""
     catalog = tmp_path / "catalog.json"
-    catalog.write_text('{"listings": [], "exclude": "x^", "documents": [], "seeds": []}')
+    catalog.write_text('{"listings": [], "note": "x^", "exclude": [], "documents": [], "seeds": []}')
     url = "https://www.cisco.com/c/en/us/td/docs/a/notes.html"
     manifest = tmp_path / "manifest.json"
     entry = {"url": url, "system": "iosxe", "families": ["ISR 4000"], "chapters": [], "revised": "2026-10-05",

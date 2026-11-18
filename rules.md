@@ -4,7 +4,7 @@ title: Règles de cisco-bug-tracker
 description: Règles communes aux bug trackers et particularités des systèmes Cisco.
 resource: https://github.com/frc-fr/cisco-bug-tracker
 tags: [rules, cisco, ios, ios-xe, ios-xr, nx-os, asa, ftd, bug-tracker]
-timestamp: 2026-11-15T20:00:00+01:00
+timestamp: 2026-11-18T18:00:00+01:00
 product: IOS, IOS XE, IOS XR, NX-OS, Secure Firewall ASA, Secure Firewall Threat Defense
 site: https://frc-fr.github.io/cisco-bug-tracker/
 ---
@@ -175,6 +175,8 @@ Section identique dans forti-, juni-, palo-, cisco- et f5-bug-tracker. Toute mod
 
 - Pages HTML sur www.cisco.com/c/en/us/td/docs/, autorisées par robots.txt.
 - Nouvelles notes trouvées sur la page « Release Notes » de chaque gamme (`/c/en/us/support/`).
+- Lien de ces pages qui ressemble à une note (motif `note` du catalogue) : suivi par un motif, ou écarté par une exclusion qui dit pourquoi ; sinon erreur de la source « notes », le passage finit en rouge.
+- FTD 10.0 et suivantes : Cisco publie deux notes par branche, « management center » et « device manager », avec les mêmes bugs ; la première est lue, la seconde écartée.
 - Note en « livre » : suivie jusqu'aux chapitres qui contiennent des bugs.
 - Pages HTML sans ETag ni Last-Modified : HEAD sur le PDF généré de la note pour savoir si elle a changé.
 - Note inchangée depuis plus de 18 mois : vérifiée une fois par semaine.

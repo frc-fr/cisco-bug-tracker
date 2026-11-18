@@ -69,12 +69,16 @@ def load_catalog(path: Path) -> dict:
 
 def classify(url: str, catalog: dict) -> Optional[Tuple[str, List[str]]]:
     """(system, families) of a note address, or None when the site does not follow it."""
-    if re.search(catalog["exclude"], url):
+    if excluded(url, catalog):
         return None
     for document in catalog["documents"]:
         if re.search(document["pattern"], url):
             return document["system"], document["families"]
     return None
+
+
+def excluded(url: str, catalog: dict) -> bool:
+    return any(re.search(rule["pattern"], url) for rule in catalog["exclude"])
 
 
 def normalize_link(link: str, base: str) -> Optional[str]:
@@ -128,8 +132,13 @@ def save_manifest(path: Path, manifest: Dict[str, dict]) -> None:
 
 
 def discover(catalog: dict, client: Client) -> Dict[str, Tuple[str, List[str]]]:
-    """Notes linked from the listing pages, and the seeds: {url: (system, families)}."""
+    """Notes linked from the listing pages, and the seeds: {url: (system, families)}.
+
+    A link that looks like a note, that no pattern follows and no exclusion names, is logged as an
+    error: Cisco moved or split a note (FTD 10.0, ISR 4000 17.18) and the catalog must say what to do.
+    """
     found: Dict[str, Tuple[str, List[str]]] = {}
+    unknown: Dict[str, str] = {}
     for listing in catalog["listings"]:
         try:
             response = client.request("GET", listing)
@@ -144,6 +153,10 @@ def discover(catalog: dict, client: Client) -> Dict[str, Tuple[str, List[str]]]:
             target = url and classify(url, catalog)
             if target:
                 found.setdefault(url, target)
+            elif url and re.search(catalog["note"], url) and not excluded(url, catalog):
+                unknown.setdefault(url, listing)
+    for url, listing in sorted(unknown.items()):
+        log.error("%s: a note that sources/catalog.json neither follows nor leaves out (listed on %s)", url, listing)
     for url in catalog.get("seeds", []):
         target = classify(url, catalog)
         if target:
