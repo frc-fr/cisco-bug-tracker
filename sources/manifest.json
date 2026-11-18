@@ -177,14 +177,14 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "etags": [
-        "25999b-65e874536616e"
-      ],
       "revised": "2026-10-23",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/670/67xx/relnotes/firepower-release-notes-67xx/upgrade.html",
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/670/67xx/relnotes/firepower-release-notes-67xx/resolved_issues.html",
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/670/67xx/relnotes/firepower-release-notes-67xx/known_issues.html"
+      ],
+      "etags": [
+        "25999b-65e874536616e"
       ]
     },
     {
@@ -240,11 +240,11 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
+      "revised": "2026-11-14",
+      "chapters": [],
       "etags": [
         "142816-66033b73e1018"
-      ],
-      "revised": "2026-11-14",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/security/secure-firewall/release-notes/threat-defense/720/threat-defense-release-notes-72.html",
@@ -1137,8 +1137,8 @@
       "families": [
         "ISR 4000"
       ],
-      "etags": [],
-      "chapters": []
+      "chapters": [],
+      "etags": []
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/routers/asr1000/release/notes/xe-16-11/asr1000-rel-notes-xe-16-11.html",
@@ -3834,11 +3834,12 @@
       "families": [
         "Cisco 8000"
       ],
+      "revised": "2025-10-19",
+      "chapters": [],
       "etags": [
-        "3fbeb-639e17a6ba521"
-      ],
-      "revised": "2025-07-14",
-      "chapters": []
+        "3fbeb-639e17a6ba521",
+        "3fbeb-64181fd71ea39"
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/general/25xx/release/notes/b-release-notes-cisco8k-2511.html",
@@ -4953,11 +4954,11 @@
       "families": [
         "NCS 560"
       ],
+      "revised": "2025-10-19",
+      "chapters": [],
       "etags": [
         "390a3-641848efb6ecb"
-      ],
-      "revised": "2025-10-19",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/release-notes/75x/b-release-notes-ncs540-r751.html",
@@ -7434,11 +7435,11 @@
       "families": [
         "Nexus 3000"
       ],
+      "revised": "2026-07-05",
+      "chapters": [],
       "etags": [
         "5f355-655df5ebab5e5"
-      ],
-      "revised": "2026-07-05",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3400s/sw/922/release/notes/3400s_922v_nxos_rn.html",
@@ -7446,11 +7447,11 @@
       "families": [
         "Nexus 3000"
       ],
+      "revised": "2026-07-05",
+      "chapters": [],
       "etags": [
         "5f505-655df5e62e8c8"
-      ],
-      "revised": "2026-07-05",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3548/sw/release_notes/921/n3548_relnotes_921.html",
@@ -7458,11 +7459,11 @@
       "families": [
         "Nexus 3000"
       ],
+      "revised": "2026-07-05",
+      "chapters": [],
       "etags": [
         "8f63a-655df603816b7"
-      ],
-      "revised": "2026-07-05",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3548/sw/release_notes/922/n3548_relnotes_922.html",
@@ -7470,11 +7471,11 @@
       "families": [
         "Nexus 3000"
       ],
+      "revised": "2026-07-05",
+      "chapters": [],
       "etags": [
         "762f8-655df5fd49e35"
-      ],
-      "revised": "2026-07-05",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3600/sw/92x/release/notes/921_3600_nxos_rn.html",
@@ -7482,11 +7483,11 @@
       "families": [
         "Nexus 3000"
       ],
+      "revised": "2025-07-16",
+      "chapters": [],
       "etags": [
         "64906-63a13e9cce193"
-      ],
-      "revised": "2025-07-16",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3600/sw/92x/release/notes/922_3600_nxos_rn.html",
@@ -7494,11 +7495,11 @@
       "families": [
         "Nexus 3000"
       ],
+      "revised": "2025-07-16",
+      "chapters": [],
       "etags": [
         "5d91f-63a0d05aa0825"
-      ],
-      "revised": "2025-07-16",
-      "chapters": []
+      ]
     },
     {
       "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus7000/sw/release/notes/cisco_nexus7000_release_notes_83.html",
