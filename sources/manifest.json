@@ -209,13 +209,14 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-09-28",
+      "revised": "2026-11-20",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/70/relnotes/firepower-release-notes-700/upgrade.html",
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/70/relnotes/firepower-release-notes-700/bugs.html"
       ],
       "etags": [
-        "3c3a61-65c820b5198e8"
+        "3c3a61-65c820b5198e8",
+        "3cf338-660b33ffc6cc5"
       ]
     },
     {
@@ -1795,10 +1796,11 @@
       "families": [
         "Catalyst 8500"
       ],
-      "revised": "2026-08-22",
+      "revised": "2026-11-20",
       "chapters": [],
       "etags": [
-        "668a2-65999a27cd861"
+        "668a2-65999a27cd861",
+        "65e0d-660b121e5ab8b"
       ]
     },
     {
