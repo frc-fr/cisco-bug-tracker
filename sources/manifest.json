@@ -1800,11 +1800,12 @@
       "families": [
         "Catalyst 8500"
       ],
-      "revised": "2026-11-20",
+      "revised": "2026-11-21",
       "chapters": [],
       "etags": [
         "668a2-65999a27cd861",
-        "65e0d-660b121e5ab8b"
+        "65e0d-660b121e5ab8b",
+        "65e0d-660c0967bfd36"
       ]
     },
     {
