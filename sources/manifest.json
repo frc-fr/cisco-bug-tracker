@@ -209,14 +209,15 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-11-20",
+      "revised": "2026-11-21",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/70/relnotes/firepower-release-notes-700/upgrade.html",
         "https://www.cisco.com/c/en/us/td/docs/security/firepower/70/relnotes/firepower-release-notes-700/bugs.html"
       ],
       "etags": [
         "3c3a61-65c820b5198e8",
-        "3cf338-660b33ffc6cc5"
+        "3cf338-660b33ffc6cc5",
+        "3cf338-660c594ddc404"
       ]
     },
     {
@@ -241,10 +242,11 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-11-14",
+      "revised": "2026-11-21",
       "chapters": [],
       "etags": [
-        "142816-66033b73e1018"
+        "142816-66033b73e1018",
+        "141d65-660cef4f2af1e"
       ]
     },
     {
@@ -279,11 +281,12 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-11-14",
+      "revised": "2026-11-22",
       "chapters": [],
       "etags": [
         "25f85f-65c83d1769514",
-        "2678a5-66033b85fbcab"
+        "2678a5-66033b85fbcab",
+        "267d22-660d35c0e6234"
       ]
     },
     {
@@ -292,10 +295,11 @@
       "families": [
         "Secure Firewall Threat Defense"
       ],
-      "revised": "2026-09-28",
+      "revised": "2026-11-21",
       "chapters": [],
       "etags": [
-        "1d2396-65c8830da0788"
+        "1d2396-65c8830da0788",
+        "1d69c6-660c5eeb74264"
       ]
     },
     {
