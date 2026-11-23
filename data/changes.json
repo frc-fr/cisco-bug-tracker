@@ -166,5 +166,7 @@
   {"date": "2026-11-18", "system": "nxos", "version": "9.2(1)", "kind": "fixed_added", "bugs": ["CSCvb94380", "CSCvc53438", "CSCvd56038", "CSCve76880", "CSCve89395", "CSCve96924", "CSCvf00752", "CSCvf02296", "CSCvf29916", "CSCvf86047", "CSCvg06224", "CSCvg52207", "CSCvg71109", "CSCvh04216", "CSCvh15975", "CSCvh63645", "CSCvi25663", "CSCvi36247", "CSCvi49093", "CSCvi52063", "CSCvi92137", "CSCvj00702", "CSCvj09807", "CSCvj23969", "CSCvj26233", "CSCvj42738", "CSCvj52053", "CSCvj56815", "CSCvj89438", "CSCvk06735"]},
   {"date": "2026-11-18", "system": "nxos", "version": "9.2(1)", "kind": "known_added", "bugs": ["CSCvk22717"]},
   {"date": "2026-11-18", "system": "nxos", "version": "9.2(2)", "kind": "fixed_added", "bugs": ["CSCuz53130", "CSCve89395", "CSCvf00752", "CSCvf02296", "CSCvf29916", "CSCvh65567", "CSCvh75279", "CSCvi07616", "CSCvk09517", "CSCvk22717", "CSCvk65190", "CSCvm04960", "CSCvm05482", "CSCvm45182", "CSCvm50617", "CSCvm52932", "CSCvm54267", "CSCvm76666", "CSCvm79423", "CSCvm79849", "CSCvm86624"]},
-  {"date": "2026-11-18", "system": "nxos", "version": "9.2(2)", "kind": "known_added", "bugs": ["CSCvb82259", "CSCvk20530", "CSCvn11908"]}
+  {"date": "2026-11-18", "system": "nxos", "version": "9.2(2)", "kind": "known_added", "bugs": ["CSCvb82259", "CSCvk20530", "CSCvn11908"]},
+  {"date": "2026-11-23", "system": "iosxe", "version": "16.12.15", "kind": "version", "bugs": []},
+  {"date": "2026-11-23", "system": "iosxe", "version": "16.12.16", "kind": "version", "bugs": []}
 ]

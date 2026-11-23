@@ -1975,10 +1975,11 @@
       "families": [
         "Catalyst 3850"
       ],
-      "revised": "2026-08-13",
+      "revised": "2026-11-23",
       "chapters": [],
       "etags": [
-        "bef62-658f1e60f63a5"
+        "bef62-658f1e60f63a5",
+        "c2a41-660f1ba2b98e4"
       ]
     },
     {
