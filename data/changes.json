@@ -169,5 +169,7 @@
   {"date": "2026-11-18", "system": "nxos", "version": "9.2(2)", "kind": "known_added", "bugs": ["CSCvb82259", "CSCvk20530", "CSCvn11908"]},
   {"date": "2026-11-23", "system": "iosxe", "version": "16.12.15", "kind": "version", "bugs": []},
   {"date": "2026-11-23", "system": "iosxe", "version": "16.12.16", "kind": "version", "bugs": []},
+  {"date": "2026-11-24", "system": "iosxe", "version": "26.1.3", "kind": "fixed_added", "bugs": ["CSCwt88239", "CSCwt95696", "CSCwu68328"]},
+  {"date": "2026-11-24", "system": "iosxe", "version": "26.1.3", "kind": "known_added", "bugs": ["CSCuv03769", "CSCwn80721", "CSCwr77437", "CSCws80808", "CSCwt00058", "CSCwt05119", "CSCwt07061", "CSCwt09028", "CSCwt10857", "CSCwt47516", "CSCwt71091", "CSCwt76906", "CSCwt87294", "CSCwt95273", "CSCwu19389", "CSCwu31342", "CSCwu58859", "CSCwu68328", "CSCwx53884"]},
   {"date": "2026-11-24", "system": "iosxe", "version": "26.1.3", "kind": "version", "bugs": []}
 ]
