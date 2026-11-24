@@ -616,10 +616,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2026-08-30",
+      "revised": "2026-11-24",
       "chapters": [],
       "etags": [
-        "43e15-65a3a62eade93"
+        "43e15-65a3a62eade93",
+        "567d7-660fec191d1a9"
       ]
     },
     {
@@ -1736,10 +1737,11 @@
         "Catalyst 8200",
         "Catalyst 8300"
       ],
-      "revised": "2026-08-30",
+      "revised": "2026-11-24",
       "chapters": [],
       "etags": [
-        "46112-65a3a35e2db49"
+        "46112-65a3a35e2db49",
+        "5a2ae-660fec18e85c6"
       ]
     },
     {
@@ -1951,10 +1953,11 @@
       "families": [
         "Catalyst 8500"
       ],
-      "revised": "2026-08-30",
+      "revised": "2026-11-24",
       "chapters": [],
       "etags": [
-        "43fb5-65a3a571d14b9"
+        "43fb5-65a3a571d14b9",
+        "5bac9-660febaab207e"
       ]
     },
     {
@@ -1975,11 +1978,12 @@
       "families": [
         "Catalyst 3850"
       ],
-      "revised": "2026-11-23",
+      "revised": "2026-11-24",
       "chapters": [],
       "etags": [
         "bef62-658f1e60f63a5",
-        "c2a41-660f1ba2b98e4"
+        "c2a41-660f1ba2b98e4",
+        "c2a41-660fd197fa0d5"
       ]
     },
     {
