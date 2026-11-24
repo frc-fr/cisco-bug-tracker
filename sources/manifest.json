@@ -2691,10 +2691,11 @@
       "families": [
         "Catalyst 9300"
       ],
-      "revised": "2026-09-03",
+      "revised": "2026-11-24",
       "chapters": [],
       "etags": [
-        "6de7b-65a968d36e23b"
+        "6de7b-65a968d36e23b",
+        "6f35a-6610647f63860"
       ]
     },
     {
