@@ -2319,10 +2319,11 @@
       "families": [
         "Catalyst 9200"
       ],
-      "revised": "2026-09-03",
+      "revised": "2026-11-24",
       "chapters": [],
       "etags": [
-        "5e1aa-65a96b533b6d5"
+        "5e1aa-65a96b533b6d5",
+        "5fa59-6610a1ac42a4a"
       ]
     },
     {
@@ -2695,7 +2696,8 @@
       "chapters": [],
       "etags": [
         "6de7b-65a968d36e23b",
-        "6f35a-6610647f63860"
+        "6f35a-6610647f63860",
+        "W/\"6f35a-6610f439576c6"
       ]
     },
     {
@@ -3049,7 +3051,8 @@
       "revised": "2026-09-03",
       "chapters": [],
       "etags": [
-        "6fdac-65a96e299f70f"
+        "6fdac-65a96e299f70f",
+        "W/\"71d8d-6611053b9ebf2"
       ]
     },
     {
@@ -3416,10 +3419,11 @@
       "families": [
         "Catalyst 9500"
       ],
-      "revised": "2026-09-03",
+      "revised": "2026-11-24",
       "chapters": [],
       "etags": [
-        "74fd0-65a96b8597eb4"
+        "74fd0-65a96b8597eb4",
+        "76462-6610a1acfaf25"
       ]
     },
     {
