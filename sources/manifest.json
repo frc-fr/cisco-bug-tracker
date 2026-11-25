@@ -3048,11 +3048,12 @@
       "families": [
         "Catalyst 9400"
       ],
-      "revised": "2026-09-03",
+      "revised": "2026-11-25",
       "chapters": [],
       "etags": [
         "6fdac-65a96e299f70f",
-        "W/\"71d8d-6611053b9ebf2"
+        "W/\"71d8d-6611053b9ebf2",
+        "71d8d-6610efb02c67b"
       ]
     },
     {
@@ -3725,10 +3726,11 @@
       "families": [
         "Catalyst 9600"
       ],
-      "revised": "2026-09-03",
+      "revised": "2026-11-25",
       "chapters": [],
       "etags": [
-        "64734-65a96da1f28f3"
+        "64734-65a96da1f28f3",
+        "660b5-661188b2c11ac"
       ]
     },
     {
