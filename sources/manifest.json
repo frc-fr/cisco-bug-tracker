@@ -461,12 +461,13 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2026-11-11",
+      "revised": "2026-11-26",
       "chapters": [],
       "etags": [
         "735fb-65a838b022ef6",
         "735fb-65a80134f7d95",
-        "735af-66004c3bdad9e"
+        "735af-66004c3bdad9e",
+        "734e3-66123258242df"
       ]
     },
     {
@@ -502,10 +503,11 @@
       "families": [
         "Catalyst 8000V"
       ],
-      "revised": "2026-09-13",
+      "revised": "2026-11-26",
       "chapters": [],
       "etags": [
-        "5ace7-65b541d54207c"
+        "5ace7-65b541d54207c",
+        "5ac58-6612533088f00"
       ]
     },
     {
@@ -1444,13 +1446,14 @@
       "families": [
         "ASR 920"
       ],
-      "revised": "2026-01-02",
+      "revised": "2026-11-26",
       "chapters": [
         "https://www.cisco.com/c/en/us/td/docs/routers/asr920/release/notes/17-15-1/b-rn-xe-17-15-1-asr920/m-caveats-17-15-x-asr920.html"
       ],
       "etags": [
         "1dca20-63d7268805508",
-        "1dc242-6476476557cf1"
+        "1dc242-6476476557cf1",
+        "1e0d06-66126e47c7fb3"
       ]
     },
     {
